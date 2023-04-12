@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/components/Nav.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1681320536884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1681320543558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     var showdate = new Date();\r\n     var displaytodaysdate = `${showdate.getDate()}.${showdate.getMonth() + 1}.${showdate.getFullYear()}`;\r\n \r\n   return (\r\n-    <div >\r\n+    <div className='w'>\r\n         <div className='bg-[#227a22] h-auto w-full flex justify-between items-center p-5 shadow-xl'>\r\n             <div className='text-white font-semibold'>\r\n                 {displaytodaysdate}\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1681320544165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     var showdate = new Date();\r\n     var displaytodaysdate = `${showdate.getDate()}.${showdate.getMonth() + 1}.${showdate.getFullYear()}`;\r\n \r\n   return (\r\n-    <div className='wi'>\r\n+    <div className='wit'>\r\n         <div className='bg-[#227a22] h-auto w-full flex justify-between items-center p-5 shadow-xl'>\r\n             <div className='text-white font-semibold'>\r\n                 {displaytodaysdate}\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1681320660630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \r\n   return (\r\n     <div className='w-[80%]'>\r\n         <div className=' h-auto w-full flex justify-between items-center p-5 shadow-xl'>\r\n-            <div className='text font-semibold'>\r\n+            <div className='tex font-semibold'>\r\n                 {displaytodaysdate}\r\n             </div>\r\n             <div>\r\n                 \r\n"
+                }
+            ],
+            "date": 1681320536884,
+            "name": "Commit-0",
+            "content": "import React from 'react';\r\nimport '../input.css'\r\n\r\n\r\nfunction Nav() {\r\n\r\n    var showdate = new Date();\r\n    var displaytodaysdate = `${showdate.getDate()}.${showdate.getMonth() + 1}.${showdate.getFullYear()}`;\r\n\r\n  return (\r\n    <div >\r\n        <div className='bg-[#227a22] h-auto w-full flex justify-between items-center p-5 shadow-xl'>\r\n            <div className='text-white font-semibold'>\r\n                {displaytodaysdate}\r\n            </div>\r\n            <div>\r\n                \r\n            </div>\r\n        </div>\r\n        <img src='./image/Galamdas.jpg'/>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default Nav;\r\n"
+        }
+    ]
+}
