@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/components/Category.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1681445796621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1681447221021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function Category() {\r\n   return (\r\n     <div>\r\n-      sd\r\n+      sdfr\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1681447381391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function Category() {\r\n   return (\r\n     <div>\r\n-      s\r\n+      \r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                }
+            ],
+            "date": 1681445796621,
+            "name": "Commit-0",
+            "content": "r"
+        }
+    ]
+}
