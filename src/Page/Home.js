@@ -5,7 +5,7 @@ import PaperMean from '../components/PaperMean';
 function Home() {
   return (
     <div>
-      <Nav/>
+      <Nav />
       <PaperMean/>
     </div>
   );

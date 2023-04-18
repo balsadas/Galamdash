@@ -10,11 +10,11 @@ import Home from './Page/Home';
 function App() {
 
     
-  const [click, setClick] = useState(false)
+ 
 
   return (
-    <div className='bg-[#E8F8F5]'>
-        <Home click={click} setClick={setClick}/>
+    <div  className='bg-[#E8F8F5]'>
+        <Home />
     </div>
   );
 }

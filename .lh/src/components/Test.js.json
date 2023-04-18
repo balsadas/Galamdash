@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/components/Test.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1681727350782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1681727384266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,5 +33,5 @@\n     </div>\r\n   );\r\n };\r\n \r\n-export default App;\r\n+export default Ap;\r\n"
+                },
+                {
+                    "date": 1681727384560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,5 +33,5 @@\n     </div>\r\n   );\r\n };\r\n \r\n-export default Ap;\r\n+export default A;\r\n"
+                },
+                {
+                    "date": 1681727391464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     </div>\r\n   );\r\n };\r\n \r\n-const App = () => {\r\n+const Ap = () => {\r\n   return (\r\n     <div className=\"App\">\r\n       <h1>React Hover Card</h1>\r\n       <Card\r\n@@ -33,5 +33,5 @@\n     </div>\r\n   );\r\n };\r\n \r\n-export default A;\r\n+export default Test;\r\n"
+                }
+            ],
+            "date": 1681727350782,
+            "name": "Commit-0",
+            "content": "import React, { useState } from \"react\";\r\nimport \"./styles.css\";\r\n\r\nconst Card = ({ title, description, image }) => {\r\n  const [hover, setHover] = useState(false);\r\n\r\n  return (\r\n    <div\r\n      className=\"card\"\r\n      onMouseEnter={() => setHover(true)}\r\n      onMouseLeave={() => setHover(false)}\r\n    >\r\n      <div className=\"card-image\">\r\n        <img src={image} alt={title} />\r\n      </div>\r\n      <div className={`card-info ${hover ? \"hover\" : \"\"}`}>\r\n        <h2>{title}</h2>\r\n        <p>{description}</p>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nconst App = () => {\r\n  return (\r\n    <div className=\"App\">\r\n      <h1>React Hover Card</h1>\r\n      <Card\r\n        title=\"Card Title\"\r\n        description=\"This is a description of the card.\"\r\n        image=\"https://picsum.photos/id/237/400/300\"\r\n      />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default App;\r\n"
+        }
+    ]
+}
