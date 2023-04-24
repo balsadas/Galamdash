@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom';
 
 const kat = [
     {
@@ -69,6 +70,7 @@ const com = [
 function Paper() {
     return (
         <div className=' px-3 py-5  overscroll-auto position-fixed  overflow-hidden ' >
+            <Link to='/IntoPaper'>
             <ul>
                 {kat.map((kat, i) => (
                     <div className='group'>
@@ -130,6 +132,7 @@ function Paper() {
                     </div>
                 ))}
             </ul>
+            </Link>
         </div>
     );
 }

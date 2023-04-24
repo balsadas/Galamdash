@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../components/Footer';
 import Nav from '../components/Nav';
 import PaperMean from '../components/PaperMean';
 
@@ -7,6 +8,7 @@ function Home() {
     <div>
       <Nav />
       <PaperMean/>
+      <Footer/>
     </div>
   );
 }

@@ -58,7 +58,8 @@ function Navbar() {
 
   return (
     <>
-      <div className='p-4 rounded-b-[15px] bg-[green] flex justify-between select-none'>
+    <div className='sticky top-0 z-50'>
+      <div className='p-4 rounded-b-[15px] bg-[green] flex justify-between select-none relative '>
         <div className='flex'>
           <div className={click ? 'group flex items-center  mt-[-.8] select-none  scale-125 mr-6  ml-3 transition-all delay-150 duration-500 ease-in-out cursor-pointer' : 'group flex items-center hover:scale-125 hover:mr-6 hover:ml-3 transition-all delay-150 duration-500 ease-in-out cursor-pointer'}
             onClick={() => setClick(!click)}
@@ -98,6 +99,7 @@ function Navbar() {
       </div>
       { click ? <div className=' shadow-md bg-[white] rounded-xl absolute'><Category /></div> : <div></div>}
       {click1 ? <div className=' w-full shadow-md bg-[#ffffffe0] rounded-xl '><Search /></div> : <div></div>}
+      </div>
     </>
   );
 }
