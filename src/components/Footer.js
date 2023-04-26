@@ -28,8 +28,8 @@ function Footer() {
             <div>
               <div>
                 <div className='flex items-center justify-center mt-4'>
-                <img src='./photo/galamdas.jpg' className='w-[3vw] h-[3vw]'/>
-                <p className='mt-[0.35rem] border-b-2 border-green-500 text-[1.5vw] text-[#018353] font-[500]'> Galamdaş</p>
+                <img src='./image/tazepng.png' className='w-[10vw] h-[3vw]'/>
+                {/* <p className='mt-[0.35rem] border-b-2 border-green-500 text-[1.5vw] text-[#018353] font-[500]'> Galamdaş</p> */}
                 </div>
                 <div className='flex justify-center mt-3'>
                   <p className='text-gray-500 text-[1vw]' >© 2023 galamdaş™. Ähli hukuklary goralan.</p>

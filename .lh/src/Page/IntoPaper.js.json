@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/Page/IntoPaper.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1682349429762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1682350917017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,13 +19,13 @@\n     return (\r\n         <div>\r\n             <div>\r\n                 <div>\r\n-                    {/* <img src={teh.img}/>\r\n+                    <img src={teh.img}/>\r\n                     <div>\r\n                         <h3>{teh.name} {teh}</h3>\r\n                         <p></p>\r\n-                    </div> */}\r\n+                    </div>\r\n                 </div>\r\n                 <div>\r\n                     <h3>\r\n \r\n"
+                },
+                {
+                    "date": 1682350938571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     return (\r\n         <div>\r\n             <div>\r\n                 <div>\r\n-                    <img src={teh.img}/>\r\n+                    <img src={teh}/>\r\n                     <div>\r\n                         <h3>{teh.name} {teh}</h3>\r\n                         <p></p>\r\n                     </div>\r\n"
+                },
+                {
+                    "date": 1682350949719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,11 +19,11 @@\n     return (\r\n         <div>\r\n             <div>\r\n                 <div>\r\n-                    <img src={teh}/>\r\n+                    <img src={teh(img)}/>\r\n                     <div>\r\n-                        <h3>{teh.name} {teh}</h3>\r\n+                        {/* <h3>{teh.name} {teh}</h3> */}\r\n                         <p></p>\r\n                     </div>\r\n                 </div>\r\n                 <div>\r\n"
+                },
+                {
+                    "date": 1682350977766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     return (\r\n         <div>\r\n             <div>\r\n                 <div>\r\n-                    <img src={teh(img)}/>\r\n+                    <img src={teh}/>\r\n                     <div>\r\n                         {/* <h3>{teh.name} {teh}</h3> */}\r\n                         <p></p>\r\n                     </div>\r\n"
+                },
+                {
+                    "date": 1682350985079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     return (\r\n         <div>\r\n             <div>\r\n                 <div>\r\n-                    <img src={teh}/>\r\n+                    <img src={teh.i}/>\r\n                     <div>\r\n                         {/* <h3>{teh.name} {teh}</h3> */}\r\n                         <p></p>\r\n                     </div>\r\n"
+                },
+                {
+                    "date": 1682351158424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     }\r\n ]\r\n \r\n \r\n-function IntoPaper(i) {\r\n+function IntoPaper(img) {\r\n     return (\r\n         <div>\r\n             <div>\r\n                 <div>\r\n"
+                },
+                {
+                    "date": 1682351158600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     }\r\n ]\r\n \r\n \r\n-function IntoPaper(im) {\r\n+function IntoPaper(img) {\r\n     return (\r\n         <div>\r\n             <div>\r\n                 <div>\r\n"
+                }
+            ],
+            "date": 1682349429762,
+            "name": "Commit-0",
+            "content": "import React from 'react';\r\n\r\n\r\nconst com = [\r\n    { id: 1, num: '23', img: './photo/bar-chart.png' },\r\n    { id: 2, num: '13', img: './photo/heart.png' },\r\n    { id: 3, num: '10', img: './photo/comment.png' },\r\n\r\n]\r\n\r\nconst  teh = [\r\n    {\r\n        id: 1, date:'1/12/2023y', img:'.photo/photo1.jpg', name:' Myrat', surname:' Balshayev', title:'Özüňe ynam.'\r\n    }\r\n]\r\n\r\n\r\nfunction IntoPaper() {\r\n    return (\r\n        <div>\r\n            <div>\r\n                <div>\r\n                    {/* <img src={teh.img}/>\r\n                    <div>\r\n                        <h3>{teh.name} {teh}</h3>\r\n                        <p></p>\r\n                    </div> */}\r\n                </div>\r\n                <div>\r\n                    <h3>\r\n\r\n                    </h3>\r\n                    <div>\r\n                        <ul className='flex justify-end items-end ' >\r\n                            {com.map((com, i) => (\r\n                                <li key={i} className='flex mr-3 items-center '>\r\n                                    <img src={com.img} className='w-[1vw] h-[1vw] select-none' />\r\n                                    <p className='text-[#6B7280] ml-1 text-[.9vw] select-none'>{com.num}</p>\r\n                                </li>\r\n                            ))}\r\n                        </ul>\r\n                    </div>\r\n                    <p>\r\n\r\n                    </p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    );\r\n}\r\n\r\nexport default IntoPaper;\r\n"
+        }
+    ]
+}

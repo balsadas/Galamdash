@@ -91,14 +91,11 @@ function Navbar() {
             {click1 ? <img src='./image/loupe1.png' className='w-[1.8vw] h-[1.8vw]' /> : <img src='./image/loupe.png' className='w-[1.8vw] h-[1.8vw]' />}
             <h4 className={click1 ? 'group-hover:block hidden  ml-2 font-bold ' : 'group-hover:block hidden text-[white] ml-2 font-bold '}>Gözleg</h4>
           </div>
-          <div className='flex items-center group ml-4 cursor-pointer hover:-translate-y-1 hover:scale-110 transition-all duration-500 ease-in'>
-            <img src='./image/user.png' className='w-[1.8vw] h-[1.8vw]' />
-            <h4 className='group-hover:block hidden text-[white] ml-2 font-bold'>Içeri gir</h4>
-          </div>
+         
         </div>
       </div>
       { click ? <div className=' shadow-md bg-[white] rounded-xl absolute'><Category /></div> : <div></div>}
-      {click1 ? <div className=' w-full shadow-md bg-[#ffffffe0] rounded-xl '><Search /></div> : <div></div>}
+      {click1 ? <div className=' w-full shadow-md bg-[#ffffffe0] rounded-xl p-4'><Search /></div> : <div></div>}
       </div>
     </>
   );

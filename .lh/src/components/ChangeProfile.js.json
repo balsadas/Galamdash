@@ -1,0 +1,230 @@
+{
+    "sourceFile": "src/components/ChangeProfile.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 53,
+            "patches": [
+                {
+                    "date": 1682535605678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1682535607018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-rf\n\\ No newline at end of file\n+rfc\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1682535607280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-rfc\n\\ No newline at end of file\n+rfce\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1682535938344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,11 @@\n-rfce\n\\ No newline at end of file\n+import React from 'react';\r\n+\r\n+function ChangeProfile() {\r\n+  return (\r\n+    <div >\r\n+      \r\n+    </div>\r\n+  );\r\n+}\r\n+\r\n+export default ChangeProfile;\r\n"
+                },
+                {
+                    "date": 1682535943708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function ChangeProfile() {\r\n   return (\r\n-    <div >\r\n+    <div className='fe'>\r\n       \r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682535950814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import React from 'react';\r\n \r\n function ChangeProfile() {\r\n   return (\r\n-    <div className='fe'>\r\n-      \r\n+    <div className='flex justify-center'>\r\n+        \r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1682535956255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function ChangeProfile() {\r\n   return (\r\n     <div className='flex justify-center'>\r\n-        \r\n+        <div\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1682535956626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function ChangeProfile() {\r\n   return (\r\n     <div className='flex justify-center'>\r\n-        <div\r\n+        <div></div>\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1682535965443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n \r\n function ChangeProfile() {\r\n   return (\r\n     <div className='flex justify-center'>\r\n-        <div></div>\r\n+        <div className=''>\r\n+\r\n+        </div>\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1682535974902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function ChangeProfile() {\r\n   return (\r\n     <div className='flex justify-center'>\r\n-        <div className=''>\r\n+        <div className='w-[7'>\r\n \r\n         </div>\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1682535980742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n \r\n function ChangeProfile() {\r\n   return (\r\n     <div className='flex justify-center'>\r\n-        <div className='w-[7'>\r\n+        <div className='w-[75\r\n+            '>\r\n \r\n         </div>\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1682535991763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,10 @@\n \r\n function ChangeProfile() {\r\n   return (\r\n     <div className='flex justify-center'>\r\n-        <div className='w-[75\r\n-            '>\r\n-\r\n+        <div className='w-[75%]'>\r\n+    \r\n         </div>\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682535997365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,11 @@\n function ChangeProfile() {\r\n   return (\r\n     <div className='flex justify-center'>\r\n         <div className='w-[75%]'>\r\n-    \r\n+            <div>\r\n+                \r\n+            </div>\r\n         </div>\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682536003369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,11 @@\n   return (\r\n     <div className='flex justify-center'>\r\n         <div className='w-[75%]'>\r\n             <div>\r\n-                \r\n+                <div>\r\n+                    \r\n+                </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1682536009473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     <div className='flex justify-center'>\r\n         <div className='w-[75%]'>\r\n             <div>\r\n                 <div>\r\n-                    \r\n+                    <H3\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536042800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     <div className='flex justify-center'>\r\n         <div className='w-[75%]'>\r\n             <div>\r\n                 <div>\r\n-                    <H3\r\n+                    <h3></h3>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536055522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     <div className='flex justify-center'>\r\n         <div className='w-[75%]'>\r\n             <div>\r\n                 <div>\r\n-                    <h3></h3>\r\n+                    <h3>Pro</h3>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536061947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     <div className='flex justify-center'>\r\n         <div className='w-[75%]'>\r\n             <div>\r\n                 <div>\r\n-                    <h3>Pro</h3>\r\n+                    <h3>Profili </h3>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536070091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,11 @@\n     <div className='flex justify-center'>\r\n         <div className='w-[75%]'>\r\n             <div>\r\n                 <div>\r\n-                    <h3>Profili </h3>\r\n+                    <h3>Profili üýtget</h3>\r\n                 </div>\r\n+                \r\n             </div>\r\n         </div>\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1682536097023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n-                \r\n+                <\r\n             </div>\r\n         </div>\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1682536148028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,11 @@\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n-                <\r\n+                <div>\r\n+                    <\r\n+                </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1682536155083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n                 <div>\r\n-                    <\r\n+                    <img/>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536160467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n                 <div>\r\n-                    <img/>\r\n+                    <img src='/>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536165777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n                 <div>\r\n-                    <img src='/>\r\n+                    <img src='./'/>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536171322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n                 <div>\r\n-                    <img src='./'/>\r\n+                    <img src='./photo/photo'/>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536177067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n                 <div>\r\n-                    <img src='./photo/photo'/>\r\n+                    <img src='./photo/photo11.j'/>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536184406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n                 <div>\r\n-                    <img src='./photo/photo11.j'/>\r\n+                    <img src='./photo/photo11.jpg' />\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536190691,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n                 <div>\r\n-                    <img src='./photo/photo11.jpg' />\r\n+                    <img src='./photo/photo11.jpg' className=''/>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536198208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n                 <div>\r\n-                    <img src='./photo/photo11.jpg' className=''/>\r\n+                    <img src='./photo/photo11.jpg' className='md:w-[1'/>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536204172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n                 <div>\r\n-                    <img src='./photo/photo11.jpg' className='md:w-[1'/>\r\n+                    <img src='./photo/photo11.jpg' className='md:w-[10vw] m'/>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536204328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n                 <div>\r\n-                    <img src='./photo/photo11.jpg' className='md:w-[10vw] m'/>\r\n+                    <img src='./photo/photo11.jpg' className='md:w-[10vw] md'/>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536210897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n                 <div>\r\n-                    <img src='./photo/photo11.jpg' className='md:w-[10vw] md'/>\r\n+                    <img src='./photo/photo11.jpg' className='md:w-[10vw] md:h-[1'/>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536217337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n                 <div>\r\n-                    <img src='./photo/photo11.jpg' className='md:w-[10vw] md:h-[1'/>\r\n+                    <img src='./photo/photo11.jpg' className='md:w-[10vw] md:h-[10vw] '/>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536222636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n                 <div>\r\n-                    <img src='./photo/photo11.jpg' className='md:w-[10vw] md:h-[10vw] '/>\r\n+                    <img src='./photo/photo11.jpg' className='md:w-[10vw] md:h-[10vw] ro'/>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536251332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n                 <div>\r\n-                    <img src='./photo/photo11.jpg' className='md:w-[10vw] md:h-[10vw] ro'/>\r\n+                    <img src='./photo/photo11.jpg' className='md:w-[10vw] md:h-[10vw] rounded-lg'/>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536273731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n                 <div>\r\n-                    <img src='./photo/photo11.jpg' className='md:w-[10vw] md:h-[10vw] rounded-lg'/>\r\n+                    <img src='./photo/photo11.jpg' className='md:w-[10vw] md:h-[10vw] rounded-l'/>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536562650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,15 +2,15 @@\n \r\n function ChangeProfile() {\r\n   return (\r\n     <div className='flex justify-center'>\r\n-        <div className='w-[75%]'>\r\n+        <div className='w-[75%] '>\r\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n                 <div>\r\n-                    <img src='./photo/photo11.jpg' className='md:w-[10vw] md:h-[10vw] rounded-l'/>\r\n+                    <img src='./photo/photo11.jpg' className='md:w-[10vw] md:h-[10vw] rounded-full'/>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682536568513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function ChangeProfile() {\r\n   return (\r\n     <div className='flex justify-center'>\r\n-        <div className='w-[75%] '>\r\n+        <div className='w-[75%] bg-'>\r\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n"
+                },
+                {
+                    "date": 1682536574648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function ChangeProfile() {\r\n   return (\r\n     <div className='flex justify-center'>\r\n-        <div className='w-[75%] bg-'>\r\n+        <div className='w-[75%] bg-[#fff] '>\r\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n"
+                },
+                {
+                    "date": 1682536579863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function ChangeProfile() {\r\n   return (\r\n     <div className='flex justify-center'>\r\n-        <div className='w-[75%] bg-[#fff] '>\r\n+        <div className='w-[75%] bg-[#fff] shadow-lg rou'>\r\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n"
+                },
+                {
+                    "date": 1682536588974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function ChangeProfile() {\r\n   return (\r\n     <div className='flex justify-center'>\r\n-        <div className='w-[75%] bg-[#fff] shadow-lg rou'>\r\n+        <div className='w-[5%] bg-[#fff] shadow-lg rounded-lg'>\r\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n"
+                },
+                {
+                    "date": 1682536651077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import React from 'react';\r\n \r\n function ChangeProfile() {\r\n   return (\r\n-    <div className='flex justify-center'>\r\n-        <div className='w-[5%] bg-[#fff] shadow-lg rounded-lg'>\r\n+    <div className='flex justify-center '>\r\n+        <div className='w-[55%] bg-[#fff] shadow-lg rounded-lg'>\r\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n"
+                },
+                {
+                    "date": 1682536657797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function ChangeProfile() {\r\n   return (\r\n-    <div className='flex justify-center '>\r\n+    <div className='flex justify-center mt-'>\r\n         <div className='w-[55%] bg-[#fff] shadow-lg rounded-lg'>\r\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n"
+                },
+                {
+                    "date": 1682536677517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function ChangeProfile() {\r\n   return (\r\n-    <div className='flex justify-center mt-'>\r\n+    <div className='flex justify-center xl:mt-[-5rem] md:mt-[-2rem] lg:mt-[-3rem]'>\r\n         <div className='w-[55%] bg-[#fff] shadow-lg rounded-lg'>\r\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n"
+                },
+                {
+                    "date": 1682536683144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function ChangeProfile() {\r\n   return (\r\n-    <div className='flex justify-center xl:mt-[-5rem] md:mt-[-2rem] lg:mt-[-3rem]'>\r\n+    <div className='flex justify-center xl:mt-[-5rem] md:mt-[-2rem] lg:mt-[-3rem] z-'>\r\n         <div className='w-[55%] bg-[#fff] shadow-lg rounded-lg'>\r\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n"
+                },
+                {
+                    "date": 1682536693556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function ChangeProfile() {\r\n   return (\r\n-    <div className='flex justify-center xl:mt-[-5rem] md:mt-[-2rem] lg:mt-[-3rem] z-'>\r\n+    <div className='flex justify-center xl:mt-[-5rem] md:mt-[-2rem] lg:mt-[-3rem] '>\r\n         <div className='w-[55%] bg-[#fff] shadow-lg rounded-lg'>\r\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n"
+                },
+                {
+                    "date": 1682536711141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import React from 'react';\r\n \r\n function ChangeProfile() {\r\n   return (\r\n-    <div className='flex justify-center xl:mt-[-5rem] md:mt-[-2rem] lg:mt-[-3rem] '>\r\n-        <div className='w-[55%] bg-[#fff] shadow-lg rounded-lg'>\r\n+    <div className='flex justify-center xl:mt-[-5rem] md:mt-[-2rem] lg:mt-[-rem] '>\r\n+        <div className='w-[55%] bg-[#fff] shadow-lg rounded-lg z-20'>\r\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n"
+                },
+                {
+                    "date": 1682536724310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function ChangeProfile() {\r\n   return (\r\n-    <div className='flex justify-center xl:mt-[-5rem] md:mt-[-2rem] lg:mt-[-rem] '>\r\n+    <div className='flex justify-center xl:mt-[-rem] md:mt-[-2rem] lg:mt-[-2.8rem] '>\r\n         <div className='w-[55%] bg-[#fff] shadow-lg rounded-lg z-20'>\r\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n"
+                },
+                {
+                    "date": 1682536729728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function ChangeProfile() {\r\n   return (\r\n-    <div className='flex justify-center xl:mt-[-rem] md:mt-[-2rem] lg:mt-[-2.8rem] '>\r\n+    <div className='flex justify-center xl:mt-[-4.5rem] md:mt-[-2rem] lg:mt-[-2.8rem] '>\r\n         <div className='w-[55%] bg-[#fff] shadow-lg rounded-lg z-20'>\r\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n"
+                },
+                {
+                    "date": 1682536744608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function ChangeProfile() {\r\n   return (\r\n-    <div className='flex justify-center xl:mt-[-4.5rem] md:mt-[-2rem] lg:mt-[-2.8rem] '>\r\n+    <div className='flex justify-center xl:mt-[-4rem] md:mt-[-2rem] lg:mt-[-2.rem] '>\r\n         <div className='w-[55%] bg-[#fff] shadow-lg rounded-lg z-20'>\r\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n"
+                },
+                {
+                    "date": 1682536769051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import React from 'react';\r\n \r\n function ChangeProfile() {\r\n   return (\r\n-    <div className='flex justify-center xl:mt-[-4rem] md:mt-[-2rem] lg:mt-[-2.rem] '>\r\n-        <div className='w-[55%] bg-[#fff] shadow-lg rounded-lg z-20'>\r\n+    <div className='flex justify-center xl:mt-[-4rem] md:mt-[-2rem] lg:mt-[-3rem] '>\r\n+        <div className='w-[55%] bg-[#fff] shadow-lg rounded-lg z-20 '>\r\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n"
+                },
+                {
+                    "date": 1682536824942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,14 @@\n \r\n function ChangeProfile() {\r\n   return (\r\n     <div className='flex justify-center xl:mt-[-4rem] md:mt-[-2rem] lg:mt-[-3rem] '>\r\n-        <div className='w-[55%] bg-[#fff] shadow-lg rounded-lg z-20 '>\r\n+        <div className='w-[55%] bg-[#fff] shadow-lg rounded-lg z-20 p-6'>\r\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n-                <div>\r\n+                <div >\r\n                     <img src='./photo/photo11.jpg' className='md:w-[10vw] md:h-[10vw] rounded-full'/>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1682536830592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n-                <div c>\r\n+                <div cl>\r\n                     <img src='./photo/photo11.jpg' className='md:w-[10vw] md:h-[10vw] rounded-full'/>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1682536830701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n             <div>\r\n                 <div>\r\n                     <h3>Profili üýtget</h3>\r\n                 </div>\r\n-                <div cl>\r\n+                <div cla>\r\n                     <img src='./photo/photo11.jpg' className='md:w-[10vw] md:h-[10vw] rounded-full'/>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n"
+                }
+            ],
+            "date": 1682535605678,
+            "name": "Commit-0",
+            "content": "rf"
+        }
+    ]
+}

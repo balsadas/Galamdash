@@ -4,9 +4,14 @@ import './App.css';
 import Home from './Page/Home';
 import IntoPaper from './Page/IntoPaper';
 import { BrowserRouter, Route, RouterProvider, Routes, createBrowserRouter } from 'react-router-dom';
+import Profile from './Page/Profile';
 
 
-
+const  name = 'Myrat'
+const surname= 'Balshyev'
+const date = '12/04/2023y'
+const title = 'Özüňe ynam.'
+const img = './photo/photo1.jpg'
 
 
 function App() {
@@ -20,8 +25,8 @@ function App() {
         <Routes>
         
             <Route path='/' element={<Home/>}/>
-            <Route path='/IntoPaper' element={<IntoPaper/>}/>
-      
+            <Route path='/IntoPaper' element={<IntoPaper name={name} surname={surname} date={date} title={title} img={img}/>}/>
+            <Route path='/Profile' element={<Profile />}/>
         </Routes>
       </BrowserRouter>
     </div>
