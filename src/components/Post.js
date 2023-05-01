@@ -66,6 +66,9 @@ function Post() {
     return (
         <div className='flex justify-center mt-[3rem]   '>
             <div className=' w-[90%]   '>
+                <div className='shadow-lg bg-[#fff] rounded-lg p-2 '>
+                    <h3 className='pl-2 font-bold text-[#19a056] md:text-[1.2vw]'>Soňky Postlar</h3>
+                </div>
                 <ul className='rows-10   w-full flex justify-center '>
                     <div>
                         {post.map((post, index) => (

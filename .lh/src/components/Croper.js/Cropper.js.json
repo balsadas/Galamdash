@@ -1,0 +1,74 @@
+{
+    "sourceFile": "src/components/Croper.js/Cropper.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1682883668430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1682883674081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,38 @@\n+import React, { useState } from 'react';\r\n+\r\n+function Cropper() {\r\n+    const cropperRef = useRe(null);\r\n+    const [loading, setLoading] = useState(true);\r\n+    const [scaleX, setScaleX] = useState(1);\r\n+    const [scaleY, setScaleY] = useState(1);\r\n+\r\n+    const handleClick = () => {\r\n+        const imageElement = cropperRef?.current;\r\n+        const cropper = imageElement?.cropper;\r\n+        const img = cropper.getCroppedCanvas().toDataURL();\r\n+        getCroppedFile(img);\r\n+    };\r\n+    const rotate = () => {\r\n+        const imageElement = cropperRef?.current;\r\n+        const cropper = imageElement?.cropper;\r\n+        cropper.rotate(90);\r\n+    };\r\n+    const flip = (type) => {\r\n+        const imageElement = cropperRef?.current;\r\n+        const cropper = imageElement?.cropper;\r\n+        if (type === \"h\") {\r\n+            cropper.scaleX(scaleX === 1 ? -1 : 1);\r\n+            setScaleX(scaleX === 1 ? -1 : 1);\r\n+        } else {\r\n+            cropper.scaleY(scaleY === 1 ? -1 : 1);\r\n+            setScaleY(scaleY === 1 ? -1 : 1);\r\n+        }\r\n+    };\r\n+    return (\r\n+        <div>\r\n+\r\n+        </div>\r\n+    );\r\n+}\r\n+\r\n+export default Cropper;\r\n"
+                },
+                {
+                    "date": 1682883684963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,47 +1,10 @@\n-import React, { useState } from 'react';\r\n+import React, { useRef, useState } from 'react';\r\n \r\n-function Cropper() {\r\n-    const cropperRef = useRe(null);\r\n-    const [loading, setLoading] = useState(true);\r\n-    const [scaleX, setScaleX] = useState(1);\r\n-    const [scaleY, setScaleY] = useState(1);\r\n \r\n-    const handleClick = () => {\r\n-        const imageElement = cropperRef?.current;\r\n-        const cropper = imageElement?.cropper;\r\n-        const img = cropper.getCroppedCanvas().toDataURL();\r\n-        getCroppedFile(img);\r\n-    };\r\n-    const rotate = () => {\r\n-        const imageElement = cropperRef?.current;\r\n-        const cropper = imageElement?.cropper;\r\n-        cropper.rotate(90);\r\n-    };\r\n-    const flip = (type) => {\r\n-        const imageElement = cropperRef?.current;\r\n-        const cropper = imageElement?.cropper;\r\n-        if (type === \"h\") {\r\n-            cropper.scaleX(scaleX === 1 ? -1 : 1);\r\n-            setScaleX(scaleX === 1 ? -1 : 1);\r\n-        } else {\r\n-            cropper.scaleY(scaleY === 1 ? -1 : 1);\r\n-            setScaleY(scaleY === 1 ? -1 : 1);\r\n-        }\r\n-    };\r\n-    return (\r\n-        <div>\r\n-\r\n-        </div>\r\n-    );\r\n-}\r\n-\r\n-export default Cropper;\r\n-import React from 'react';\r\n-\r\n function Cropper() {\r\n     const cropperRef = useRef(null);\r\n-    const [loading, setLoading] = useStat(true);\r\n+    const [loading, setLoading] = useState(true);\r\n     const [scaleX, setScaleX] = useState(1);\r\n     const [scaleY, setScaleY] = useState(1);\r\n \r\n     const handleClick = () => {\r\n"
+                },
+                {
+                    "date": 1682883692377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import React, { useRef, useState } from 'react';\r\n+import Cropper from \"react-cropper\";\r\n \r\n \r\n function Cropper() {\r\n     const cropperRef = useRef(null);\r\n"
+                },
+                {
+                    "date": 1682883806797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import React, { useRef, useState } from 'react';\r\n import Cropper from \"react-cropper\";\r\n+import \"cropperjs/dist/cropper.css\";\r\n \r\n \r\n function Cropper() {\r\n     const cropperRef = useRef(null);\r\n@@ -31,9 +32,9 @@\n         }\r\n     };\r\n     return (\r\n         <div>\r\n-\r\n+            \r\n         </div>\r\n     );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1682883812154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n         }\r\n     };\r\n     return (\r\n         <div>\r\n-            \r\n+            {}loa\r\n         </div>\r\n     );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1682883817541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n         }\r\n     };\r\n     return (\r\n         <div>\r\n-            {}loa\r\n+            {l}\r\n         </div>\r\n     );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1682883889438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n         }\r\n     };\r\n     return (\r\n         <div>\r\n-            {l}\r\n+            {loading }\r\n         </div>\r\n     );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1682883897326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n         }\r\n     };\r\n     return (\r\n         <div>\r\n-            {loading }\r\n+            {loading && }\r\n         </div>\r\n     );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1682883897657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n         }\r\n     };\r\n     return (\r\n         <div>\r\n-            {loading && }\r\n+            {loading && ()}\r\n         </div>\r\n     );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1682883907187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,11 @@\n         }\r\n     };\r\n     return (\r\n         <div>\r\n-            {loading && ()}\r\n+            {loading && (\r\n+                <\r\n+            )}\r\n         </div>\r\n     );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1682883917996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,43 @@\n+import React, { useRef, useState } from 'react';\r\n+import Cropper from \"react-cropper\";\r\n+import \"cropperjs/dist/cropper.css\";\r\n+\r\n+\r\n+function Cropper() {\r\n+    const cropperRef = useRef(null);\r\n+    const [loading, setLoading] = useState(true);\r\n+    const [scaleX, setScaleX] = useState(1);\r\n+    const [scaleY, setScaleY] = useState(1);\r\n+\r\n+    const handleClick = () => {\r\n+        const imageElement = cropperRef?.current;\r\n+        const cropper = imageElement?.cropper;\r\n+        const img = cropper.getCroppedCanvas().toDataURL();\r\n+        getCroppedFile(img);\r\n+    };\r\n+    const rotate = () => {\r\n+        const imageElement = cropperRef?.current;\r\n+        const cropper = imageElement?.cropper;\r\n+        cropper.rotate(90);\r\n+    };\r\n+    const flip = (type) => {\r\n+        const imageElement = cropperRef?.current;\r\n+        const cropper = imageElement?.cropper;\r\n+        if (type === \"h\") {\r\n+            cropper.scaleX(scaleX === 1 ? -1 : 1);\r\n+            setScaleX(scaleX === 1 ? -1 : 1);\r\n+        } else {\r\n+            cropper.scaleY(scaleY === 1 ? -1 : 1);\r\n+            setScaleY(scaleY === 1 ? -1 : 1);\r\n+        }\r\n+    };\r\n+    return (\r\n+        <div>\r\n+            {loading && (\r\n+                <div ></div>\r\n+            )}\r\n+        </div>\r\n+    );\r\n+}\r\n+\r\n+export default Cropper;\r\n"
+                },
+                {
+                    "date": 1682883924435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,54 +33,11 @@\n     };\r\n     return (\r\n         <div>\r\n             {loading && (\r\n-                <div ></div>\r\n+                <div className='w'></div>\r\n             )}\r\n         </div>\r\n     );\r\n }\r\n \r\n export default Cropper;\r\n-import React, { useRef, useState } from 'react';\r\n-import Cropper from \"react-cropper\";\r\n-import \"cropperjs/dist/cropper.css\";\r\n-\r\n-\r\n-function Cropper() {\r\n-    const cropperRef = useRef(null);\r\n-    const [loading, setLoading] = useState(true);\r\n-    const [scaleX, setScaleX] = useState(1);\r\n-    const [scaleY, setScaleY] = useState(1);\r\n-\r\n-    const handleClick = () => {\r\n-        const imageElement = cropperRef?.current;\r\n-        const cropper = imageElement?.cropper;\r\n-        const img = cropper.getCroppedCanvas().toDataURL();\r\n-        getCroppedFile(img);\r\n-    };\r\n-    const rotate = () => {\r\n-        const imageElement = cropperRef?.current;\r\n-        const cropper = imageElement?.cropper;\r\n-        cropper.rotate(90);\r\n-    };\r\n-    const flip = (type) => {\r\n-        const imageElement = cropperRef?.current;\r\n-        const cropper = imageElement?.cropper;\r\n-        if (type === \"h\") {\r\n-            cropper.scaleX(scaleX === 1 ? -1 : 1);\r\n-            setScaleX(scaleX === 1 ? -1 : 1);\r\n-        } else {\r\n-            cropper.scaleY(scaleY === 1 ? -1 : 1);\r\n-            setScaleY(scaleY === 1 ? -1 : 1);\r\n-        }\r\n-    };\r\n-    return (\r\n-        <div>\r\n-            {loading && (\r\n-                <\r\n-            )}\r\n-        </div>\r\n-    );\r\n-}\r\n-\r\n-export default Cropper;\r\n"
+                },
+                {
+                    "date": 1682883931011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n     };\r\n     return (\r\n         <div>\r\n             {loading && (\r\n-                <div className='w-full bac'></div>\r\n+                <div className='w-full back'></div>\r\n             )}\r\n         </div>\r\n     );\r\n }\r\n"
+                },
+                {
+                    "date": 1682883941754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n     };\r\n     return (\r\n         <div>\r\n             {loading && (\r\n-                <div className='w-full backdrop-blur-lg h-'></div>\r\n+                <div className='w-full backdrop-blur-lg h-['></div>\r\n             )}\r\n         </div>\r\n     );\r\n }\r\n"
+                }
+            ],
+            "date": 1682883668430,
+            "name": "Commit-0",
+            "content": "import React from 'react';\r\n\r\nfunction Cropper() {\r\n    const cropperRef = useRef(null);\r\n    const [loading, setLoading] = useStat(true);\r\n    const [scaleX, setScaleX] = useState(1);\r\n    const [scaleY, setScaleY] = useState(1);\r\n\r\n    const handleClick = () => {\r\n        const imageElement = cropperRef?.current;\r\n        const cropper = imageElement?.cropper;\r\n        const img = cropper.getCroppedCanvas().toDataURL();\r\n        getCroppedFile(img);\r\n    };\r\n    const rotate = () => {\r\n        const imageElement = cropperRef?.current;\r\n        const cropper = imageElement?.cropper;\r\n        cropper.rotate(90);\r\n    };\r\n    const flip = (type) => {\r\n        const imageElement = cropperRef?.current;\r\n        const cropper = imageElement?.cropper;\r\n        if (type === \"h\") {\r\n            cropper.scaleX(scaleX === 1 ? -1 : 1);\r\n            setScaleX(scaleX === 1 ? -1 : 1);\r\n        } else {\r\n            cropper.scaleY(scaleY === 1 ? -1 : 1);\r\n            setScaleY(scaleY === 1 ? -1 : 1);\r\n        }\r\n    };\r\n    return (\r\n        <div>\r\n\r\n        </div>\r\n    );\r\n}\r\n\r\nexport default Cropper;\r\n"
+        }
+    ]
+}

@@ -42,7 +42,7 @@ const kat = [
 ]
 
 
-const Shortendtext = ({ text, maxLength }) => {
+const Shortendtext = (text, maxLength) => {
     if (text.length <= maxLength) {
         return <>{text}</>
     }
@@ -69,69 +69,75 @@ const com = [
 
 function Paper() {
     return (
-        <div className=' px-3 py-5  overscroll-auto position-fixed  overflow-hidden ' >
+        <div className=' md:px-3 md:py-5 mb-5 md:mb-0    overflow-hidden ' >
             <Link to='/IntoPaper'>
-            <ul>
-                {kat.map((kat, i) => (
-                    <div className='group'>
-                        <motion.li
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, amount: 1 }}
-                            transition={{ delay: 0.2, duration: 0.5 }}
-                            variants={{
-                                hidden: { opacity: 0, y: -50 },
-                                visible: { opacity: 1, y: 0 },
-                            }}
-                            key={i} className='mt-6 bg-[#ffffffe0] shadow-xl rounded-xl px-8 py-7 group-hover:mt-[2rem] group-hover:mb-[2rem] cursor-pointer'>
-                            <motion.div
+                <ul>
+                    {kat.map((kat, i) => (
+                        <div className='group' key={i}>
+                            <motion.li
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={{ once: true, amount: 1 }}
-                                transition={{ delay: 0.5, duration: 0.8 }}
+                                transition={{ delay: 0.2, duration: 0.5 }}
                                 variants={{
-                                    hidden: { opacity: 0, },
-                                    visible: { opacity: 1, },
+                                    hidden: { opacity: 0, y: -50 },
+                                    visible: { opacity: 1, y: 0 },
                                 }}
+                                className='mt-6 bg-[#ffffffe0] shadow-xl rounded-xl md:px-8 md:py-7 px-6 py-5 group-hover:mt-[2rem] group-hover:mb-[2rem] cursor-pointer'>
+                                <motion.div
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true, amount: 1 }}
+                                    transition={{ delay: 0.5, duration: 0.8 }}
+                                    variants={{
+                                        hidden: { opacity: 0, },
+                                        visible: { opacity: 1, },
+                                    }}
 
-                            >
-                                <div className='flex items-center mb-3'>
-                                    <img src={kat.img1} className='object-cover rounded-full h-[3vw] w-[3vw]' />
-                                    <h4 className='ml-2 font-[500]'>{kat.name} {kat.surname}</h4>
-                                    <p className='text-[#6B7280] ml-2 text-[.9vw]'><span className='mb-3'>.</span>{kat.email}</p>
-                                    <p className='text-[#6B7280] ml-2 text-[.9vw]'><span>.</span>{kat.date}</p>
-                                </div>
-                                <div>
-                                    <h2 className='font-bold text-[1.5vw] mb-1 select-none'>{kat.title}</h2>
-                                    <div className='columns-2 flex'>
-                                        <p className='w-[80%] text-[#6B7280] text-[1vw] pr-2 select-none'><Shortendtext text={kat.text} maxLength={500} /></p>
-                                        <img className='object-cover rounded-md h-[12vw] mb-5  mt-[-3vw] w-[11.5vw] transition duration-300 ease-in-out group-hover:scale-110' src={kat.img} />
+                                >
+                                    <div className='flex items-center mb-3'>
+                                        <img src={kat.img1} className='object-cover rounded-full md:h-[3vw] md:w-[3vw] w-[8vw] h-[8vw] ' />
+                                        <h4 className='md:text-[1.5vw] text-[4.5vw] ml-2 font-[500]'>{kat.name} {kat.surname}</h4>
+                                        <p className='text-[#6B7280] ml-2 text-[2vw] md:text-[.9vw]'><span className='mb-3'>.</span>{kat.email}</p>
+                                        <p className='text-[#6B7280] ml-2 text-[2vw] md:text-[.9vw]'><span>.</span>{kat.date}</p>
                                     </div>
-                                </div>
-                                <div className='flex columns-2'>
-                                    <div className='w-[80%]'>
-                                        <ul className='flex'>
-                                            {tag.map((tag, i) => (
-                                                <li className='mr-3 text-[1vw] text-[#1F2937]  select-none bg-[#F3F4F6] py-1 px-2 rounded-md font-[500]' key={i}>{tag.text}</li>
-                                            ))}
-                                        </ul>
+                                    <div>
+                                        <img className='object-cover rounded-md  h-[70vw] w-full mb-3   block md:hidden' src={kat.img} />
+                                        <h2 className='font-bold md:text-[1.5vw] text-[4.5vw] mb-1  pl-2select-none'>{kat.title}</h2>
+                                        <div className='md:columns-2 md:flex'>
+
+
+                                            <p className='w-[100%] text-[#6B7280] md:text-[1vw] text-[3vw] pr-2 select-none md:hidden block mb-2'>{Shortendtext((kat.text), 210)}</p>
+
+
+                                            <p className='w-[80%] text-[#6B7280] md:text-[1vw] text-[3vw] pr-2 select-none md:block hidden'>{Shortendtext((kat.text), 500)}</p>
+                                            <img className='object-cover rounded-md h-[12vw] mb-5  mt-[-3vw] w-[11.5vw] transition duration-300 ease-in-out group-hover:scale-110 hidden md:block' src={kat.img} />
+                                        </div>
                                     </div>
-                                    <div className='w-[20%] '>
-                                        <ul className='flex justify-end items-end ' >
-                                            {com.map((com, i) => (
-                                                <li key={i} className='flex mr-3 items-center '>
-                                                    <img src={com.img} className='w-[1vw] h-[1vw] select-none' />
-                                                    <p className='text-[#6B7280] ml-1 text-[.9vw] select-none'>{com.num}</p>
-                                                </li>
-                                            ))}
-                                        </ul>
+                                    <div className='md:flex md:columns-2'>
+                                        <div className='md:w-[80%] w-full '>
+                                            <ul className='flex'>
+                                                {tag.map((tag, i) => (
+                                                    <li className='mr-3 md:text-[1vw] text-[2.5vw] text-[#1F2937]  select-none bg-[#F3F4F6] md:py-1 py-[0.25rem] px-[0.3rem] md:px-2 rounded-md font-[500]' key={i}>{tag.text}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                        <div className='md:w-[20%] w-full md:mt-0 mt-5 '>
+                                            <ul className='flex justify-start items-end ' >
+                                                {com.map((com, i) => (
+                                                    <li key={i} className='flex mr-3 items-center '>
+                                                        <img src={com.img} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
+                                                        <p className='text-[#6B7280] ml-1 md:text-[.9vw] text-[3vw] select-none'>{com.num}</p>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
                                     </div>
-                                </div>
-                            </motion.div>
-                        </motion.li>
-                    </div>
-                ))}
-            </ul>
+                                </motion.div>
+                            </motion.li>
+                        </div>
+                    ))}
+                </ul>
             </Link>
         </div>
     );

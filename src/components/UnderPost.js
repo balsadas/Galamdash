@@ -18,30 +18,30 @@ const short = (text,length) => {
 function UnderPost() {
     return (
         <div className='flex justify-center bg-[#fff] '>
-            <div className='w-[70%]'>
+            <div className='md:w-[70%] w-[90%]'>
                 <div>
-                    <h3 className='text-[#6B7280] font-[500] text-[1.5vw]'>Bularam halap bilersiňiz:</h3>
+                    <h3 className='text-[#6B7280] font-[500] text-[5vw] md:text-[1.5vw]'>Bularam halap bilersiňiz:</h3>
                     <div className='h-1 rounded-lg w-full bg-[#e8e8e8e0] mt-3'></div>
                 </div>
                 <div className='mt-[2rem] '>
-                    <ul className='columns-3'>
+                    <ul className='md:columns-3'>
                         {post.map((post, i) => (
-                            <li className='bg-[#e2e2e2c0] group hover:bg-[#ffffffe0]  hover:shadow-lg'>
+                            <li key={i} className='bg-[#e2e2e2c0] group hover:bg-[#ffffffe0] md:mt-0 mt-5 hover:shadow-lg'>
                                 <div>
-                                    <img className='md:w-[25vw] object-cover md:h-[15vw] group-hover:scale-90 transition-all ease-in-out duration-100 ' src={post.img} />
-                                    <div className='lg:p-[2rem] md:p-[1rem]'>
+                                    <img className='md:w-[25vw] w-full h-[75vw] object-cover md:h-[15vw] group-hover:scale-90 transition-all ease-in-out duration-100 ' src={post.img} />
+                                    <div className='lg:p-[2rem] md:p-[1rem] p-[1rem]'>
                                         <div>
-                                            <h3 className='font-bold md:text-[1.2vw] group-hover:underline transition-all ease-in-out'>{post.title}</h3>
+                                            <h3 className='font-bold md:text-[1.2vw] text-[4.5vw] group-hover:underline transition-all ease-in-out'>{post.title}</h3>
                                         </div>
                                         <div>
-                                            <p className='mt-2 md:text-[1vw] font-[400]'>{short((post.text),88)}</p>
+                                            <p className='mt-2 md:text-[1vw] text-[4vw] font-[400]'>{short((post.text),88)}</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className='flex items-center lg:px-[2rem] md:px-[1rem] lg:pb-5 md:pb-3'>
-                                    <img src='./image/arrow.png' className='md:w-[2vw] md:h-[2vw] group-hover:hidden block'/>
-                                    <img src='./image/arrow-right.png' className='md:w-[2vw] md:h-[2vw] group-hover:block  hidden'/>
-                                    <p className='md:text-[1.1vw]'>Giňişleýin</p>
+                                <div className='flex items-center lg:px-[2rem] px-[1rem] pb-4 md:px-[1rem] lg:pb-5 md:pb-3'>
+                                    <img src='./image/arrow.png' className='md:w-[2vw] md:h-[2vw]  w-[10vw] h-[10vw] group-hover:hidden block'/>
+                                    <img src='./image/arrow-right.png' className='md:w-[2vw] w-[10vw] h-[10vw] md:h-[2vw] group-hover:block  hidden'/>
+                                    <p className='md:text-[1.1vw] text-[4.5vw]'>Giňişleýin</p>
                                 </div>
                             </li>
                         ))}

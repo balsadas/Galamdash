@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Paper from '../components/Paper';
-import ChangeProfile from '../components/ChangeProfile';
-import Footer from '../components/Footer';
+import Paper from '../../components/Paper';
+import ChangeProfile from './ChangeProfile';
+import Footer from '../../components/Footer';
 import { Link } from 'react-router-dom';
 
 
@@ -27,10 +27,10 @@ function Profile() {
                     </div>
 
                     <div className={change ? "block" : "hidden"}>
-                        <ChangeProfile />
+                        <ChangeProfile change={change} setChange={setChange} />
                     </div>
 
-                    <div change={change} className={change ? "hidden " : 'justify-center flex xl:mt-[-5rem] md:mt-[-2rem] lg:mt-[-3rem] '}>
+                    <div  className={change ? "hidden " : 'justify-center flex xl:mt-[-5rem] md:mt-[-2rem] lg:mt-[-3rem] '}>
                         <div className='w-[80%] shadow-lg rounded-lg bg-[#fff] z-20'>
 
                             <div className='flex justify-center'>
@@ -56,7 +56,7 @@ function Profile() {
 
 
                             <div className='flex justify-center mt-[3rem]'>
-                                <div>
+                                <div className='select-none'>
                                     <h3 className='md:text-[1.8vw] font-bold text-[#514f4f]'>Myrat Balshayev</h3>
                                     <p className='text-center md:text-[1.2vw] text-gray-500 '>@developer</p>
                                 </div>
@@ -64,7 +64,7 @@ function Profile() {
 
 
                             <div className='flex justify-center mt-6 '>
-                                <div className='w-[70%] flex justify-center'>
+                                <div className='w-[70%] flex justify-center select-none'>
                                     <p className='text-center md:text-[1vw] text-[#5e5d5d] '>
                                         performs and records all of his own music, giving it a warm,
                                         intimate feel with a solid groove structure. An artist of considerable range.
@@ -95,14 +95,14 @@ function Profile() {
                                 </div>
                             </div>
 
-                            <div>
-                                <Footer />
-                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-
+            <div className='mt-[3rem] '>
+                <Footer />
+            </div>
         </>
 
     );

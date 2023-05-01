@@ -29,30 +29,30 @@ function IntoPaper({ img, date, name, surname, title }) {
     return (
         <>
             <NavSearch />
-            <div className='bg-[#fff] flex justify-center pt-[7rem]'>
-                <div className='w-[50%]'>
+            <div className='bg-[#fff] flex justify-center md:pt-[7rem] pt-[6rem]'>
+                <div className='md:w-[50%] w-[90%]'>
                     <div className='flex items-center justify-between'>
                         <div className='flex items-center'>
-                            <img className='rounded-full cursor-pointer w-[3vw] h-[3vw] object-cover' src={img} />
+                            <img className='rounded-full cursor-pointer md:w-[3vw] md:h-[3vw] w-[12vw] h-[12vw] object-cover' src={img} />
                             <div className='ml-3'>
-                                <h3 className='text-[1.3vw] select-none font-bold '>{name} {surname} </h3>
-                                <p className='text-[0.8vw] select-none text-[#6B7280]'>{date}</p>
+                                <h3 className='md:text-[1.3vw] text-[6vw] select-none font-bold '>{name} {surname} </h3>
+                                <p className='md:text-[0.8vw] text-[3vw] select-none text-[#6B7280]'>{date}</p>
                             </div>
                         </div>
-                        <img src='./image/link.png' className='w-[1.5vw] h-[1.5vw] mr-8' />
+                        <img src='./image/link.png' className='md:w-[1.5vw] md:h-[1.5vw] w-[5vw] h-[5vw] mr-8' />
                     </div>
                     <div className='mt-5'>
-                        <h3 className='font-bold text-[1.7vw]'>
+                        <h3 className='font-bold md:text-[1.7vw] text-[5vw]'>
                             {title}
                         </h3>
-                        <div className='mt-7'>
+                        <div className='md:mt-7 mt-4'>
                             <ul className='flex'>
                                 {tag.map((tag, i) => (
-                                    <li className='mr-3 text-[1vw] text-[#1F2937]  select-none bg-[#F3F4F6] py-1 px-2 rounded-md font-[500]' key={i}>{tag.text}</li>
+                                    <li className='mr-3 md:text-[1vw] text-[2.5vw] text-[#1F2937]  select-none bg-[#F3F4F6] py-1 px-2 rounded-md font-[500]' key={i}>{tag.text}</li>
                                 ))}
                             </ul>
                         </div>
-                        <p className='text-[#6B7280] text-[1vw] mt-3'>
+                        <p className='text-[#6B7280] text-[4vw] text-justify md:text-[1vw] mt-3'>
                             Bagtly we manyly durmuş üçin özüňe ynam gerek. Özüňe ynam - özüňe we durmuş ýagdaýlaryňa oňyn we hakykatçyl garamaga mümkinçilik berýän garaýyşdyr. Özüne ynamly adamlar öz ukyplaryna ynanýarlar, durmuşyna gözegçilik edýärler we isleýän, meýilleşdirýän we garaşýan zatlaryny edip biljekdigine ynanýarlar.
 
                             Özüňe ynamy nädip ösdürmeli?
@@ -84,19 +84,19 @@ function IntoPaper({ img, date, name, surname, title }) {
 
                             Özüňe ynam has çuňňur duýgudaşlygy döredip biler. Doly gatnaşanyňyzda, kimdir biriniň birneme aşak görünýändigini ýa-da burçdaky dostuň aglamak üçin egniňe mätäçdigini görüp bilersiňiz. Özüňiziň ynamsyzlygyňyz bilen meşgullanmasaňyz, başgalara kömek sorap ýüz tutup bilersiňiz.
                         </p>
-                        <div className='flex justify-center mt-[3rem]'>
+                        <div className='flex justify-center mt-[2rem] md:mt-[3rem]'>
                             <div>
-                                <img src='./photo/photo15.jpg' className='object-cover w-[40vw] ' />
-                                <div className='h-[2vw] w-[40vw] bg-[#e8e8e8e0] mt-4'></div>
+                                <img src='./photo/photo15.jpg' className='object-cover md:w-[40vw] ' />
+                                <div className='h-[2vw] md:w-[40vw] bg-[#e8e8e8e0] mt-4'></div>
                             </div>
                         </div>
                     </div>
                     <div className='flex justify-center mt-[3rem]  mb-[3rem]'>
                         <ul className='flex justify-end items-end ' >
                             {com.map((com, i) => (
-                                <li key={com.id} className='flex mr-8 items-center '>
-                                    <img src={com.img} className='w-[1.5vw] h-[1.5vw] select-none' />
-                                    <p className='text-[#6B7280] ml-1 text-[1vw] select-none'>{com.num} {com.title}</p>
+                                <li key={i} className='flex md:mr-8 mr-3 items-center '>
+                                    <img src={com.img} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
+                                    <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>{com.num} {com.title}</p>
                                 </li>
                             ))}
                         </ul>

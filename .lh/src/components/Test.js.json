@@ -1,9 +1,9 @@
 {
-    "sourceFile": "src/components/Test.js",
+    "sourceFile": "src/components/test.js",
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1681727350782,
@@ -20,6 +20,14 @@
                 {
                     "date": 1681727391464,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     </div>\r\n   );\r\n };\r\n \r\n-const App = () => {\r\n+const Ap = () => {\r\n   return (\r\n     <div className=\"App\">\r\n       <h1>React Hover Card</h1>\r\n       <Card\r\n@@ -33,5 +33,5 @@\n     </div>\r\n   );\r\n };\r\n \r\n-export default A;\r\n+export default Test;\r\n"
+                },
+                {
+                    "date": 1682570922909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,37 +1,30 @@\n-import React, { useState } from \"react\";\r\n-import \"./styles.css\";\r\n+import React, {Component} from 'react';\r\n+import Cropper from 'react-cropper';\r\n+import 'cropperjs/dist/cropper.css'; // see installation section above for versions of NPM older than 3.0.0\r\n+// If you choose not to use import, you need to assign Cropper to default\r\n+// var Cropper = require('react-cropper').default\r\n \r\n-const Card = ({ title, description, image }) => {\r\n-  const [hover, setHover] = useState(false);\r\n+class Demo extends Component {\r\n+    _crop() {\r\n+        // image in dataUrl\r\n+        console.log(this.cropper.getCroppedCanvas().toDataURL());\r\n+    }\r\n \r\n-  return (\r\n-    <div\r\n-      className=\"card\"\r\n-      onMouseEnter={() => setHover(true)}\r\n-      onMouseLeave={() => setHover(false)}\r\n-    >\r\n-      <div className=\"card-image\">\r\n-        <img src={image} alt={title} />\r\n-      </div>\r\n-      <div className={`card-info ${hover ? \"hover\" : \"\"}`}>\r\n-        <h2>{title}</h2>\r\n-        <p>{description}</p>\r\n-      </div>\r\n-    </div>\r\n-  );\r\n-};\r\n+    onCropperInit(cropper) {\r\n+        this.cropper = cropper;\r\n+    }\r\n \r\n-const Ap = () => {\r\n-  return (\r\n-    <div className=\"App\">\r\n-      <h1>React Hover Card</h1>\r\n-      <Card\r\n-        title=\"Card Title\"\r\n-        description=\"This is a description of the card.\"\r\n-        image=\"https://picsum.photos/id/237/400/300\"\r\n-      />\r\n-    </div>\r\n-  );\r\n-};\r\n-\r\n-export default Test;\r\n+    render() {\r\n+        return (\r\n+            <Cropper\r\n+                src=\"http://fengyuanchen.github.io/cropper/images/picture.jpg\"\r\n+                style={{height: 400, width: '100%'}}\r\n+                // Cropper.js options\r\n+                initialAspectRatio={16 / 9}\r\n+                guides={false}\r\n+                crop={this._crop.bind(this)}\r\n+                onInitialized={this.onCropperInit.bind(this)}\r\n+            />\r\n+        );\r\n+    }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1682571007352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,36 @@\n+rfce\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n // import React, {Component} from 'react';\r\n // import Cropper from 'react-cropper';\r\n // import 'cropperjs/dist/cropper.css'; // see installation section above for versions of NPM older than 3.0.0\r\n // // If you choose not to use import, you need to assign Cropper to default\r\n"
                 }
             ],
             "date": 1681727350782,

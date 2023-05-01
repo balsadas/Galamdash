@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/components/Croper.js/Downloadimg.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1682837042188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1682837101616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,27 @@\n-r\n\\ No newline at end of file\n+import React from 'react';\r\n+\r\n+function Downloadimg() {\r\n+  return (\r\n+    <div>\r\n+      const onChange = (e) => {\r\n+        e.preventDefault();\r\n+        let files;\r\n+        if (e.dataTransfer) {\r\n+          files = e.dataTransfer.files;\r\n+        } else if (e.target) {\r\n+          files = e.target.files;\r\n+        }\r\n+        if (files.length === 0) {\r\n+          return alert(\"Please select a file.\");\r\n+        }\r\n+        const reader = new FileReader();\r\n+        reader.onload = () => {\r\n+          getUploadedFile(reader.result);\r\n+        };\r\n+        reader.readAsDataURL(files[0]);\r\n+      };\r\n+    </div>\r\n+  );\r\n+}\r\n+\r\n+export default Downloadimg;\r\n"
+                },
+                {
+                    "date": 1682837107450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,27 +1,28 @@\n import React from 'react';\r\n \r\n function Downloadimg() {\r\n-  return (\r\n-    <div>\r\n-      const onChange = (e) => {\r\n+    const onChange = (e) => {\r\n         e.preventDefault();\r\n         let files;\r\n         if (e.dataTransfer) {\r\n-          files = e.dataTransfer.files;\r\n+            files = e.dataTransfer.files;\r\n         } else if (e.target) {\r\n-          files = e.target.files;\r\n+            files = e.target.files;\r\n         }\r\n         if (files.length === 0) {\r\n-          return alert(\"Please select a file.\");\r\n+            return alert(\"Please select a file.\");\r\n         }\r\n         const reader = new FileReader();\r\n         reader.onload = () => {\r\n-          getUploadedFile(reader.result);\r\n+            getUploadedFile(reader.result);\r\n         };\r\n         reader.readAsDataURL(files[0]);\r\n-      };\r\n-    </div>\r\n-  );\r\n+    };\r\n+    return (\r\n+        <div>\r\n+\r\n+        </div>\r\n+    );\r\n }\r\n \r\n export default Downloadimg;\r\n"
+                },
+                {
+                    "date": 1682837127996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         reader.readAsDataURL(files[0]);\r\n     };\r\n     return (\r\n         <div>\r\n-\r\n+            \r\n         </div>\r\n     );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1682884546477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,30 @@\n+import React from 'react';\r\n+\r\n+function Downloadimg({ getUploadedFile }) {\r\n+    const onChange = (e) => {\r\n+        e.preventDefault();\r\n+        let files;\r\n+        if (e.dataTransfer) {\r\n+            files = e.dataTransfer.files;\r\n+        } else if (e.target) {\r\n+            files = e.target.files;\r\n+        }\r\n+        if (files.length === 0) {\r\n+            return alert(\"Please select a file.\");\r\n+        }\r\n+        const reader = new FileReader();\r\n+        reader.onload = () => {\r\n+            getUploadedFile(reader.result);\r\n+        };\r\n+        reader.readAsDataURL(files[0]);\r\n+    };\r\n+    return (\r\n+        <div>\r\n+            <div>\r\n+                <input type='file' accept='image/*' onChange={onChange} multiple />\r\n+            </div>\r\n+        </div>\r\n+    );\r\n+}\r\n+\r\n+export default Downloadimg;\r\n"
+                }
+            ],
+            "date": 1682837042188,
+            "name": "Commit-0",
+            "content": "r"
+        }
+    ]
+}

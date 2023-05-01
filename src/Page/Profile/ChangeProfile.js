@@ -1,16 +1,21 @@
 import React from 'react';
-import Footer from './Footer';
+import Footer from '../../components/Footer';
+import { Link } from 'react-router-dom';
+import { cookie_get } from '../../cookie';
 
-function ChangeProfile() {
+function ChangeProfile({ change, setChange }) {
+
     return (
         <div className='flex justify-center xl:mt-[-4rem] md:mt-[-2rem] lg:mt-[-3rem] '>
             <div className='w-[55%] bg-[#fff] shadow-lg rounded-lg z-20 p-8'>
                 <div>
-                    <div>
+                    <div className='flex justify-between  select-none '>
+                        <img onClick={() => setChange(!change)} src='./image/arrowl.png' className='md:w-[2vw] cursor-pointer md:h-[2vw] ' />
                         <h3 className='md:text-[1.5vw]  text-[#514f4f]  font-bold'>Profili üýtget</h3>
                     </div>
                     <div className='flex justify-center'>
                         <img src='./photo/photo11.jpg' className='md:w-[10vw] md:h-[10vw] rounded-full' />
+                        <input type="file" name=""  id="Surat"   />
                     </div>
                     <div className='h-[8px] mt-8 rounded-sm w-full bg-slate-300'></div>
 
@@ -42,7 +47,7 @@ function ChangeProfile() {
                     </div>
                     <div className='w-full mt-4'>
                         <p className='md:text-[1.1vw] font-bold ml-2 mb-1  text-[#514f4f] '>Men barada</p>
-                        <textarea className='w-[100%] border  rounded-md min-h-[10vw] p-2' placeholder='TITU talyp. Voleyboll oynamany halayaryn!'/>
+                        <textarea className='w-[100%] border  rounded-md min-h-[10vw] p-2' placeholder='TITU talyp. Voleyboll oynamany halayaryn!' />
                     </div>
 
                     <div className='mt-4'>
@@ -51,7 +56,7 @@ function ChangeProfile() {
                     </div>
                 </div>
             </div>
-                {/* <div>
+            {/* <div>
                     <Footer/>
                 </div> */}
         </div>
