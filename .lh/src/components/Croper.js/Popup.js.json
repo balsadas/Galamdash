@@ -1,0 +1,58 @@
+{
+    "sourceFile": "src/components/Croper.js/Popup.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1682883380073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1682883386881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function Popup() {\r\n   return (\r\n     <div>\r\n-      <\r\n+      <di>\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1682883395175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n \r\n function Popup() {\r\n   return (\r\n     <div>\r\n-      <di>\r\n+      <div >\r\n+\r\n+      </div>\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1682883402023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n \r\n function Popup() {\r\n   return (\r\n     <div>\r\n-      <div >\r\n+      <div\r\n+      \r\n+      >\r\n \r\n       </div>\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1682883408422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n function Popup() {\r\n   return (\r\n     <div>\r\n       <div\r\n-      \r\n+      opend\r\n       >\r\n \r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682883408710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n function Popup() {\r\n   return (\r\n     <div>\r\n       <div\r\n-      opend\r\n+      open\r\n       >\r\n \r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682883420828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,10 @@\n function Popup() {\r\n   return (\r\n     <div>\r\n       <div\r\n-      open\r\n+      open={open}\r\n+      \r\n       >\r\n \r\n       </div>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682883491316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,11 @@\n   return (\r\n     <div>\r\n       <div\r\n       open={open}\r\n-      \r\n+      onClose={handleClose}\r\n       >\r\n-\r\n+        \r\n       </div>\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682883507303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,19 @@\n import React from 'react';\r\n \r\n+\r\n function Popup() {\r\n   return (\r\n     <div>\r\n       <div\r\n       open={open}\r\n       onClose={handleClose}\r\n       >\r\n-        \r\n+         <CropperDeme\r\n+              handleClose={handleClose}\r\n+              src={image}\r\n+              getCroppedFile={getCroppedFile}\r\n+            />\r\n       </div>\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682884491675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,21 @@\n+import React from 'react';\r\n+\r\n+\r\n+function Popup() {\r\n+  return (\r\n+    <div>\r\n+      <div\r\n+      open={open}\r\n+      onClose={handleClose}\r\n+      >\r\n+         <CropperDeme\r\n+              handleClose={handleClose}\r\n+              src={image}\r\n+              getCroppedFile={getCroppedFile}\r\n+            />\r\n+      </div>\r\n+    </div>\r\n+  );\r\n+}\r\n+\r\n+export default Popup;\r\n"
+                },
+                {
+                    "date": 1682884499411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n       <div\r\n       open={open}\r\n       onClose={handleClose}\r\n       >\r\n-         <CropperDem\r\n+         <CropperDe\r\n               handleClose={handleClose}\r\n               src={image}\r\n               getCroppedFile={getCroppedFile}\r\n             />\r\n"
+                }
+            ],
+            "date": 1682883380073,
+            "name": "Commit-0",
+            "content": "import React from 'react';\r\n\r\nfunction Popup() {\r\n  return (\r\n    <div>\r\n      <\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default Popup;\r\n"
+        }
+    ]
+}

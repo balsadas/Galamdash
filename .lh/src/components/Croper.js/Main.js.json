@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/components/Croper.js/Main.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1682884172817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1682884200745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,12 @@\n+import React from 'react';\r\n+\r\n+\r\n+function Main() {\r\n+  return (\r\n+    <div>\r\n+      \r\n+    </div>\r\n+  );\r\n+}\r\n+\r\n+export default Main;\r\n"
+                },
+                {
+                    "date": 1682884209700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React from 'react';\r\n+import Upload from \"./Upload\";\r\n+import Popup from \"./Popup\";\r\n \r\n-\r\n function Main() {\r\n   return (\r\n     <div>\r\n       \r\n@@ -9,5 +10,4 @@\n   );\r\n }\r\n \r\n export default Main;\r\n-r\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1682884218439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import Upload from \"./Upload\";\r\n import Popup from \"./Popup\";\r\n \r\n function Main() {\r\n+    \r\n   return (\r\n     <div>\r\n       \r\n     </div>\r\n"
+                },
+                {
+                    "date": 1682884223844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,13 +2,22 @@\n import Upload from \"./Upload\";\r\n import Popup from \"./Popup\";\r\n \r\n function Main() {\r\n+    const [open, setOpen] = React.useState(false);\r\n+    const [image, setImage] = React.useState(\r\n+        \"https://images.unsplash.com/photo-1612232134966-a9b076b9fbe7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"\r\n+    );\r\n+\r\n+    const handleClose = () => {\r\n+        setOpen(false);\r\n+    };\r\n+\r\n     \r\n-  return (\r\n-    <div>\r\n-      \r\n-    </div>\r\n-  );\r\n+    return (\r\n+        <div>\r\n+\r\n+        </div>\r\n+    );\r\n }\r\n \r\n export default Main;\r\n"
+                },
+                {
+                    "date": 1682884247201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,16 +4,16 @@\n \r\n function Main() {\r\n     const [open, setOpen] = React.useState(false);\r\n     const [image, setImage] = React.useState(\r\n-        \"https://images.unsplash.com/photo-1612232134966-a9b076b9fbe7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80\"\r\n+        \"\"\r\n     );\r\n \r\n     const handleClose = () => {\r\n         setOpen(false);\r\n     };\r\n \r\n-    \r\n+\r\n     return (\r\n         <div>\r\n \r\n         </div>\r\n"
+                },
+                {
+                    "date": 1682884252406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n function Main() {\r\n     const [open, setOpen] = React.useState(false);\r\n     const [image, setImage] = React.useState(\r\n-        \"\"\r\n+        \"./pho\"\r\n     );\r\n \r\n     const handleClose = () => {\r\n         setOpen(false);\r\n"
+                },
+                {
+                    "date": 1682884262157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n function Main() {\r\n     const [open, setOpen] = React.useState(false);\r\n     const [image, setImage] = React.useState(\r\n-        \"./pho\"\r\n+        \"./photo/photo2\"\r\n     );\r\n \r\n     const handleClose = () => {\r\n         setOpen(false);\r\n"
+                },
+                {
+                    "date": 1682884268694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n function Main() {\r\n     const [open, setOpen] = React.useState(false);\r\n     const [image, setImage] = React.useState(\r\n-        \"./photo/photo17.j\"\r\n+        \"./photo/photo17.jp\"\r\n     );\r\n \r\n     const handleClose = () => {\r\n         setOpen(false);\r\n"
+                },
+                {
+                    "date": 1682884294785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \r\n \r\n     return (\r\n         <div>\r\n-            <d\r\n+            <di\r\n         </div>\r\n     );\r\n }\r\n \r\n"
+                }
+            ],
+            "date": 1682884172817,
+            "name": "Commit-0",
+            "content": "r"
+        }
+    ]
+}

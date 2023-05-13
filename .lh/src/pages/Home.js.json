@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/pages/Home.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1681241153048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1681241159579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n function Home() {\r\n     return (\r\n         <div className='w-full h-full'>\r\n             <Nav />\r\n-            \r\n+            <Nav\r\n         </div>\r\n     );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1681241159715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n function Home() {\r\n     return (\r\n         <div className='w-full h-full'>\r\n             <Nav />\r\n-            <Navb\r\n+            <Navba\r\n         </div>\r\n     );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1681323777610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,14 @@\n+import React from 'react';\r\n+import Nav from '../components/Nav';\r\n+import Navbar from '../components/Navbar';\r\n+\r\n+function Home() {\r\n+    return (\r\n+        <div className='w-full h-full'>\r\n+            <Nav />\r\n+          \r\n+        </div>\r\n+    );\r\n+}\r\n+\r\n+export default Home;\r\n"
+                }
+            ],
+            "date": 1681241153048,
+            "name": "Commit-0",
+            "content": "import React from 'react';\r\nimport Nav from '../components/Nav';\r\n\r\nfunction Home() {\r\n    return (\r\n        <div className='w-full h-full'>\r\n            <Nav />\r\n            \r\n        </div>\r\n    );\r\n}\r\n\r\nexport default Home;\r\n"
+        }
+    ]
+}

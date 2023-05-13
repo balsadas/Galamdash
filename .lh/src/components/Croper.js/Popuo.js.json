@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/components/Croper.js/Popuo.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1682837523365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1682838037916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,11 @@\n-r\n\\ No newline at end of file\n+import React from 'react';\r\n+\r\n+function Popu() {\r\n+  return (\r\n+    <div>\r\n+      \r\n+    </div>\r\n+  );\r\n+}\r\n+\r\n+export default Popu;\r\n"
+                },
+                {
+                    "date": 1682838037963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import React from 'react';\r\n \r\n-function Popu() {\r\n+function Popup() {\r\n   return (\r\n     <div>\r\n       \r\n     </div>\r\n   );\r\n }\r\n \r\n-export default Popu;\r\n+export default Popup;\r\n"
+                }
+            ],
+            "date": 1682837523365,
+            "name": "Commit-0",
+            "content": "r"
+        }
+    ]
+}

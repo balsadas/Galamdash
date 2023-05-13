@@ -1,0 +1,74 @@
+{
+    "sourceFile": "src/components/PaperMean.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1681458404851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1681458430213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,11 @@\n-r\n\\ No newline at end of file\n+import React from 'react';\r\n+\r\n+function PaperMean() {\r\n+  return (\r\n+    <div >\r\n+      \r\n+    </div>\r\n+  );\r\n+}\r\n+\r\n+export default PaperMean;\r\n"
+                },
+                {
+                    "date": 1681458444130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function PaperMean() {\r\n   return (\r\n-    <div >\r\n+    <div className='flex justify-center columns-3'>\r\n       \r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1681458456956,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function PaperMean() {\r\n   return (\r\n     <div className='flex justify-center columns-3'>\r\n-      \r\n+      <\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1681458464747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,11 @@\n \r\n function PaperMean() {\r\n   return (\r\n     <div className='flex justify-center columns-3'>\r\n-      <\r\n+      <div >\r\n+\r\n+      </div>\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1681458470281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function PaperMean() {\r\n   return (\r\n     <div className='flex justify-center columns-3'>\r\n-      <div >\r\n+      <div className='W-'>\r\n \r\n       </div>\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1681458475654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function PaperMean() {\r\n   return (\r\n     <div className='flex justify-center columns-3'>\r\n-      <div className='W-'>\r\n+      <div className='W-[20%]'>\r\n \r\n       </div>\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1681458481476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n     <div className='flex justify-center columns-3'>\r\n       <div className='W-[20%]'>\r\n \r\n       </div>\r\n+      <DI\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1681458481575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     <div className='flex justify-center columns-3'>\r\n       <div className='W-[20%]'>\r\n \r\n       </div>\r\n-      <DI\r\n+      <\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1681458487121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,11 @@\n     <div className='flex justify-center columns-3'>\r\n       <div className='W-[20%]'>\r\n \r\n       </div>\r\n-      <\r\n+      <div >\r\n+\r\n+      </div>\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1681458494040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,12 @@\n \r\n function PaperMean() {\r\n   return (\r\n     <div className='flex justify-center columns-3'>\r\n-      <div className='W-[20%]'>\r\n+      <div className='-[20%]'>\r\n \r\n       </div>\r\n-      <div >\r\n+      <div className=''>\r\n \r\n       </div>\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1681458500179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,12 @@\n \r\n function PaperMean() {\r\n   return (\r\n     <div className='flex justify-center columns-3'>\r\n-      <div className='-[20%]'>\r\n+      <div className='w-[20%]'>\r\n \r\n       </div>\r\n-      <div className=''>\r\n+      <div className='w-[60%'>\r\n \r\n       </div>\r\n     </div>\r\n   );\r\n"
+                },
+                {
+                    "date": 1681458506240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,12 @@\n     <div className='flex justify-center columns-3'>\r\n       <div className='w-[20%]'>\r\n \r\n       </div>\r\n-      <div className='w-[60%'>\r\n+      <div className='w-[60%]'>\r\n \r\n       </div>\r\n+      <d\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1681458506455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n       </div>\r\n       <div className='w-[60%]'>\r\n \r\n       </div>\r\n-      <di\r\n+      <div\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1681458565556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import React from 'react';\r\n+import Paper from './Paper';\r\n \r\n function PaperMean() {\r\n   return (\r\n     <div className='flex justify-center columns-3'>\r\n"
+                }
+            ],
+            "date": 1681458404851,
+            "name": "Commit-0",
+            "content": "r"
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/components/Croper.js/Croper.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1682883557544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1682883558286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-rf\n\\ No newline at end of file\n+rfce\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1682883582614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,12 @@\n-rfce\n\\ No newline at end of file\n+import React from 'react';\r\n+\r\n+function Croper() {\r\n+    \r\n+  return (\r\n+    <div>\r\n+      \r\n+    </div>\r\n+  );\r\n+}\r\n+\r\n+export default Croper;\r\n"
+                },
+                {
+                    "date": 1682883603615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,16 @@\n import React from 'react';\r\n \r\n function Croper() {\r\n+    const cropperRef = useRef(null);\r\n+    const [loading, setLoading] = useState(true);\r\n+    const [scaleX, setScaleX] = useState(1);\r\n+    const [scaleY, setScaleY] = useState(1);\r\n     \r\n-  return (\r\n-    <div>\r\n-      \r\n-    </div>\r\n-  );\r\n+    return (\r\n+        <div>\r\n+\r\n+        </div>\r\n+    );\r\n }\r\n \r\n export default Croper;\r\n"
+                },
+                {
+                    "date": 1682883603890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n     const cropperRef = useRef(null);\r\n     const [loading, setLoading] = useState(true);\r\n     const [scaleX, setScaleX] = useState(1);\r\n     const [scaleY, setScaleY] = useState(1);\r\n+\r\n     \r\n     return (\r\n         <div>\r\n \r\n"
+                },
+                {
+                    "date": 1682883638486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,13 +5,34 @@\n     const [loading, setLoading] = useState(true);\r\n     const [scaleX, setScaleX] = useState(1);\r\n     const [scaleY, setScaleY] = useState(1);\r\n \r\n-    \r\n+    const handleClick = () => {\r\n+        const imageElement = cropperRef?.current;\r\n+        const cropper = imageElement?.cropper;\r\n+        const img = cropper.getCroppedCanvas().toDataURL();\r\n+        getCroppedFile(img);\r\n+    };\r\n+    const rotate = () => {\r\n+        const imageElement = cropperRef?.current;\r\n+        const cropper = imageElement?.cropper;\r\n+        cropper.rotate(90);\r\n+    };\r\n+    const flip = (type) => {\r\n+        const imageElement = cropperRef?.current;\r\n+        const cropper = imageElement?.cropper;\r\n+        if (type === \"h\") {\r\n+            cropper.scaleX(scaleX === 1 ? -1 : 1);\r\n+            setScaleX(scaleX === 1 ? -1 : 1);\r\n+        } else {\r\n+            cropper.scaleY(scaleY === 1 ? -1 : 1);\r\n+            setScaleY(scaleY === 1 ? -1 : 1);\r\n+        }\r\n+    };\r\n     return (\r\n         <div>\r\n \r\n         </div>\r\n     );\r\n }\r\n \r\n-export default Croper;\r\n+export default Cropper;\r\n"
+                }
+            ],
+            "date": 1682883557544,
+            "name": "Commit-0",
+            "content": "rf"
+        }
+    ]
+}
