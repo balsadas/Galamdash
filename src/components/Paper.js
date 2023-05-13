@@ -56,13 +56,14 @@ const com = [
 
 function Paper() {
     const [kat, setKat] = useState([])
+    const [catgeory, setCategory] = useState(0)
 
     useEffect(() => {
         fetch()
     })
 
     const fetch = async () => {
-        const result = await axios.get(`${setting.SERVER}/api/category`)
+        const result = await axios.get(`${setting.SERVER}/api/category/${catgeory}`)
         console.log(result)
     }
 
