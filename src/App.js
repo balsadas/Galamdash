@@ -6,6 +6,7 @@ import IntoPaper from './Page/IntoPaper';
 import { BrowserRouter, Route, RouterProvider, Routes, createBrowserRouter } from 'react-router-dom';
 import Profile from './Page/Profile/Profile';
 import Register from './components/Register';
+import CreatePost from './Page/CreatePost';
 
 
 const  name = 'Myrat'
@@ -29,6 +30,7 @@ function App() {
             <Route path='/IntoPaper' element={<IntoPaper name={name} surname={surname} date={date} title={title} img={img}/>}/>
             <Route path='/Profile' element={<Profile />}/>
             <Route path='/Register' element={<Register />}/>
+            <Route path='/CreatePost' element={<CreatePost/>}/>
         </Routes>
       </BrowserRouter>
     </div>

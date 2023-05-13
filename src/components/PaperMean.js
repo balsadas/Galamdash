@@ -5,6 +5,8 @@ import Post from './Post';
 
 
 function PaperMean() {
+
+
     return (
         <div className='flex justify-center columns-3'>
             <div className='w-[20%] md:block hidden'>

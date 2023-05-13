@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/Page/CreatePost.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1683141891844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1683142061158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,11 @@\n-rf\n\\ No newline at end of file\n+import React from 'react';\r\n+\r\n+function CreatePost() {\r\n+  return (\r\n+    <div>\r\n+        \r\n+    </div>\r\n+  );\r\n+}\r\n+\r\n+export default CreatePost;\r\n"
+                },
+                {
+                    "date": 1683142076588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import React from 'react';\r\n \r\n+\r\n function CreatePost() {\r\n   return (\r\n     <div>\r\n         \r\n"
+                },
+                {
+                    "date": 1683142082635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,14 @@\n import React from 'react';\r\n+import { Editor } from 'react-draft-wysiwyg';\r\n+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';\r\n \r\n-\r\n function CreatePost() {\r\n   return (\r\n     <div>\r\n         \r\n+<Editor />\r\n+\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1683142203459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,15 @@\n import { Editor } from 'react-draft-wysiwyg';\r\n import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';\r\n \r\n function CreatePost() {\r\n-  return (\r\n-    <div>\r\n-        \r\n-<Editor />\r\n+    return (\r\n+        <div>\r\n \r\n-    </div>\r\n-  );\r\n+            <Editor \r\n+            />\r\n+\r\n+        </div>\r\n+    );\r\n }\r\n \r\n export default CreatePost;\r\n"
+                },
+                {
+                    "date": 1683142209934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,12 @@\n function CreatePost() {\r\n     return (\r\n         <div>\r\n \r\n-            <Editor \r\n+            <Editor\r\n+  wrapperClassName=\"wrapper\"\r\n+  editorClassName=\"editor\"\r\n+  toolbarClassName=\"toolbar\"\r\n             />\r\n \r\n         </div>\r\n     );\r\n"
+                },
+                {
+                    "date": 1683142333298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,14 +6,14 @@\n     return (\r\n         <div>\r\n \r\n             <Editor\r\n-  wrapperClassName=\"wrapper\"\r\n-  editorClassName=\"editor\"\r\n-  toolbarClassName=\"toolbar\"\r\n+                wrapperClassName=\"wrapper\"\r\n+                editorClassName=\"editor\"\r\n+                toolbarClassName=\"toolbar\"\r\n             />\r\n \r\n-        </div>\r\n+        </>\r\n     );\r\n }\r\n \r\n export default CreatePost;\r\n"
+                },
+                {
+                    "date": 1683142349076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import React from 'react';\r\n import { Editor } from 'react-draft-wysiwyg';\r\n-import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';\r\n+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.cs';\r\n \r\n function CreatePost() {\r\n     return (\r\n-        <div>\r\n+        <>\r\n \r\n             <Editor\r\n                 wrapperClassName=\"wrapper\"\r\n                 editorClassName=\"editor\"\r\n"
+                },
+                {
+                    "date": 1683142359987,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from 'react';\r\n-import { Editor } from 'react-draft-wysiwy';\r\n+import { Editor } from 'react-draft-wysiwyg';\r\n import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.csx';\r\n \r\n function CreatePost() {\r\n     return (\r\n"
+                },
+                {
+                    "date": 1683142385912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\r\n import { Editor } from 'react-draft-wysiwyg-a';\r\n-import 'react-draft-wysiwyg/dist/react-draft-wysiwy\r\n+import 'react-draft-wysiwyg/di\r\n \r\n function CreatePost() {\r\n     return (\r\n         <>\r\n"
+                }
+            ],
+            "date": 1683141891844,
+            "name": "Commit-0",
+            "content": "rf"
+        }
+    ]
+}

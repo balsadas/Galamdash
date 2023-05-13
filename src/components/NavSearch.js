@@ -15,13 +15,13 @@ function NavSearch() {
 
                         </div>
                     </Link>
-                    <div
+                    {/* <div
                         className='flex items-center  cursor-pointer'
                         onClick={() => setClick1(!click1)}
                     >
                     <img src='./image/loupe1.png' className='md:w-[1.8vw] md:h-[1.8vw] w-[4vw] h-[4vw]' /> 
                        
-                    </div>
+                    </div> */}
                     <div className='flex'>
                         <div className='flex items-center  hover:scale-110 transition-all duration-500 ease-in'>
                             <img src='./image/plus.png' className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] ' />
@@ -33,7 +33,7 @@ function NavSearch() {
                     </div>
                 </div>
             </div>
-            {click1 ? <div className=' w-full shadow-md bg-[#ffffffe0] rounded-xl fixed top-[4rem] p-4'><Search /></div> : <div></div>}
+            {/* {click1 ? <div className=' w-full shadow-md bg-[#ffffffe0] rounded-xl fixed top-[4rem] p-4'><Search /></div> : <div></div>} */}
         </>
     );
 }

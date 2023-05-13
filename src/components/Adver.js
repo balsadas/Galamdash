@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,12 +11,31 @@ const ad = [
 
 
 function Adver() {
+    const [stickyClass, setStickyClass] = useState('');
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 100) {
+                setStickyClass('sticky');
+            } else {
+                setStickyClass('');
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
 
 
     return (
-        <div className='bg-slate-500 w-[90%] mt-[3.8rem] shadow-lg h-[45vw] rounded-md flex'>
-            Adver
-            {/* <Swiper
+        <div className={stickyClass ? 'fixed top-[-6%] w-[20%]' : 'w-[90%]'}>
+            <div className='bg-slate-500 w-[90%] mt-[3.8rem] shadow-lg h-[45vw] rounded-md flex'>
+                Adver
+                {/* <Swiper
                 slidesPerView={1}
                 loop={true}
                 autoplay={{
@@ -43,7 +62,9 @@ function Adver() {
                     </SwiperSlide>
               
             </Swiper> */}
+            </div>
         </div>
+
     );
 }
 

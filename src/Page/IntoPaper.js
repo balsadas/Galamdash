@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavSearch from '../components/NavSearch';
 import UnderPost from '../components/UnderPost';
 import Footer from '../components/Footer';
+import Comment from '../components/Comment';
 
 
 const tag = [
@@ -11,23 +12,26 @@ const tag = [
     { id: 4, text: 'Magtymguly' },
     { id: 5, text: 'dashary yurt' }
 ]
-const com = [
-    { id: 1, num: '23', img: './photo/bar-chart.png', title: 'görüldi' },
-    { id: 2, num: '13', title: 'halandy', img: './image/like.png' },
-    { id: 3, num: '10', img: './photo/comment.png', title: 'teswir' },
-    { id: 4, num: '5', img: './image/downloads.png', title: 'ýüklendi' }
+// const com = [
+//     { id: 1, num: '23', img: './photo/bar-chart.png', title: 'görüldi' },
+//     { id: 2, num: '13', title: 'halandy', img: './image/like.png' },
+//     { id: 3, num: '10', img: './photo/comment.png', title: 'teswir' },
+//     { id: 4, num: '5', img: './image/downloads.png', title: 'ýüklendi' }
 
-]
+// ]
 
 
 
 
 function IntoPaper({ img, date, name, surname, title }) {
 
-
+const [com,setCom] = useState(false)
 
     return (
-        <>
+        <div className='relative'>
+           
+              
+    
             <NavSearch />
             <div className='bg-[#fff] flex justify-center md:pt-[7rem] pt-[6rem]'>
                 <div className='md:w-[50%] w-[90%]'>
@@ -93,12 +97,24 @@ function IntoPaper({ img, date, name, surname, title }) {
                     </div>
                     <div className='flex justify-center mt-[3rem]  mb-[3rem]'>
                         <ul className='flex justify-end items-end ' >
-                            {com.map((com, i) => (
-                                <li key={i} className='flex md:mr-8 mr-3 items-center '>
-                                    <img src={com.img} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
-                                    <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>{com.num} {com.title}</p>
-                                </li>
-                            ))}
+
+                            <li className='flex md:mr-8 mr-3 items-center '>
+                                <img src="./photo/bar-chart.png" className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
+                                <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>12 görüldi</p>
+                            </li>
+                            <li className='flex md:mr-8 mr-3 items-center '>
+                                <img src="./image/like.png" className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
+                                <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>15 halandy</p>
+                            </li>
+                            <li onClick={() => setCom(!com)} className='flex md:mr-8 mr-3 items-center '>
+                                <img src="./photo/comment.png" className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
+                                <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>6 teswir</p>
+                            </li>
+                            <li className='flex md:mr-8 mr-3 items-center '>
+                                <img src="./image/downloads.png" className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
+                                <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>6 ýüklendi</p>
+                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -107,7 +123,7 @@ function IntoPaper({ img, date, name, surname, title }) {
             <div className='bg-[#fff] pt-6'>
                 <Footer />
             </div>
-        </>
+        </div>
     );
 }
 

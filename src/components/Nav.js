@@ -11,7 +11,7 @@ const flag = [
 ]
 
 
-function Nav() {
+function Nav({bg,setBg}) {
   const [click, setClick] = useState(0)
   const [dclick, setDclick] = useState(false)
 
@@ -62,7 +62,7 @@ function Nav() {
           <img src='./image/Galamdas.jpg' className='select-none' />
         </div>
         <div  >
-          <Navbar />
+          <Navbar bg={bg} setBg={setBg}/>
         </div>
       </div>
       <div className='w-[20%] hidden md:block'></div>

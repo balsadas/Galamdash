@@ -5,12 +5,12 @@ import PaperMean from '../components/PaperMean';
 import Register from '../components/Register';
 
 function Home() {
-
+const [bg,setBg]= useState(false)
   
   return (
-    <div>
-
-      <Nav/>
+    <div className='relative'>
+     <div onClick={() => setBg(!bg)} className={bg ? 'absolute w-full h-full bg-[#d0d0d000] z-[899]' : ''}></div> 
+      <Nav bg={bg} setBg={setBg}/>
       <PaperMean />
       <Footer />
     
