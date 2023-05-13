@@ -30,13 +30,14 @@ import axios from 'axios';
 
 
 const Shortendtext = (text, maxLength) => {
-    if (text.length <= maxLength) {
-        return <>{text}</>
+    if (!!text) {
+        if (text.length <= maxLength) {
+            return <>{text}</>
+        }
+        const Shortendtext = `${text.slice(0, maxLength)}...`
+
+        return <>{Shortendtext}</>
     }
-
-    const Shortendtext = `${text.slice(0, maxLength)}...`
-
-    return <>{Shortendtext}</>
 }
 
 const tag = [
@@ -55,24 +56,31 @@ const com = [
 ]
 
 function Paper() {
-    const [kat, setKat] = useState([])
+    const [Kat, setKat] = useState([])
     const [catgeory, setCategory] = useState(0)
 
     useEffect(() => {
         fetch()
-    })
+    }, [])
 
     const fetch = async () => {
-        const result = await axios.get(`${setting.SERVER}/api/category/${catgeory}`)
-        console.log(result)
+        let result = []
+        if (catgeory != 0) {
+            result = await axios.get(`${setting.SERVER}/api/category/${catgeory}`)
+        } else {
+            result = await axios.get(`${setting.SERVER}/api/post?all=true`)
+        }
+        setKat(result.data)
     }
-
     return (
         <div className=' md:px-3 md:py-5 mb-5 md:mb-0    overflow-hidden ' >
             <Link to='/IntoPaper'>
                 <ul>
-                    {kat.map((kat, i) => (
+
+                    {Kat.map((kat, i) => (
+
                         <div className='group' key={i}>
+
                             <motion.li
                                 initial="hidden"
                                 whileInView="visible"
@@ -95,29 +103,33 @@ function Paper() {
 
                                 >
                                     <div className='flex items-center mb-3'>
-                                        <img src={kat.img1} className='object-cover rounded-full md:h-[3vw] md:w-[3vw] w-[8vw] h-[8vw] ' />
-                                        <h4 className='md:text-[1.5vw] text-[4.5vw] ml-2 font-[500]'>{kat.name} {kat.surname}</h4>
-                                        <p className='text-[#6B7280] ml-2 text-[2vw] md:text-[.9vw]'><span className='mb-3'>.</span>{kat.email}</p>
+                                        <img src={`${setting.SERVER}/${kat.User.img}`} className='object-cover rounded-full md:h-[3vw] md:w-[3vw] w-[8vw] h-[8vw] ' />
+                                        <h4 className='md:text-[1.5vw] text-[4.5vw] ml-2 font-[500]'>{kat.User.nick} </h4>
+                                        {/* <p className='text-[#6B7280] ml-2 text-[2vw] md:text-[.9vw]'><span className='mb-3'>.</span>{kat.User.email}</p> */}
                                         <p className='text-[#6B7280] ml-2 text-[2vw] md:text-[.9vw]'><span>.</span>{kat.date}</p>
                                     </div>
-                                    <div>
-                                        <img className='object-cover rounded-md  h-[70vw] w-full mb-3   block md:hidden' src={kat.img} />
+                                    <div>  
+                                        <img className='object-cover rounded-md  h-[70vw] w-full mb-3   block md:hidden' src={`${setting.SERVER}/${kat.img}`} />
                                         <h2 className='font-bold md:text-[1.5vw] text-[4.5vw] mb-1  pl-2select-none'>{kat.title}</h2>
                                         <div className='md:columns-2 md:flex'>
 
 
-                                            <p className='w-[100%] text-[#6B7280] md:text-[1vw] text-[3vw] pr-2 select-none md:hidden block mb-2'>{Shortendtext((kat.text), 210)}</p>
+                                            <p className='w-[100%] text-[#6B7280] md:text-[1vw] text-[3vw] pr-2 select-none md:hidden block mb-2'>
+                                                {Shortendtext(kat.content, 210)}
+                                            </p>
 
 
-                                            <p className='w-[80%] text-[#6B7280] md:text-[1vw] text-[3vw] pr-2 select-none md:block hidden'>{Shortendtext((kat.text), 500)}</p>
-                                            <img className='object-cover rounded-md h-[12vw] mb-5  mt-[-3vw] w-[11.5vw] transition duration-300 ease-in-out group-hover:scale-110 hidden md:block' src={kat.img} />
+                                            <p className='w-[80%] text-[#6B7280] md:text-[1vw] text-[3vw] pr-2 select-none md:block hidden'>{Shortendtext((kat.content), 500)}</p>
+                                            <img className='object-cover rounded-md h-[12vw] mb-5  mt-[-3vw] w-[11.5vw] transition duration-300 ease-in-out group-hover:scale-110 hidden md:block' src={`${setting.SERVER}/${kat.img}`} />
                                         </div>
                                     </div>
                                     <div className='md:flex md:columns-2'>
                                         <div className='md:w-[80%] w-full '>
                                             <ul className='flex'>
-                                                {tag.map((tag, i) => (
-                                                    <li className='mr-3 md:text-[1vw] text-[2.5vw] text-[#1F2937]  select-none bg-[#F3F4F6] md:py-1 py-[0.25rem] px-[0.3rem] md:px-2 rounded-md font-[500]' key={i}>{tag.text}</li>
+                                                {kat.Tags.map((tag, i) => (
+                                                    <li className='mr-3 md:text-[1vw] text-[2.5vw] text-[#1F2937]  select-none bg-[#F3F4F6] md:py-1 py-[0.25rem] px-[0.3rem] md:px-2 rounded-md font-[500]' key={i}>
+                                                        {tag.TagList.title}
+                                                    </li>
                                                 ))}
                                             </ul>
                                         </div>
