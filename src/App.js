@@ -24,7 +24,6 @@ function App() {
     <div className='bg-[#E8F8F5]'>
       <BrowserRouter>
         <Routes>
-        
             <Route path='/' element={<Home/>}/>
             <Route path='/IntoPaper' element={<IntoPaper name={name} surname={surname} date={date} title={title} img={img}/>}/>
             <Route path='/Profile' element={<Profile />}/>
