@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/components/Search.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1681452926103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1681453379688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,11 @@\n-r\n\\ No newline at end of file\n+import React from 'react';\r\n+\r\n+function Search() {\r\n+  return (\r\n+    <div>\r\n+      i\r\n+    </div>\r\n+  );\r\n+}\r\n+\r\n+export default Search;\r\n"
+                },
+                {
+                    "date": 1681453380152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function Search() {\r\n   return (\r\n     <div>\r\n-      in\r\n+      inp\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1681453408898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,11 @@\n+import React from 'react';\r\n+\r\n+function Search() {\r\n+  return (\r\n+    <div>\r\n+      <input type='search' pla/>\r\n+    </div>\r\n+  );\r\n+}\r\n+\r\n+export default Search;\r\n"
+                }
+            ],
+            "date": 1681452926102,
+            "name": "Commit-0",
+            "content": "r"
+        }
+    ]
+}

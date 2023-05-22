@@ -1,0 +1,154 @@
+{
+    "sourceFile": "src/components/Dropdown.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 34,
+            "patches": [
+                {
+                    "date": 1682618929594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1682619471936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,11 @@\n-r\n\\ No newline at end of file\n+import React from 'react';\r\n+\r\n+function Dropdown() {\r\n+  return (\r\n+    <div >\r\n+      \r\n+    </div>\r\n+  );\r\n+}\r\n+\r\n+export default Dropdown;\r\n"
+                },
+                {
+                    "date": 1682619477901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div >\r\n+    <div className='absolute '>\r\n       \r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619485659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='absolute '>\r\n+    <div className='absolute shadow-lg r'>\r\n       \r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619485808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='absolute shadow-lg r'>\r\n+    <div className='absolute shadow-lg ro'>\r\n       \r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619492157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='absolute shadow-lg ro'>\r\n-      \r\n+    <div className='absolute shadow-lg rounded-lg'>\r\n+      re\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1682619505237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='absolute shadow-lg rounded-lg'>\r\n-      re\r\n+    <div className=' absolute shadow-lg rounded-lg'>\r\n+      regfrw\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1682619515119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className=' absolute shadow-lg rounded-lg'>\r\n+    <div className='top- absolute shadow-lg rounded-lg'>\r\n       regfrw\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619541233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='top- absolute shadow-lg rounded-lg'>\r\n+    <div className='mt-5 bf absolute shadow-lg rounded-lg'>\r\n       regfrw\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619547622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='mt-5 bf absolute shadow-lg rounded-lg'>\r\n+    <div className='mt-5 bg-white  absolute shadow-lg rounded-lg'>\r\n       regfrw\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619568827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='mt-5 bg-white  absolute shadow-lg rounded-lg'>\r\n+    <div className='mt-5 bg-white p-6  absolute shadow-lg rounded-lg'>\r\n       regfrw\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619574570,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='mt-5 bg-white p-6  absolute shadow-lg rounded-lg'>\r\n+    <div className='mt-5 bg-white p-6 mr-6 absolute shadow-lg rounded-lg'>\r\n       regfrw\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619590996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='mt-5 bg-white p-6 mr-6 absolute shadow-lg rounded-lg'>\r\n+    <div className='mt-5 bg-white p-6 r-6 absolute shadow-lg rounded-lg'>\r\n       regfrw\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619597362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='mt-5 bg-white p-6 r-6 absolute shadow-lg rounded-lg'>\r\n+    <div className='mt-5 bg-white p-6 pr- absolute shadow-lg rounded-lg'>\r\n       regfrw\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619597769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='mt-5 bg-white p-6 pr- absolute shadow-lg rounded-lg'>\r\n+    <div className='mt-5 bg-white p-6 pr absolute shadow-lg rounded-lg'>\r\n       regfrw\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619603475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='mt-5 bg-white p-6 pr absolute shadow-lg rounded-lg'>\r\n+    <div className='mt-5 bg-white p-6 right-7 absolute shadow-lg rounded-lg'>\r\n       regfrw\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619609686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='mt-5 bg-white p-6 right-7 absolute shadow-lg rounded-lg'>\r\n+    <div className='mt-5 bg-white p-6 right- absolute shadow-lg rounded-lg'>\r\n       regfrw\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619615204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='mt-5 bg-white p-6 right- absolute shadow-lg rounded-lg'>\r\n+    <div className='mt-5 bg-white p-6  absolute shadow-lg rounded-lg'>\r\n       regfrw\r\n-    </div>\r\n+    </div>mr-\r\n   );\r\n }\r\n \r\n export default Dropdown;\r\n"
+                },
+                {
+                    "date": 1682619621838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='mt-5 bg-white p-6  absolute shadow-lg rounded-lg'>\r\n+    <div className='mt-5 bg-white p-6 mr-6 absolute shadow-lg rounded-lg'>\r\n       regfrw\r\n-    </div>mr-\r\n+    </div>\r\n   );\r\n }\r\n \r\n export default Dropdown;\r\n"
+                },
+                {
+                    "date": 1682619626920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='mt-5 bg-white p-6 mr-6 absolute shadow-lg rounded-lg'>\r\n+    <div className='mt-5 bg-white p-6 mr- absolute shadow-lg rounded-lg'>\r\n       regfrw\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619638526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='mt-5 bg-white p-6 mr- absolute shadow-lg rounded-lg'>\r\n+    <div className='mt-5 bg-white p-6 mr-[-4rem] absolute shadow-lg rounded-lg'>\r\n       regfrw\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619711034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='mt-5 bg-white p-6 mr-[-4rem] absolute shadow-lg rounded-lg'>\r\n+    <div className='mt-5 bg-white p-6 m absolute shadow-lg rounded-lg'>\r\n       regfrw\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619718580,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='mt-5 bg-white p-6 m absolute shadow-lg rounded-lg'>\r\n+    <div className='mt-5 bg-white p-6 r absolute shadow-lg rounded-lg'>\r\n       regfrw\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619725634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='mt-5 bg-white p-6 r absolute shadow-lg rounded-lg'>\r\n+    <div className='mt-5 bg-white p-6 right- absolute shadow-lg rounded-lg'>\r\n       regfrw\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619743549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n   return (\r\n-    <div className='mt-5 bg-white p-6 right- absolute shadow-lg rounded-lg'>\r\n+    \r\n+    <div className='mt-5 bg-white p-6  absolute shadow-lg rounded-lg'>\r\n       regfrw\r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619749995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,13 @@\n import React from 'react';\r\n \r\n function Dropdown() {\r\n-  return (\r\n-    \r\n-    <div className='mt-5 bg-white p-6  absolute shadow-lg rounded-lg'>\r\n-      regfrw\r\n-    </div>\r\n-  );\r\n+    return (\r\n+        <>\r\n+            <div className='mt-5 bg-white p-6  absolute shadow-lg rounded-lg'>\r\n+                regfrw\r\n+            </div>\r\n+        </>\r\n+    );\r\n }\r\n \r\n export default Dropdown;\r\n"
+                },
+                {
+                    "date": 1682619755721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,11 @@\n \r\n function Dropdown() {\r\n     return (\r\n         <>\r\n+        <div>\r\n+            \r\n+        </div>\r\n             <div className='mt-5 bg-white p-6  absolute shadow-lg rounded-lg'>\r\n                 regfrw\r\n             </div>\r\n         </>\r\n"
+                },
+                {
+                    "date": 1682619762031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,13 +2,12 @@\n \r\n function Dropdown() {\r\n     return (\r\n         <>\r\n-        <div>\r\n-            \r\n-        </div>\r\n-            <div className='mt-5 bg-white p-6  absolute shadow-lg rounded-lg'>\r\n-                regfrw\r\n+            <div>\r\n+                <div className='mt-5 bg-white p-6  absolute shadow-lg rounded-lg'>\r\n+                    regfrw\r\n+                </div>\r\n             </div>\r\n         </>\r\n     );\r\n }\r\n"
+                },
+                {
+                    "date": 1682619767647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function Dropdown() {\r\n     return (\r\n         <>\r\n-            <div>\r\n+            <div className='w'>\r\n                 <div className='mt-5 bg-white p-6  absolute shadow-lg rounded-lg'>\r\n                     regfrw\r\n                 </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1682619773455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function Dropdown() {\r\n     return (\r\n         <>\r\n-            <div className='w'>\r\n+            <div className='w-full '>\r\n                 <div className='mt-5 bg-white p-6  absolute shadow-lg rounded-lg'>\r\n                     regfrw\r\n                 </div>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1682619795955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n \r\n function Dropdown() {\r\n     return (\r\n         <>\r\n-            <div className='w-full '>\r\n-                <div className='mt-5 bg-white p-6  absolute shadow-lg rounded-lg'>\r\n+            <div className='w-full flex justify-end'>\r\n+                <div className='mt- bg-white p-6  absolute shadow-lg rounded-lg'>\r\n                     regfrw\r\n                 </div>\r\n             </div>\r\n         </>\r\n"
+                },
+                {
+                    "date": 1682619804069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n function Dropdown() {\r\n     return (\r\n         <>\r\n             <div className='w-full flex justify-end'>\r\n-                <div className='mt- bg-white p-6  absolute shadow-lg rounded-lg'>\r\n+                <div className='mt bg-white p-6  absolute shadow-lg rounded-lg'>\r\n                     regfrw\r\n                 </div>\r\n             </div>\r\n         </>\r\n"
+                },
+                {
+                    "date": 1682620070352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n function Dropdown() {\r\n     return (\r\n         <>\r\n             <div className='w-full flex justify-end'>\r\n-                <div className='mt bg-white p-6  absolute shadow-lg rounded-lg'>\r\n-                    regfrw\r\n+                <div className=' bg-white p-6  absolute shadow-lg rounded-lg'>\r\n+                    \r\n                 </div>\r\n             </div>\r\n         </>\r\n     );\r\n"
+                },
+                {
+                    "date": 1682620081134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     return (\r\n         <>\r\n             <div className='w-full flex justify-end'>\r\n                 <div className=' bg-white p-3  absolute shadow-lg rounded-lg'>\r\n-                    <\r\n+                    <di\r\n                 </div>\r\n             </div>\r\n         </>\r\n     );\r\n"
+                },
+                {
+                    "date": 1682620099914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n         <>\r\n             <div className='w-full flex justify-end'>\r\n                 <div className=' bg-white p-3  absolute shadow-lg rounded-lg'>\r\n                     <div>\r\n-                        <im\r\n+                        <img\r\n                     </div>\r\n                 </div>\r\n             </div>\r\n         </>\r\n"
+                }
+            ],
+            "date": 1682618929594,
+            "name": "Commit-0",
+            "content": "r"
+        }
+    ]
+}

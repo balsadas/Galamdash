@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/components/UnderPost.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1682361892222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1682363379947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,12 @@\n-rf\n\\ No newline at end of file\n+import React from 'react';\r\n+\r\n+\r\n+function UnderPost() {\r\n+  return (\r\n+    <div>\r\n+      \r\n+    </div>\r\n+  );\r\n+}\r\n+\r\n+export default UnderPost;\r\n"
+                },
+                {
+                    "date": 1682363388803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React from 'react';\r\n \r\n-co\r\n+cons\r\n \r\n \r\n function UnderPost() {\r\n   return (\r\n"
+                },
+                {
+                    "date": 1682363479320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import React from 'react';\r\n \r\n const post = [\r\n-    {id:1, img:'./ph'}\r\n+    {id:1, img:'./pho'}\r\n ]\r\n \r\n \r\n function UnderPost() {\r\n"
+                }
+            ],
+            "date": 1682361892222,
+            "name": "Commit-0",
+            "content": "rf"
+        }
+    ]
+}

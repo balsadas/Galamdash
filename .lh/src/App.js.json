@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/App.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1681320822205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1681320822713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n function App() {\n \n \n   return (\n-    <div c>\n+    <div cla>\n         <Home/>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1681320828615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n function App() {\n \n \n   return (\n-    <div cla>\n+    <div className='bg-[#'>\n         <Home/>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1681320836707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n function App() {\n \n \n   return (\n-    <div className='bg-[#'>\n+    <div className='bg-[#E8F'>\n         <Home/>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1681320942181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n function App() {\n \n \n   return (\n-    <div className='bg-[#E8F'>\n+    <div >\n         <Home/>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1681408861582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,19 @@\n+\n+import { forwardRef, useEffect, useRef, useState } from 'react';\n+import './App.css';\n+import Home from './pages/Home';\n+\n+\n+\n+\n+function App() {\n+\n+\n+  return (\n+    <div ç>\n+        <Home/>\n+    </div>\n+  );\n+}\n+\n+export default App;\n"
+                },
+                {
+                    "date": 1681408867543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n function App() {\n \n \n   return (\n-    <div cla>\n+    <div clas>\n         <Home/>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1681408867785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n function App() {\n \n \n   return (\n-    <div clas>\n+    <div className=''>\n         <Home/>\n     </div>\n   );\n }\n"
+                }
+            ],
+            "date": 1681320822205,
+            "name": "Commit-0",
+            "content": "\nimport { forwardRef, useEffect, useRef, useState } from 'react';\nimport './App.css';\nimport Home from './pages/Home';\n\n\n\n\nfunction App() {\n\n\n  return (\n    <div c>\n        <Home/>\n    </div>\n  );\n}\n\nexport default App;\n"
+        }
+    ]
+}

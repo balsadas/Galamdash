@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/components/Footer.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1681851372488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1681851372988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-r\n\\ No newline at end of file\n+rf\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1681851544781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,11 @@\n-rf\n\\ No newline at end of file\n+import React from 'react';\r\n+\r\n+function Footer() {\r\n+  return (\r\n+    <div >\r\n+      \r\n+    </div>\r\n+  );\r\n+}\r\n+\r\n+export default Footer;\r\n"
+                },
+                {
+                    "date": 1681851555103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Footer() {\r\n   return (\r\n-    <div >\r\n+    <div w>\r\n       \r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1681851555557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Footer() {\r\n   return (\r\n-    <div wi>\r\n+    <div wit>\r\n       \r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1681851594664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Footer() {\r\n   return (\r\n-    <div className='w-full shadow-lg bg-[#ffffffe0] round'>\r\n+    <div className='w-full shadow-lg bg-[#ffffffe0] rounde'>\r\n       \r\n     </div>\r\n   );\r\n }\r\n"
+                }
+            ],
+            "date": 1681851372488,
+            "name": "Commit-0",
+            "content": "r"
+        }
+    ]
+}

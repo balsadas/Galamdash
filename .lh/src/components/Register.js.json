@@ -1,0 +1,42 @@
+{
+    "sourceFile": "src/components/Register.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1682622552504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1682622583984,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,11 @@\n-r\n\\ No newline at end of file\n+import React from 'react';\r\n+\r\n+function Register() {\r\n+  return (\r\n+    <div>\r\n+        \r\n+    </div>\r\n+  );\r\n+}\r\n+\r\n+export default Register;\r\n"
+                },
+                {
+                    "date": 1682622589274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Register() {\r\n   return (\r\n-    <div>\r\n+    <div cla>\r\n         \r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682622596456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Register() {\r\n   return (\r\n-    <div cla>\r\n+    <div className='absolute '>\r\n         \r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682622602125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Register() {\r\n   return (\r\n-    <div className='absolute '>\r\n+    <div className='absolute w-'>\r\n         \r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682622650572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Register() {\r\n   return (\r\n-    <div className='absolute w-f'>\r\n+    <div className='absolute w-fu'>\r\n         \r\n     </div>\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1682623395746,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function Register() {\r\n   return (\r\n     <div className='z-50'>\r\n-        er\r\n+        erg\r\n     </div>\r\n   );\r\n }\r\n \r\n"
+                }
+            ],
+            "date": 1682622552504,
+            "name": "Commit-0",
+            "content": "r"
+        }
+    ]
+}

@@ -1,0 +1,62 @@
+{
+    "sourceFile": "src/components/Navbar.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1681240758627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1681240764665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+import React from 'react';\r\n+\r\n+function Navbar() {\r\n+usee\r\n+\r\n+  return (\r\n+    <div>\r\n+      \r\n+    </div>\r\n+  );\r\n+}\r\n+\r\n+export default Navbar;\r\n"
+                },
+                {
+                    "date": 1681240772717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,13 @@\n import React from 'react';\r\n \r\n function Navbar() {\r\n-usee\r\n+useEffect(() => {\r\n+  effect\r\n+  return () => {\r\n+    cleanup\r\n+  };\r\n+}, [inpu])\r\n \r\n   return (\r\n     <div>\r\n       \r\n@@ -10,17 +15,4 @@\n   );\r\n }\r\n \r\n export default Navbar;\r\n-import React from 'react';\r\n-\r\n-function Navbar() {\r\n-\r\n-  \r\n-  return (\r\n-    <div>\r\n-      \r\n-    </div>\r\n-  );\r\n-}\r\n-\r\n-export default Navbar;\r\n"
+                },
+                {
+                    "date": 1681240806672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,10 @@\n import React from 'react';\r\n \r\n function Navbar() {\r\n useEffect(() => {\r\n-  effect\r\n-  return () => {\r\n-    cleanup\r\n-  };\r\n-}, [inpu])\r\n+  \r\n+}, [])\r\n \r\n   return (\r\n     <div>\r\n       \r\n"
+                },
+                {
+                    "date": 1681240821504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Navbar() {\r\n useEffect(() => {\r\n-  \r\n+  fetch()\r\n }, [])\r\n \r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1681240830024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Navbar() {\r\n useEffect(() => {\r\n-  fetch()\r\n+  fetch('https://jsonplaceholder.typicode.com/posts'),\r\n }, [])\r\n \r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1681240836299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Navbar() {\r\n useEffect(() => {\r\n-  fetch('https://jsonplaceholder.typicode.com/posts'),\r\n+  fetch('https://jsonplaceholder.typicode.com/posts'),{}\r\n }, [])\r\n \r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1681240844026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import React from 'react';\r\n \r\n function Navbar() {\r\n useEffect(() => {\r\n-  fetch('https://jsonplaceholder.typicode.com/posts'),{}\r\n+  fetch('https://jsonplaceholder.typicode.com/posts'),\r\n }, [])\r\n \r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1681240851021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n import React from 'react';\r\n \r\n function Navbar() {\r\n useEffect(() => {\r\n-  fetch('https://jsonplaceholder.typicode.com/posts'),\r\n+  fetch('https://jsonplaceholder.typicode.com/posts', {\r\n+    t\r\n+  })\r\n }, [])\r\n \r\n   return (\r\n     <div>\r\n"
+                },
+                {
+                    "date": 1681240851180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function Navbar() {\r\n useEffect(() => {\r\n   fetch('https://jsonplaceholder.typicode.com/posts', {\r\n-    t\r\n+    th\r\n   })\r\n }, [])\r\n \r\n   return (\r\n"
+                },
+                {
+                    "date": 1681240862551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function Navbar() {\r\n useEffect(() => {\r\n   fetch('https://jsonplaceholder.typicode.com/posts', {\r\n-    then.(r)\r\n+    then.(re)\r\n   })\r\n }, [])\r\n \r\n   return (\r\n"
+                },
+                {
+                    "date": 1681240869529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n function Navbar() {\r\n useEffect(() => {\r\n   fetch('https://jsonplaceholder.typicode.com/posts', {\r\n-    then.(res => consol)\r\n+    then.(res => console)\r\n   })\r\n }, [])\r\n \r\n   return (\r\n"
+                }
+            ],
+            "date": 1681240758627,
+            "name": "Commit-0",
+            "content": "import React from 'react';\r\n\r\nfunction Navbar() {\r\n\r\n  \r\n  return (\r\n    <div>\r\n      \r\n    </div>\r\n  );\r\n}\r\n\r\nexport default Navbar;\r\n"
+        }
+    ]
+}
