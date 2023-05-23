@@ -7,6 +7,7 @@ import { data } from 'autoprefixer';
 import Cookies from 'universal-cookie';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import setting from '../setting.json'
 
 
 function Register() {
@@ -45,7 +46,7 @@ function Register() {
             password: ""
         }
 
-        const url2 = `http://192.168.11.23:8080/api/user/login`
+        const url2 = `${setting.SERVER}/api/user/login`
 
 
 
@@ -113,7 +114,7 @@ console.log('value', selection)
             type: selection
         }
 
-        const url = `http://192.168.11.23:8080/api/user/registry`
+        const url = `${setting.SERVER}/api/user/registry`
 
 
         console.log('geldi', body.selection)

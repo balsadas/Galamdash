@@ -31,14 +31,14 @@ function IntoPaper({ img, date, name, surname, title }) {
 const [com,setCom] = useState(false)
 const [fetchIntoPaper,setFetchIntoPaper] = useState([])
 
-const intoPost =  async()=>{
-    const id = cookie_get('token', ).uid
-    if(id != undefined){
-        id=0
-    }
-    const fetchInto = await axios.get(`${setting.server}/api/post/${id}`)
-    setFetchIntoPaper(fetchInto.data)
-}
+// const intoPost =  async()=>{
+//     const id = cookie_get('token', ).uid
+//     if(id != undefined){
+//         id=0
+//     }
+//     const fetchInto = await axios.get(`${setting.server}/api/post/${id}`)
+//     setFetchIntoPaper(fetchInto.data)
+// }
 console.log(setFetchIntoPaper)
 useEffect(()=>{
    IntoPaper() 

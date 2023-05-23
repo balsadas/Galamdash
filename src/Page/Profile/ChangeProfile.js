@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from '../../components/Footer';
 import { Link } from 'react-router-dom';
-import { cookie_get } from '../../cookie';
+
 
 function ChangeProfile({ change, setChange }) {
 
