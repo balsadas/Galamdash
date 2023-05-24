@@ -30,6 +30,7 @@ function IntoPaper({ img, date, name, surname, title }) {
     const [Post, setPost] = useState()
     const [Views, setViews] = useState(0)
     const [Likes, setLikes] = useState(0)
+    const [Comments, setComments] = useState(0)
     const { postID } = useParams()
 
     useEffect(() => {
@@ -45,13 +46,13 @@ function IntoPaper({ img, date, name, surname, title }) {
             redirect('/404')
         })
         setPost(res.data)
-        res = await axios.get(`${setting.SERVER}/api/view/${postID}`)
-        setViews(res.data[0].count)
-        res = await axios.get(`${setting.SERVER}/api/like/${postID}`)
-        setLikes(res.data[0].count)
+        res = await axios.get(`${setting.SERVER}/api/count/${postID}`)
+        setLikes(res.data.like.count)
+        setViews(res.data.view.count)
+        setComments(res.data.comment.count)
+
 
     }
-    console.log(Likes)
     return (Post && (
         <>
             <NavSearch />
@@ -103,7 +104,7 @@ function IntoPaper({ img, date, name, surname, title }) {
                             </li>
                             <li className='flex md:mr-8 mr-3 items-center '>
                                 <img src={com[2].img} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
-                                <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>{com.num} {com[2].title}</p>
+                                <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>{Comments} {com[2].title}</p>
                             </li>
                             {/* <li className='flex md:mr-8 mr-3 items-center '>
                                 <img src={com[3].img} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
