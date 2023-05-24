@@ -8,6 +8,8 @@ import Cookies from 'universal-cookie';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import setting from '../setting.json'
+import axios from 'axios';
+
 
 
 function Register() {
@@ -276,7 +278,7 @@ console.log('value', selection)
                                             id='sign_up-name'
                                             className='border  rounded-md px-2 py-1 md:w-full w-[100%] focus:bg-[#E8F8F5]' />
                                     </div>
-                                    <div className='md:mb-2 mb-4'>
+                                    <div>
                                         <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'>Familiýa</p>
                                         <input
                                             required
@@ -286,7 +288,7 @@ console.log('value', selection)
                                             id='sign_up-surname'
                                             className='border  rounded-md py-1 px-2 md:w-[100%] w-[100%] focus:bg-[#E8F8F5]' />
                                     </div>
-                                    <div className='md:mb-2 mb-4'>
+                                    <div>
                                         <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'>Email</p>
                                         <input
                                             required
@@ -297,37 +299,13 @@ console.log('value', selection)
                                             className='border  rounded-md py-1 px-2 md:w-full w-[100%] focus:bg-[#E8F8F5]'
                                         />
                                     </div>
-                                    <div className='font-bold md:text-[1vw] text-[4vw] md:mb-2 mb-2 '>
-                                        <p className='font-bold md:text-[1vw] mb-1 ml-2'>Ulanyjy ady</p>
-                                        <div className='flex border rounded-md '>
-                                            <p className='px-[.7rem] rounded-l-md  flex items-center  bg-slate-300  font-bold  md:text-[1.3vw] border-l '> @</p>
-                                        <input
-                                            
-                                            type='text'
-                                            onKeyPress={(e) => { Enter(e) }}
-                                            placeholder='atamyradow'
-                                            id='sign_up_user'
-                                            className='  rounded-r-md p-2 md:w-[25vw] w-[100%] focus:bg-[#E8F8F5]' />
-                                        </div>
+                                    <div className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'>
+                                        <p className='font-bold md:text-[1vw] mb-1'>Ulanyjy ady</p>
+                                        <input type='text' placeholder='@atamyradow' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
                                     </div>
                                     <div className='flex mb-2'>
 
-                                        <input
-                                            type={visibility ? 'text' : 'password'}
-                                            onKeyPress={(e) => { Enter(e) }}
-                                            placeholder='Açar sözi'
-                                            id='sign_up-pass-1'
-                                            className='border-l border-b border-t  rounded-l-md px-2 py-1 md:w-[26vw] w-[80vw] focus:bg-[#E8F8F5]' />
-                                        <div className='border-r border-b border-t  rounded-r-md flex items-center border-l' onClick={() => { setVisibility(!visibility) }}> {visibility ? <img src='./image/visibility.png' className='  md:p-1 p-2  w-[13vw] h-[13vw]  md:w-[3vw] md:h-[3vw] ' /> : <img src='./image/visible.png' className='md:w-[3vw] w-[13vw] h-[13vw] md:p-1  p-2 md:h-[3vw] ' />}</div>
-                                    </div>
-                                    <div className='flex mb-2'>
-                                        <input
-                                            type={visibility ? 'text' : 'password'}
-                                            onKeyPress={(e) => { Enter(e) }}
-                                            placeholder='Açar sözi tassykla'
-                                            id='sign_up-pass-2'
-                                            className='border-l border-b border-t  rounded-l-md px-2 py-1 md:w-[26vw] w-[80vw] focus:bg-[#E8F8F5]' />
-                                        <div className='border-r border-b border-t  rounded-r-md flex items-center border-l' onClick={() => { setVisibility(!visibility) }}> {visibility ? <img src='./image/visibility.png' className='  md:p-1 p-2  w-[13vw] h-[13vw]  md:w-[3vw] md:h-[3vw] ' /> : <img src='./image/visible.png' className='md:w-[3vw] w-[13vw] h-[13vw] md:p-1  p-2 md:h-[3vw] ' />}</div>
+                                        <input type='password' placeholder='Açar sözi' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
                                     </div>
                                     <div>
                                         <select onChange={(e)=>setSelection(e.target.value)} required name='sayla' className='md:w-full w-full px-2 py-1 border-slate-300 rounded-md border font-bold mb-2'>
@@ -370,7 +348,7 @@ console.log('value', selection)
                                             </Link>
                                         </div>
                                         <div className='w-[90%] '>
-                                            <h3 className='font-bold md:text-[1.5vw] text-[5.5vw] flex justify-center'>Hasaba gir</h3>
+                                            <h3 className='font-bold md:text-[1.5vw] text-[5.5vw] flex justify-center'>Hasap döret</h3>
                                         </div>
                                     </div>
                                     <div className='md:mb-2 mb-4'>
@@ -390,6 +368,7 @@ console.log('value', selection)
                                     <div className='w-full flex justify-center' >
                                         <button type='submit' onClick={() => { login() }} className='border md:w-[80%] w-[90%] mt-3 p-1 rounded-md md:text-[1.2vw] text-[4.5vw] bg-[#19a056] text-[#fff] font-bold'>Gir</button>
                                     </div>
+
                                     <p className=' select-none md:text-[.8vw] text-[3.5vw] mt-2 flex justify-center text-gray-400' >hasabyňyz yokmy? <span onClick={() => setClick(!click)} className='ml-1 cursor-pointer text-[green]'>hasap aç</span></p>
                                 </div>
                             </div>
