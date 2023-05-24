@@ -9,34 +9,32 @@ import axios from 'axios';
 function Register() {
     const [click, setClick] = useState(false)
 
-    const [email2, setEmail2] = useState({
-        email: '',
-        password: ''
-    })
-
-    const handleChange = (e) => {
-        const value = e.target.value;
-        setEmail2({
-            ...email2,
-            [e.target.name]: value
-        })
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const userData = {
-            email: email2.email,
-            password: email2.password
+    const Enter = (e) => {
+        var key = e.keyCode || e.which;
+        if (key === 13) { // Клавиша Enter
+            if (e.target.id === 'sign_email' || e.target.id === 'sign_pass') {
+                login()
+            } else if (e.target.id === 'sign_up-name' || e.target.id === 'sign_up-surname' || e.target.id === 'sign_up-email' || e.target.id === 'sign_up_user' || e.target.id === 'sign_up-pass-1' || e.target.id === 'sign_up-pass-2') {
+                signIn()
+            } else {
+                console.log('Enter', e.target.id)
+            }
         }
     }
 
-    const fetchLogIn = () => {
-        axios.post(`${setting.SERVER}/api/user/login`, setEmail2)
-            .then(res => { console.log(res) })
-            .catch(err => { console.log(err) })
 
+    const fetchLogIn = async () => {
+        let body = {
+            email: '',
+            password:''
+        }
+
+        body['email']= document.getElementById('sign_email').value
+        body['password'] = document.getElementById('sign_pass').value
+        if(body['email'] !== '' || body['password'] !== ''){
+            axios.post(`${setting.SERVER}/api/user/login`)
+        }
     }
-console.log(setEmail2)
 
 
     return (
@@ -115,17 +113,17 @@ console.log(setEmail2)
                                             </Link>
                                         </div>
                                         <div className='w-[90%] '>
-                                            <h3 className='font-bold md:text-[1.5vw] text-[5.5vw] flex justify-center'>Hasap döret</h3>
+                                            <h3 className='font-bold md:text-[1.5vw] text-[5.5vw] flex justify-center'>Hasaba gir</h3>
                                         </div>
                                     </div>
                                     <form onSubmit={handleSubmit}>
                                         <div>
-                                            <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'>Ulanyjy ady ya-da email</p>
-                                            <input type='text' value={email2.email} onChange={handleChange} name='email' placeholder='Atamyrat' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                            <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'> email</p>
+                                            <input  type='text'  id='sign_email' placeholder='Atamyrat' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
                                         </div>
                                         <div>
                                             <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'>Parol</p>
-                                            <input type='password' name='password' value={email2.password} onChange={handleChange} placeholder='Açar sözi' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                            <input type='password' id='sign_pass' placeholder='Açar sözi' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
                                         </div>
                                         {/* <div className='flex'>
                                  <input type='checkbox' className='ml-2' />
