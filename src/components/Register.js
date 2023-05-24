@@ -3,6 +3,8 @@ import Footer from './Footer';
 import { Link } from 'react-router-dom';
 import setting from '../setting.json'
 import axios from 'axios';
+import Cookies from 'universal-cookie';
+import Cookies from 'universal-cookie';
 
 
 
@@ -44,6 +46,8 @@ function Register() {
         axios.post(`${setting.SERVER}/api/user/login`, userData)
         .then(res =>{
             console.log(res,'res')
+            const Cookies = new Cookies
+            Cookies.set('token')
         }).catch(err=>{console.log(err,'err')})
     }
 
