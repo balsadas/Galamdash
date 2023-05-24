@@ -15,6 +15,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function Register() {
     const [click, setClick] = useState(false)
     const [selection, setSelection] = useState('')
+    const [visibility,setVisibility] =useState(false)
 
     const Enter = (e) => {
         var key = e.keyCode || e.which;
@@ -288,7 +289,10 @@ function Register() {
                                     </div>
                                     <div>
                                         <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'>Parol</p>
-                                        <input type='password' name='password' onChange={handleChange} value={data2.password} id='sign_pass' placeholder='Açar sözi' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                        <div className='flex'>
+                                            <input type={visibility ? 'text' : 'password'} name='password' onChange={handleChange} value={data2.password} id='sign_pass' onKeyPress={(e) => { Enter(e) }} placeholder='Açar sözi'  className='border-l border-b border-t  rounded-l-md px-2 py-1 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                            <div className='border-r border-b border-t  rounded-r-md flex items-center border-l' onClick={() => { setVisibility(!visibility) }}> {visibility ? <img src='./image/visibility.png' className='  md:p-1 p-2  w-[13vw] h-[13vw]  md:w-[3vw] md:h-[3vw] ' /> : <img src='./image/visible.png' className='md:w-[3vw] w-[13vw] h-[13vw] md:p-1  p-2 md:h-[3vw] ' />}</div>
+                                        </div>                                        
                                     </div>
 
                                     {/* <div className='flex'>
