@@ -8,7 +8,7 @@ import Cookies from 'universal-cookie';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import setting from '../setting.json'
-import axios from 'axios';
+
 
 
 
