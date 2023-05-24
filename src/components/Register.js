@@ -32,7 +32,7 @@ function Register() {
         password2:'',
         name:'',
         surname:'',
-        nick:''
+        nick:'',
     })
 
     const handleChange1 = (e) =>{
