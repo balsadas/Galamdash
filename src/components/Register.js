@@ -1,11 +1,43 @@
 import React, { useState } from 'react';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
+import setting from '../setting.json'
+import axios from 'axios';
 
 
 
 function Register() {
     const [click, setClick] = useState(false)
+
+    const [email2, setEmail2] = useState({
+        email: '',
+        password: ''
+    })
+
+    const handleChange = (e) => {
+        const value = e.target.value;
+        setEmail2({
+            ...email2,
+            [e.target.name]: value
+        })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const userData = {
+            email: email2.email,
+            password: email2.password
+        }
+    }
+
+    const fetchLogIn = () => {
+        axios.post(`${setting.SERVER}/api/user/login`, setEmail2)
+            .then(res => { console.log(res) })
+            .catch(err => { console.log(err) })
+
+    }
+console.log(setEmail2)
+
 
     return (
         <>
@@ -73,7 +105,6 @@ function Register() {
                         <div className={click ? 'md:w-[50%] md:hidden items-center  md:h-screen bg-[#fff] translate-x-0 duration-300 delay-300 ease-in-out transition-all flex ' : 'md:w-[50%] translate-x-[-50%] duration-300 delay-150 ease-in-out transition-all opacity-0  items-center  md:h-screen bg-[#fff] md:hidden flex'}>
                             <img src='./image/Galamdas1.png' />
                         </div>
-
                         <div className={click ? 'md:w-[50%] md:pt-0 pt-8 w-full flex items-center bg-[#fff] translate-x-[0%] duration-300 delay-100 ease-in-out transition-all' : 'opacity-0 translate-x-[-50%] duration-300 delay-100 ease-in-out transition-all md:w-[50%] w-full flex items-center bg-[#fff] '}>
                             <div className='flex justify-center w-full'>
                                 <div>
@@ -87,20 +118,22 @@ function Register() {
                                             <h3 className='font-bold md:text-[1.5vw] text-[5.5vw] flex justify-center'>Hasap döret</h3>
                                         </div>
                                     </div>
-                                    <div>
-                                        <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'>Ulanyjy ady ya-da email</p>
-                                        <input type='text' placeholder='Atamyrat' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
-                                    </div>
-                                    <div>
-                                        <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'>Parol</p>
-                                        <input type='password' placeholder='Açar sözi' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
-                                    </div>
-                                    {/* <div className='flex'>
+                                    <form onSubmit={handleSubmit}>
+                                        <div>
+                                            <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'>Ulanyjy ady ya-da email</p>
+                                            <input type='text' value={email2.email} onChange={handleChange} name='email' placeholder='Atamyrat' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                        </div>
+                                        <div>
+                                            <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'>Parol</p>
+                                            <input type='password' name='password' value={email2.password} onChange={handleChange} placeholder='Açar sözi' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                        </div>
+                                        {/* <div className='flex'>
                                  <input type='checkbox' className='ml-2' />
                                  <p className='md:text-[.8vw] ml-2'>Düzgünnamany okadym we kabul etdim</p>    </div> */}
-                                    <div className='w-full flex justify-center' >
-                                        <button type='submit' className='border md:w-[80%] w-[90%] mt-3 p-1 rounded-md md:text-[1.2vw] text-[4.5vw] bg-[#19a056] text-[#fff] font-bold'>Gir</button>
-                                    </div>
+                                        <div className='w-full flex justify-center' >
+                                            <button type='submit' className='border md:w-[80%] w-[90%] mt-3 p-1 rounded-md md:text-[1.2vw] text-[4.5vw] bg-[#19a056] text-[#fff] font-bold'>Gir</button>
+                                        </div>
+                                    </form>
                                     <p className=' select-none md:text-[.8vw] text-[3.5vw] mt-2 flex justify-center text-gray-400' >hasabyňyz yokmy? <span onClick={() => setClick(!click)} className='ml-1 cursor-pointer text-[green]'>hasap aç</span></p>
                                 </div>
                             </div>
@@ -124,7 +157,7 @@ function Register() {
                 <div className='bg-[#fff]'>
                     <Footer />
                 </div>
-            </div>
+            </div >
         </>
     );
 }
