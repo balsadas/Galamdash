@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import setting from '../setting.json'
 import axios from 'axios';
 import Cookies from 'universal-cookie';
-import Cookies from 'universal-cookie';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { async } from 'q';
 
 
 
@@ -22,6 +24,37 @@ function Register() {
             }
         }
     }
+
+
+    const [data,setData] =useState({
+        email:'',
+        password1:'',
+        password2:'',
+        name:'',
+        surname:'',
+        nick:''
+    })
+
+    const handleChange1 = (e) =>{
+        const value = e.target.value
+        setData({
+            ...data,
+            [e.target.name]: value
+        })
+    }
+
+    const fetchSignUp = async()=>{
+        const userData = {
+            email:data.email,
+            password1:data.password1,
+            password2:data.password2,
+            name:data.name,
+            nick:data.nick,
+            surname:data.surname
+        }
+
+    }
+
 
     const [data2, setData2] = useState({
         email: '',
@@ -43,40 +76,104 @@ function Register() {
             email: data2.email,
             password: data2.password
         }
-        axios.post(`${setting.SERVER}/api/user/login`, userData)
-        .then(res =>{
-            console.log(res,'res')
-            if(res.data.status === 200){
-            const Link = document.location
-            const Cookies = new Cookies
-            Cookies.set('token',`${res.data.token}`,)
-            }
-        }).catch(err=>{console.log(err,'err')})
+        if (data2.email !== '' && data2.password !== '') {
+            axios.post(`${setting.SERVER}/api/user/login`, userData)
+                .then(res => {
+                    console.log(res, 'res')
+                    if (res.status === 200) {
+                        const link = document.location.pathname = '/'
+                        const Cookies = new Cookies
+                        Cookies.set('token', `${res.data.token}`, link())
+                        console.log('----', Cookies)
+                    }
+                }).catch(err => {
+                    console.log(err, 'err')
+                    if (err.request.status === 404) {
+                        console.log('email tapylmady')
+                        toast.error('user tapylmady', {
+                           
+                            autoClose: 2000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "colored",
+                        });
+                    } else if (err.request.status === 400) {
+                        console.log('email tapylmady')
+                        toast.error('kod yalnysh', {
+                            
+                            autoClose: 2000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "colored",
+                        });
+                    }
+
+                })
+        }
+        else if (data2.email === '') {
+            toast.error('email doldur ', {
+                
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+        }
+        else if (data2.password === '') {
+            toast.error('password doldur ', {
+                
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+        }
     }
 
-    // const fetchLogIn = async () => {
-    //     let body = {
-    //         email: '',
-    //         password: ''
-    //     }
-
-    //     body['email'] = document.getElementById('sign_email').value
-    //     body['password'] = document.getElementById('sign_pass').value
-    //     if (body['email'] !== '' || body['password'] !== '') {
-    //         await axios.post(`${setting.SERVER}/api/user/login`, {
-    //             email: body.email,
-    //             password: body.password
-    //         }).then(res => {
-    //             console.log('res', res)
-    //         }).catch(err => {
-    //             console.log(err)
-    //         })
-    //     }
-    // }
 
 
     return (
         <>
+            <div className='md:hidden block'>
+                <ToastContainer
+                    position="top-center"
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="colored"
+                />
+            </div>
+            <div className='md:block hidden'>
+                <ToastContainer
+                    position="bottom-left"
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="colored"
+                />
+            </div>
             <div className='w-full '>
                 <div className={click ? 'hidden ' : 'block '}>
                     <div className='md:flex '>
@@ -144,27 +241,27 @@ function Register() {
                         <div className={click ? 'md:w-[50%] md:pt-0 pt-8 w-full flex items-center bg-[#fff] translate-x-[0%] duration-300 delay-100 ease-in-out transition-all' : 'opacity-0 translate-x-[-50%] duration-300 delay-100 ease-in-out transition-all md:w-[50%] w-full flex items-center bg-[#fff] '}>
                             <div className='flex justify-center w-full'>
                                 <div>
-                                    
-                                        <div className='mb-4 flex '>
-                                            <div className='w-[10%] flex items-center'>
-                                                <Link to='/'>
-                                                    <img src='./image/arrowl.png' className=' w-[5vw] h-[5vw] md:w-[1.5vw] md:h-[1.5vw]' />
-                                                </Link>
-                                            </div>
-                                            <div className='w-[90%] '>
-                                                <h3 className='font-bold md:text-[1.5vw] text-[5.5vw] flex justify-center'>Hasaba gir</h3>
-                                            </div>
-                                        </div>
 
-                                        <div>
-                                            <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'> email</p>
-                                            <input type='text' name='email' onChange={handleChange} value={data2.email} id='sign_email' placeholder='Atamyrat' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                    <div className='mb-4 flex '>
+                                        <div className='w-[10%] flex items-center'>
+                                            <Link to='/'>
+                                                <img src='./image/arrowl.png' className=' w-[5vw] h-[5vw] md:w-[1.5vw] md:h-[1.5vw]' />
+                                            </Link>
                                         </div>
-                                        <div>
-                                            <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'>Parol</p>
-                                            <input type='password' name='password' onChange={handleChange} value={data2.password} id='sign_pass' placeholder='Açar sözi' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                        <div className='w-[90%] '>
+                                            <h3 className='font-bold md:text-[1.5vw] text-[5.5vw] flex justify-center'>Hasaba gir</h3>
                                         </div>
-                               
+                                    </div>
+
+                                    <div>
+                                        <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'> email</p>
+                                        <input type='text' name='email' onChange={handleChange} value={data2.email} id='sign_email' placeholder='Atamyrat' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                    </div>
+                                    <div>
+                                        <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'>Parol</p>
+                                        <input type='password' name='password' onChange={handleChange} value={data2.password} id='sign_pass' placeholder='Açar sözi' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                    </div>
+
                                     {/* <div className='flex'>
                                  <input type='checkbox' className='ml-2' />
                                  <p className='md:text-[.8vw] ml-2'>Düzgünnamany okadym we kabul etdim</p>    </div> */}
