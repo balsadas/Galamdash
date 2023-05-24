@@ -15,16 +15,16 @@ import 'react-toastify/dist/ReactToastify.css';
 function Register() {
     const [click, setClick] = useState(false)
     const [selection, setSelection] = useState('')
-    const [visibility,setVisibility] =useState(false)
+    const [visibility, setVisibility] = useState(false)
 
     const Enter = (e) => {
         var key = e.keyCode || e.which;
         if (key === 13) { // Клавиша Enter
             if (e.target.id === 'sign_email' || e.target.id === 'sign_pass') {
                 fetchLogIn()
-            } else if(e.target.id === 'signUp_email' || e.target.id === 'signUp_pass1' || e.target.id === "signUp_pass2" || e.target.id === 'signUp_user' || e.target.id === "signUp_name" || e.target.id === 'signUp_surname') {
+            } else if (e.target.id === 'signUp_email' || e.target.id === 'signUp_pass1' || e.target.id === "signUp_pass2" || e.target.id === 'signUp_user' || e.target.id === "signUp_name" || e.target.id === 'signUp_surname') {
                 fetchSignUp()
-            }else {
+            } else {
                 console.log('Enter', e.target.id)
             }
         }
@@ -57,24 +57,24 @@ function Register() {
             name: data.name,
             nick: data.nick,
             surname: data.surname,
-            type:data.type
+            type: data.type
 
         }
-        axios.post(`${setting.SERVER}/api/user/registry`,userData)
-        .then(res=>{
-            console.log('res geldi',res)
-            if(res.status === 200){
-                const link =document.location.pathname='/'
-                const Cookies= new Cookies
-                Cookies.set('token',`${res.data.token}`,link())
-                console.log('---',Cookies)
-            }
-           
-        })
-        .catch(err =>{
-            console.log(err,'err')
-            
-        })
+        axios.post(`${setting.SERVER}/api/user/registry`, userData)
+            .then(res => {
+                console.log('res geldi', res)
+                if (res.status === 200) {
+                    const link = document.location.pathname = '/'
+                    const Cookies = new Cookies
+                    Cookies.set('token', `${res.data.token}`, link())
+                    console.log('---', Cookies)
+                }
+
+            })
+            .catch(err => {
+                console.log(err, 'err')
+
+            })
     }
 
 
@@ -217,26 +217,27 @@ function Register() {
                                     </div>
                                     <div>
                                         <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'>At</p>
-                                        <input name='name' value={data.name} onChange={handleChange1} id='signUp_name' type='text' placeholder='Atamyrat' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                        <input name='name' value={data.name} onChange={handleChange1} id='signUp_name' type='text' placeholder='Atamyrat' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[100%] w-full focus:bg-[#E8F8F5]' />
                                     </div>
                                     <div>
                                         <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'>Familiýa</p>
-                                        <input type='text' name='surname' value={data.surname} onChange={handleChange1} id='signUp_surname' placeholder='Atamyradow' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                        <input type='text' name='surname' value={data.surname} onChange={handleChange1} id='signUp_surname' placeholder='Atamyradow' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[100%] w-full focus:bg-[#E8F8F5]' />
                                     </div>
                                     <div>
                                         <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'>Email</p>
-                                        <input type='email' name='email' value={data.email} onChange={handleChange1} id='signUp_email' placeholder='atamyrat@gmail.com' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                        <input type='email' name='email' value={data.email} onChange={handleChange1} id='signUp_email' placeholder='atamyrat@gmail.com' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[100%] w-full focus:bg-[#E8F8F5]' />
                                     </div>
-                                    <div className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'>
+                                    <div className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 '>
                                         <p className='font-bold md:text-[1vw] mb-1'>Ulanyjy ady</p>
-                                        <input type='text' name='nick' value={data.nick} onChange={handleChange1} id='signUp_user' placeholder='@atamyradow' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                        <input type='text' name='nick' value={data.nick} onChange={handleChange1} id='signUp_user' placeholder='@atamyradow' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[100%] w-full focus:bg-[#E8F8F5]' />
                                     </div>
-                                    <div>
-
-                                        <input name='password1' value={data.password1} onChange={handleChange1} id='signUp_pass1' type='password' placeholder='Açar sözi' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                    <div className='flex md:mb-2 mb-4'>
+                                        <input name='password2' value={data.password2} onChange={handleChange1} id='signUp_pass2' type={visibility ? 'text' : 'password'} placeholder='Açar sözi tassykla' className='border-t border-l border-b  rounded-l-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                        <div className='border-r border-b border-t  rounded-r-md flex items-center border-l' onClick={() => { setVisibility(!visibility) }}> {visibility ? <img src='./image/visibility.png' className='  md:p-1 p-2  w-[13vw] h-[13vw]  md:w-[3vw] md:h-[3vw] ' /> : <img src='./image/visible.png' className='md:w-[3vw] w-[13vw] h-[13vw] md:p-1  p-2 md:h-[3vw] ' />}</div>
                                     </div>
-                                    <div>
-                                        <input name='password2' value={data.password2} onChange={handleChange1} id='signUp_pass2' type='password' placeholder='Açar sözi tassykla' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                    <div className='flex md:mb-2 mb-4'>
+                                        <input name='password2' value={data.password2} onChange={handleChange1} id='signUp_pass2' type={visibility ? 'text' : 'password'} placeholder='Açar sözi tassykla' className='border-t border-l border-b  rounded-l-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                        <div className='border-r border-b border-t  rounded-r-md flex items-center border-l' onClick={() => { setVisibility(!visibility) }}> {visibility ? <img src='./image/visibility.png' className='  md:p-1 p-2  w-[13vw] h-[13vw]  md:w-[3vw] md:h-[3vw] ' /> : <img src='./image/visible.png' className='md:w-[3vw] w-[13vw] h-[13vw] md:p-1  p-2 md:h-[3vw] ' />}</div>
                                     </div>
                                     <div>
                                         <select onChange={(e) => setSelection(e.target.value)} required name='sayla' className='md:w-full w-full px-2 py-1 border-slate-300 rounded-md border font-bold mb-2'>
@@ -251,7 +252,7 @@ function Register() {
                                         <p className='md:text-[.8vw] text-[3vw] ml-2'>Düzgünnamany okadym we kabul etdim</p>
                                     </div>
                                     <div className='w-full flex justify-center' >
-                                        <button type='submit' onKeyPress={()=>Enter()} onClick={()=>fetchSignUp()} className='border md:w-[80%] w-full mt-3 p-1 rounded-md md:text-[1.2vw] text-[4.5vw] bg-[#19a056] text-[#fff] font-bold'>Hasap döret</button>
+                                        <button type='submit' onKeyPress={() => Enter()} onClick={() => fetchSignUp()} className='border md:w-[80%] w-full mt-3 p-1 rounded-md md:text-[1.2vw] text-[4.5vw] bg-[#19a056] text-[#fff] font-bold'>Hasap döret</button>
                                     </div>
                                     <p className='md:text-[.8vw] text-[3.5vw] mt-2 flex justify-center select-none  text-gray-400'>hasabyňyz barmy? <span className='ml-1 cursor-pointer text-[green]' onClick={() => setClick(!click)}>hasaba giriň</span></p>
                                 </div>
@@ -285,21 +286,21 @@ function Register() {
 
                                     <div>
                                         <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'> email</p>
-                                        <input type='text' name='email' onChange={handleChange} value={data2.email} id='sign_email' placeholder='Atamyrat' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                        <input type='text' name='email' onChange={handleChange} value={data2.email} id='sign_email' placeholder='Atamyrat' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[100%] w-full focus:bg-[#E8F8F5]' />
                                     </div>
                                     <div>
                                         <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'>Parol</p>
                                         <div className='flex'>
-                                            <input type={visibility ? 'text' : 'password'} name='password' onChange={handleChange} value={data2.password} id='sign_pass' onKeyPress={(e) => { Enter(e) }} placeholder='Açar sözi'  className='border-l border-b border-t  rounded-l-md px-2 py-1 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                            <input type={visibility ? 'text' : 'password'} name='password' onChange={handleChange} value={data2.password} id='sign_pass' onKeyPress={(e) => { Enter(e) }} placeholder='Açar sözi' className='border-l border-b border-t  rounded-l-md px-2 py-1 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
                                             <div className='border-r border-b border-t  rounded-r-md flex items-center border-l' onClick={() => { setVisibility(!visibility) }}> {visibility ? <img src='./image/visibility.png' className='  md:p-1 p-2  w-[13vw] h-[13vw]  md:w-[3vw] md:h-[3vw] ' /> : <img src='./image/visible.png' className='md:w-[3vw] w-[13vw] h-[13vw] md:p-1  p-2 md:h-[3vw] ' />}</div>
-                                        </div>                                        
+                                        </div>
                                     </div>
 
                                     {/* <div className='flex'>
                                  <input type='checkbox' className='ml-2' />
                                  <p className='md:text-[.8vw] ml-2'>Düzgünnamany okadym we kabul etdim</p>    </div> */}
                                     <div className='w-full flex justify-center' >
-                                        <button type='submit' onKeyPress={()=>Enter()} onClick={() => fetchLogIn()} className='border md:w-[80%] w-[90%] mt-3 p-1 rounded-md md:text-[1.2vw] text-[4.5vw] bg-[#19a056] text-[#fff] font-bold'>Gir</button>
+                                        <button type='submit' onKeyPress={() => Enter()} onClick={() => fetchLogIn()} className='border md:w-[80%] w-[90%] mt-3 p-1 rounded-md md:text-[1.2vw] text-[4.5vw] bg-[#19a056] text-[#fff] font-bold'>Gir</button>
                                     </div>
 
                                     <p className=' select-none md:text-[.8vw] text-[3.5vw] mt-2 flex justify-center text-gray-400' >hasabyňyz yokmy? <span onClick={() => setClick(!click)} className='ml-1 cursor-pointer text-[green]'>hasap aç</span></p>
