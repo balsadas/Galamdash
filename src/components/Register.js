@@ -26,13 +26,20 @@ function Register() {
     const fetchLogIn = async () => {
         let body = {
             email: '',
-            password:''
+            password: ''
         }
 
-        body['email']= document.getElementById('sign_email').value
+        body['email'] = document.getElementById('sign_email').value
         body['password'] = document.getElementById('sign_pass').value
-        if(body['email'] !== '' || body['password'] !== ''){
-            axios.post(`${setting.SERVER}/api/user/login`)
+        if (body['email'] !== '' || body['password'] !== '') {
+            await axios.post(`${setting.SERVER}/api/user/login`, {
+                email: body.email,
+                password: body.password
+            }).then(res => {
+                console.log('res', res)
+            }).catch(err => {
+                console.log(err)
+            })
         }
     }
 
@@ -119,7 +126,7 @@ function Register() {
                                     <form onSubmit={handleSubmit}>
                                         <div>
                                             <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'> email</p>
-                                            <input  type='text'  id='sign_email' placeholder='Atamyrat' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                            <input type='text' id='sign_email' placeholder='Atamyrat' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
                                         </div>
                                         <div>
                                             <p className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 ml-2'>Parol</p>
