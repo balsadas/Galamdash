@@ -46,8 +46,11 @@ function Register() {
         axios.post(`${setting.SERVER}/api/user/login`, userData)
         .then(res =>{
             console.log(res,'res')
+            if(res.data.status === 200){
+            const Link = document.location
             const Cookies = new Cookies
-            Cookies.set('token')
+            Cookies.set('token',`${res.data.token}`,)
+            }
         }).catch(err=>{console.log(err,'err')})
     }
 
