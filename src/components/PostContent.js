@@ -18,7 +18,7 @@ const MainPost = ({ kat }) => {
     const [like, setLike] = useState({ num: '0', img: './photo/heart.png' })
     const [comment, setComment] = useState({ num: '0', img: './photo/comment.png' })
     const [view, setView] = useState({ num: '0', img: './photo/bar-chart.png' })
-    const [f, setF] = useState(false)
+
 
     useEffect(() => {
         countFetch()
@@ -34,11 +34,10 @@ const MainPost = ({ kat }) => {
         change = view
         change.num = res.data.view.count
         setView(change)
-        setF(true)
     }
 
 
-    return f && <div className='group' >
+    return (<div className='group' >
         <motion.li
             className='mt-6 bg-[#ffffffe0] shadow-xl rounded-xl md:px-8 md:py-7 px-6 py-5 group-hover:mt-[2rem] group-hover:mb-[2rem] cursor-pointer'>
             <motion.div
@@ -85,7 +84,7 @@ const MainPost = ({ kat }) => {
                 </div>
             </motion.div>
         </motion.li>
-    </div>
+    </div>)
 }
 
 export default MainPost
