@@ -55,14 +55,14 @@ function Paper() {
         if (catgeory != 0) {
             result = await axios.get(`${setting.SERVER}/api/category/${catgeory}`)
         } else {
-            result = await axios.get(`${setting.SERVER}/api/post?all=true`)
+            result = await axios.get(`${setting.SERVER}/api/random`)
         }
         setKat(result.data)
     }
     return (
         <div className=' md:px-3 md:py-5 mb-5 md:mb-0    overflow-hidden ' >
             <ul>
-                
+
                 {Kat.map((kat, i) => (kat &&
                     <Link to={`/IntoPaper/${kat.id}`} key={i}>
                         <PostContent kat={kat} />
