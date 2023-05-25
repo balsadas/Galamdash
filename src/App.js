@@ -21,7 +21,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/IntoPaper/:postID' element={<IntoPaper name={name} surname={surname} date={date} title={title} img={img} />} />
+          <Route path='/IntoPaper/:postID' element={<IntoPaper />} />
           <Route path='/Profile' element={<Profile />} />
           <Route path='/Register' element={<Register />} />
           <Route path='*' element={<div>404</div>} />
