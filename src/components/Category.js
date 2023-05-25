@@ -1,33 +1,34 @@
 import React, { useState } from 'react';
 
-// const kati = [
-//     { id: 1, text: 'Poeziya' },
-//     { id: 2, text: 'Proza' },
-//     { id: 3, text: 'Terjime' },
-//     { id: 4, text: 'Sonky gosulanlar' },
-//     { id: 5, text: 'Nukdar we Nazaryyet' },
-//     { id: 6, text: 'Makala' },
-//     { id: 7, text: 'Tazelikler' },
-//     { id: 8, text: 'Sonky gosulanlar' },
-//     { id: 9, text: 'Poeziya' },
-//     { id: 10, text: 'Proza' },
-//     { id: 11, text: 'Terjime' },
-//     { id: 12, text: 'Omri we doredijiligi' },
-//     { id: 13, text: 'Nukdar we Nazaryyet' },
-//     { id: 14, text: 'Makala' },
-//     { id: 15, text: 'Tazelikler' },
-//     { id: 16, text: 'Omri we doredijiligi' }
-// ]
+const kati = [
+    { id: 1, text: 'Poeziya' },
+    { id: 2, text: 'Proza' },
+    { id: 3, text: 'Terjime' },
+    { id: 4, text: 'Sonky gosulanlar' },
+    { id: 5, text: 'Nukdar we Nazaryyet' },
+    { id: 6, text: 'Makala' },
+    { id: 7, text: 'Tazelikler' },
+    { id: 8, text: 'Sonky gosulanlar' },
+    { id: 9, text: 'Poeziya' },
+    { id: 10, text: 'Proza' },
+    { id: 11, text: 'Terjime' },
+    { id: 12, text: 'Omri we doredijiligi' },
+    { id: 13, text: 'Nukdar we Nazaryyet' },
+    { id: 14, text: 'Makala' },
+    { id: 15, text: 'Tazelikler' },
+    { id: 16, text: 'Omri we doredijiligi' }
+]
 
 
-const [data,setData] = useState([])
+
+
+
+function Category({click}) {
+    const [data,setData] = useState([])
 
 const fetchCat = async ()=>{
     
 }
-
-
-function Category({click}) {
 
     return (
         <div >
