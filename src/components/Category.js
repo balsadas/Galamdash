@@ -3,11 +3,7 @@ import React, { useState } from 'react';
 
 
 function Category({click,data}) {
-    const [data,setData]=useState([])
-
-    const fetchCat = async() =>{
-        
-    }
+ 
     return (
         <div >
             <div>

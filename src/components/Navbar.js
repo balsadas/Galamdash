@@ -4,6 +4,11 @@ import Category from './Category';
 import Search from './Search';
 
 function Navbar() {
+  const [data,setData]=useState([])
+
+  const fetchCat = async() =>{
+      
+  }
  
   const kat = [
     { id: 1, text: "Şahyrlar" },
@@ -25,17 +30,7 @@ function Navbar() {
             <img src='./image/hamburger.png' className='text-[white] mr-2 md:w-[2vw] md:h-[2vw] w-[5vw] h-[5vw]'  />
             <h4 className={click ? 'p-1 font-[500] md:text-[1vw] text-[2vw] text-[white]' : 'text-[white] md:text-[1vw] text-[2.5vw] font-bold'}>Ähli Bölümler</h4>
           </div>
-          <div className='md:flex hidden items-center '>
-            <ul className='flex ml-3'>
-              {kat.map((kat, index) => (
-                <li
-                  key={index}
-                  className='mr-2 text-[white] font-bold cursor-pointer md:hidden lg:block hover:underline hover:scale-125 hover:mr-6 hover:ml-3 transition-all delay-150 duration-500 ease-in-out text-[1vw]'>
-                  {kat.text}
-                </li>
-              ))}
-            </ul>
-          </div>
+
         </div>
         <div className='flex '>
           <div className='flex  items-center cursor-pointer  hover:-translate-y-1 hover:scale-110 transition-all duration-500 ease-in'>
