@@ -53,7 +53,8 @@ function IntoPaper() {
 
 
     }
-    return (Post && (
+
+    return (Post &&
         <>
             <NavSearch />
             <div className='bg-[#fff] flex justify-center md:pt-[7rem] pt-[6rem]'>
@@ -120,7 +121,7 @@ function IntoPaper() {
                 <Footer />
             </div>
         </>
-    ))
+    )
 }
 
 export default IntoPaper;
