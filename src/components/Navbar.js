@@ -6,21 +6,21 @@ import setting from '../setting.json'
 import axios from 'axios';
 
 function Navbar() {
-  const [data, setData] = useState([])
-
-  const fetchCat = async () => {
-    const Cat = axios.get(`${setting.SERVER}/api/category`)
-    .then((res)=>{
-      console.log(res,'res geldi')
-      setData(Cat.data)
-    })
-    .catch((err=>{console.log(err,'error')}))
-    
+  const [categoryData,setCategoryData] = useState([])
+  console.log(categoryData)
+  const categoryFetch = async ()=>{
+    try{
+      const fetcha = await axios.get(`${setting.SERVER}/api/category`)
+      setCategoryData(fetcha.data)
+      
+    }
+    catch(error){}
   }
-console.log(setData,'fdghtrs')
-  useEffect(() => {
-    fetchCat()
-  }, [])
+  useEffect(()=>{
+    categoryFetch()
+  },[])
+ 
+
 
   const kat = [
     { id: 1, text: "Şahyrlar" },
@@ -59,7 +59,7 @@ console.log(setData,'fdghtrs')
 
           </div>
         </div>
-        {click ? <div className=' shadow-md bg-[white] rounded-xl absolute'><Category data={data} /></div> : <div></div>}
+        {click ? <div className=' shadow-md bg-[white] rounded-xl absolute'><Category data={categoryData} /></div> : <div></div>}
         {click1 ? <div className=' w-full shadow-md bg-[#ffffffe0] rounded-xl p-4'><Search /></div> : <div></div>}
       </div>
     </>

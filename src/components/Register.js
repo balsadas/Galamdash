@@ -66,7 +66,7 @@ function Register() {
                     console.log('res geldi', res)
                     if (res.status === 200) {
                         const link = document.location.pathname = '/'
-                        const Cookies = new Cookies
+                        const Cookies = new Cookies()
                         Cookies.set('token', `${res.data.token}`, link())
                         console.log('---', Cookies)
                     }

@@ -64,7 +64,7 @@ const MainPost = ({ kat }) => {
                         </ul>
                     </div>
                     <div className='md:w-[20%] w-full md:mt-0 mt-5 '>
-                        <ul className='flex justify-start items-end ' >
+                        <ul className='flex justify-end items-end ' >
 
                             <li className='flex mr-3 items-center '>
                                 <img src={like.img} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
