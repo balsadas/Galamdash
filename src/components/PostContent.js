@@ -15,9 +15,9 @@ const Shortendtext = (text, maxLength) => {
 
 const MainPost = ({ kat }) => {
 
-    const [like, setLike] = useState({ num: '0', img: './photo/heart.png' })
-    const [comment, setComment] = useState({ num: '0', img: './photo/comment.png' })
-    const [view, setView] = useState({ num: '0', img: './photo/bar-chart.png' })
+    const [like, setLike] = useState(0)
+    const [comment, setComment] = useState(0)
+    const [view, setView] = useState(0)
 
 
     useEffect(() => {
@@ -25,15 +25,9 @@ const MainPost = ({ kat }) => {
     }, [])
     const countFetch = async () => {
         let res = await axios.get(`${setting.SERVER}/api/count/${kat.id}`)
-        let change = like
-        change.num = res.data.like.count
-        setLike(change)
-        change = comment
-        change.num = res.data.comment.count
-        setComment(change)
-        change = view
-        change.num = res.data.view.count
-        setView(change)
+        setLike(res.data.like.count)
+        setComment(res.data.comment.count)
+        setView(res.data.view.count)
     }
 
 
@@ -67,16 +61,16 @@ const MainPost = ({ kat }) => {
                         <ul className='flex justify-start items-end ' >
 
                             <li className='flex mr-3 items-center '>
-                                <img src={like.img} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
-                                <p className='text-[#6B7280] ml-1 md:text-[.9vw] text-[3vw] select-none'>{like.num}</p>
+                                <img src={'./photo/heart.png'} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
+                                <p className='text-[#6B7280] ml-1 md:text-[.9vw] text-[3vw] select-none'>{like}</p>
                             </li>
                             <li className='flex mr-3 items-center '>
-                                <img src={comment.img} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
-                                <p className='text-[#6B7280] ml-1 md:text-[.9vw] text-[3vw] select-none'>{comment.num}</p>
+                                <img src={'./photo/comment.png'} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
+                                <p className='text-[#6B7280] ml-1 md:text-[.9vw] text-[3vw] select-none'>{comment}</p>
                             </li>
                             <li className='flex mr-3 items-center '>
-                                <img src={view.img} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
-                                <p className='text-[#6B7280] ml-1 md:text-[.9vw] text-[3vw] select-none'>{view.num}</p>
+                                <img src={'./photo/bar-chart.png'} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
+                                <p className='text-[#6B7280] ml-1 md:text-[.9vw] text-[3vw] select-none'>{view}</p>
                             </li>
 
                         </ul>
