@@ -26,7 +26,7 @@ const com = [
 
 
 
-function IntoPaper({ img, date, name, surname, title }) {
+function IntoPaper() {
     const [Post, setPost] = useState()
     const [Views, setViews] = useState(0)
     const [Likes, setLikes] = useState(0)
