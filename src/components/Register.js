@@ -63,18 +63,12 @@ function Register() {
                 .then(res => {
                     if (res.status === 200) {
                         const link = document.location.pathname = '/'
-<<<<<<< HEAD
-                        const Cookies = new Cookies()
-                        Cookies.set('token', `${res.data.token}`, link())
-                        console.log('---', Cookies)
-=======
                         const cookie = new Cookies()
                         for (const key in res.data) {
                             console.log(key)
                             cookie.set(key, res.data[key].toString())
                         }
                         link()
->>>>>>> 7c3a5061fc332cc1120f585545fdea98c68513c3
                     }
 
                 })
