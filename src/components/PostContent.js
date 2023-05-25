@@ -39,9 +39,9 @@ const MainPost = ({ kat }) => {
 
 
     return f && <div className='group' >
-        <motion.li
+        <li
             className='mt-6 bg-[#ffffffe0] shadow-xl rounded-xl md:px-8 md:py-7 px-6 py-5 group-hover:mt-[2rem] group-hover:mb-[2rem] cursor-pointer'>
-            <motion.div
+            <div
             >
                 <div className='flex items-center mb-3'>
                     <img src={`${setting.SERVER}/${kat.User.img}`} className='object-cover rounded-full md:h-[3vw] md:w-[3vw] w-[8vw] h-[8vw] ' />
@@ -83,8 +83,8 @@ const MainPost = ({ kat }) => {
                         </ul>
                     </div>
                 </div>
-            </motion.div>
-        </motion.li>
+            </div>
+        </li>
     </div>
 }
 

@@ -60,21 +60,103 @@ function Register() {
             type: data.type
 
         }
-        axios.post(`${setting.SERVER}/api/user/registry`, userData)
-            .then(res => {
-                console.log('res geldi', res)
-                if (res.status === 200) {
-                    const link = document.location.pathname = '/'
-                    const Cookies = new Cookies
-                    Cookies.set('token', `${res.data.token}`, link())
-                    console.log('---', Cookies)
-                }
+        if (data.email !== '' || data.name !== '' || data.nick !== '' || data.password1 !== '' || data.password2 !== '' || data.surname !== '' || data.type !== '') {
+            axios.post(`${setting.SERVER}/api/user/registry`, userData)
+                .then(res => {
+                    console.log('res geldi', res)
+                    if (res.status === 200) {
+                        const link = document.location.pathname = '/'
+                        const Cookies = new Cookies
+                        Cookies.set('token', `${res.data.token}`, link())
+                        console.log('---', Cookies)
+                    }
 
-            })
-            .catch(err => {
-                console.log(err, 'err')
-
-            })
+                })
+                .catch(err => {
+                    console.log(err, 'err')
+                    if (err.request.status === 404) {
+                        toast.error('password dendal', {
+                            autoClose: 2000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "colored",
+                        });
+                    }
+                })
+        } else if (data.name === '') {
+            toast.error('ady doldur', {
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+        } else if (data.surname === '') {
+            toast.error('familyany doldur', {
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+        } else if (data.email === '') {
+            toast.error('email doldur', {
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+        } else if (data.nick === '') {
+            toast.error('ulanyjy adyny doldur', {
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+        } else if (data.password1 === '') {
+            toast.error('passwordy doldur', {
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+        } else if (data.password2 === '') {
+            toast.error('password  doldur', {
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+        } else if (data.type === '') {
+            toast.error('sayla ', {
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+        }
     }
 
 
@@ -229,10 +311,13 @@ function Register() {
                                     </div>
                                     <div className='font-bold md:text-[1vw] text-[4vw] md:mb-1 mb-2 '>
                                         <p className='font-bold md:text-[1vw] mb-1'>Ulanyjy ady</p>
-                                        <input type='text' name='nick' value={data.nick} onChange={handleChange1} id='signUp_user' placeholder='@atamyradow' className='border md:mb-2 mb-4 rounded-md p-2 md:w-[100%] w-full focus:bg-[#E8F8F5]' />
+                                        <div className='flex md:mb-2 mb-4'>
+                                            <p className='border-l border-t border-b p-2 bg-[#868d9ad8] rounded-l-md flex justify-center items-center'>@</p>
+                                            <input type='text' name='nick' value={data.nick} onChange={handleChange1} id='signUp_user' placeholder='@atamyradow' className='border-r border-t border-b  rounded-r-md p-2 md:w-[100%] w-full focus:bg-[#E8F8F5]' />
+                                        </div>
                                     </div>
                                     <div className='flex md:mb-2 mb-4'>
-                                        <input name='password2' value={data.password2} onChange={handleChange1} id='signUp_pass2' type={visibility ? 'text' : 'password'} placeholder='Açar sözi tassykla' className='border-t border-l border-b  rounded-l-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
+                                        <input name='password1' value={data.password1} onChange={handleChange1} id='signUp_pass1' type={visibility ? 'text' : 'password'} placeholder='Açar sözi tassykla' className='border-t border-l border-b  rounded-l-md p-2 md:w-[25vw] w-[80vw] focus:bg-[#E8F8F5]' />
                                         <div className='border-r border-b border-t  rounded-r-md flex items-center border-l' onClick={() => { setVisibility(!visibility) }}> {visibility ? <img src='./image/visibility.png' className='  md:p-1 p-2  w-[13vw] h-[13vw]  md:w-[3vw] md:h-[3vw] ' /> : <img src='./image/visible.png' className='md:w-[3vw] w-[13vw] h-[13vw] md:p-1  p-2 md:h-[3vw] ' />}</div>
                                     </div>
                                     <div className='flex md:mb-2 mb-4'>
@@ -240,8 +325,8 @@ function Register() {
                                         <div className='border-r border-b border-t  rounded-r-md flex items-center border-l' onClick={() => { setVisibility(!visibility) }}> {visibility ? <img src='./image/visibility.png' className='  md:p-1 p-2  w-[13vw] h-[13vw]  md:w-[3vw] md:h-[3vw] ' /> : <img src='./image/visible.png' className='md:w-[3vw] w-[13vw] h-[13vw] md:p-1  p-2 md:h-[3vw] ' />}</div>
                                     </div>
                                     <div>
-                                        <select onChange={(e) => setSelection(e.target.value)} required name='sayla' className='md:w-full w-full px-2 py-1 border-slate-300 rounded-md border font-bold mb-2'>
-                                            <option value='error'>Sayla</option>
+                                        <select onChange={(e) => setSelection(e.target.value)} required name='nick' className='md:w-full w-full px-2 py-1 border-slate-300 rounded-md border font-bold mb-2'>
+                                            <option >Sayla</option>
                                             <option value='0'>Awtor</option>
                                             <option value='1'>okayjy</option>
 
