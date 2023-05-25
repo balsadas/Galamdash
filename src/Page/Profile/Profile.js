@@ -3,6 +3,8 @@ import Paper from '../../components/Paper';
 import ChangeProfile from './ChangeProfile';
 import Footer from '../../components/Footer';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import setting from '../../setting.json'
 
 
 const pos = [
@@ -15,6 +17,15 @@ const pos = [
 function Profile() {
     const [click, setClick] = useState(0)
     const [change, setChange] = useState(false)
+    const [data,setData]=useState([])
+
+    const fetchProfile = async () =>{
+      try{
+        const Profile = await axios.get(`${setting.SERVER}/api/user/my`)
+        setData(Profile.data)
+      }
+      catch(err){}
+    }
     return (
         <>
             <div >
