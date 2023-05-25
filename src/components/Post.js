@@ -67,7 +67,6 @@ function Post() {
 
     const fetchnewposts = async () => {
         await axios.get(`${setting.SERVER}/api/post`).then((res) => {
-            console.log(res.data)
             setPost(res.data)
         }).catch((err) => {
             console.log(err)

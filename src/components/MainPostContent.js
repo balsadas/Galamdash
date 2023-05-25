@@ -29,7 +29,6 @@ const MainPostContent = ({ post }) => {
         setComment(res.data.comment.count)
         setView(res.data.view.count)
     }
-    console.log(view, like, comment)
     return <motion.li
         initial="hidden"
         whileInView="visible"

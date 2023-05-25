@@ -6,20 +6,19 @@ import setting from '../setting.json'
 import axios from 'axios';
 
 function Navbar() {
-  const [categoryData,setCategoryData] = useState([])
-  console.log(categoryData)
-  const categoryFetch = async ()=>{
-    try{
+  const [categoryData, setCategoryData] = useState(['Esasy'])
+  const categoryFetch = async () => {
+    try {
       const fetcha = await axios.get(`${setting.SERVER}/api/category`)
-      setCategoryData(fetcha.data)
-      
+      console.log(fetcha.data)
+      setCategoryData(category.concat(fetcha.data))
     }
-    catch(error){}
+    catch (error) { }
   }
-  useEffect(()=>{
+  useEffect(() => {
     categoryFetch()
-  },[])
- 
+  }, [])
+
 
 
   const kat = [
