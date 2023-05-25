@@ -37,8 +37,7 @@ function Register() {
         password2: '',
         name: '',
         surname: '',
-        nick: '',
-        type: selection
+        nick: ''
     })
 
     const handleChange1 = (e) => {
@@ -57,18 +56,19 @@ function Register() {
             name: data.name,
             nick: data.nick,
             surname: data.surname,
-            type: data.type
-
+            type: selection
         }
         if (data.email !== '' || data.name !== '' || data.nick !== '' || data.password1 !== '' || data.password2 !== '' || data.surname !== '' || data.type !== '') {
             axios.post(`${setting.SERVER}/api/user/registry`, userData)
                 .then(res => {
-                    console.log('res geldi', res)
                     if (res.status === 200) {
                         const link = document.location.pathname = '/'
-                        const Cookies = new Cookies
-                        Cookies.set('token', `${res.data.token}`, link())
-                        console.log('---', Cookies)
+                        const cookie = new Cookies()
+                        for (const key in res.data) {
+                            console.log(key)
+                            cookie.set(key, res.data[key].toString())
+                        }
+                        link()
                     }
 
                 })
@@ -183,12 +183,13 @@ function Register() {
         if (data2.email !== '' && data2.password !== '') {
             axios.post(`${setting.SERVER}/api/user/login`, userData)
                 .then(res => {
-                    console.log(res, 'res')
                     if (res.status === 200) {
                         const link = document.location.pathname = '/'
-                        const Cookies = new Cookies
-                        Cookies.set('token', `${res.data.token}`, link())
-                        console.log('----', Cookies)
+                        const cookie = new Cookies()
+                        for (const key in res.data) {
+                            cookie.set(key, res.data[key].toString())
+                        }
+                        link()
                     }
                 }).catch(err => {
                     console.log(err, 'err')
@@ -325,11 +326,10 @@ function Register() {
                                         <div className='border-r border-b border-t  rounded-r-md flex items-center border-l' onClick={() => { setVisibility(!visibility) }}> {visibility ? <img src='./image/visibility.png' className='  md:p-1 p-2  w-[13vw] h-[13vw]  md:w-[3vw] md:h-[3vw] ' /> : <img src='./image/visible.png' className='md:w-[3vw] w-[13vw] h-[13vw] md:p-1  p-2 md:h-[3vw] ' />}</div>
                                     </div>
                                     <div>
-                                        <select onChange={(e) => setSelection(e.target.value)} required name='nick' className='md:w-full w-full px-2 py-1 border-slate-300 rounded-md border font-bold mb-2'>
+                                        <select onChange={(e) => (setSelection(e.target.value))} required name='type' className='md:w-full w-full px-2 py-1 border-slate-300 rounded-md border font-bold mb-2'>
                                             <option >Sayla</option>
-                                            <option value='0'>Awtor</option>
-                                            <option value='1'>okayjy</option>
-
+                                            <option value='1'>Awtor</option>
+                                            <option value='0'>okayjy</option>
                                         </select>
                                     </div>
                                     <div className='flex'>
