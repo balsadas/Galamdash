@@ -2,12 +2,21 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import Category from './Category';
 import Search from './Search';
+import setting from '../setting.json'
+import { error } from 'console';
 
 function Navbar() {
   const [data,setData]=useState([])
 
   const fetchCat = async() =>{
-      
+      try{
+        const cat =await axios.get(`${setting.SERVER}/api/catergory`)
+        console.log(cat,'cat')
+        setData(cat)
+      }
+      catch{
+        
+      }
   }
  
   const kat = [
