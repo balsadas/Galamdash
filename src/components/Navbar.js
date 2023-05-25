@@ -9,15 +9,15 @@ function Navbar() {
   const [data, setData] = useState([])
 
   const fetchCat = async () => {
-    try {
-      const cat = await axios.get(`${setting.SERVER}/api/catergory`)
-      
-      setData(cat)
-    }
-    catch (error) {
-    }
+    const Cat = axios.get(`${setting.SERVER}/api/category`)
+    .then((res)=>{
+      console.log(res,'res geldi')
+      setData(Cat.data)
+    })
+    .catch((err=>{console.log(err,'error')}))
+    
   }
-console.log(data,'fdghtrs')
+console.log(setData,'fdghtrs')
   useEffect(() => {
     fetchCat()
   }, [])
