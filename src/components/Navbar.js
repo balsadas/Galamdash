@@ -5,16 +5,27 @@ import Search from './Search';
 import setting from '../setting.json'
 import axios from 'axios';
 
+const combine = (array1, array2) => {
+  for (let i = 0; i < array2.length; i++) {
+    array1.push(array2[i])
+  }
+  return array1
+}
+
+
 function Navbar() {
-  const [categoryData, setCategoryData] = useState(['Esasy'])
+  const [categoryData, setCategoryData] = useState([{ id: 0, title: 'Esasy' }])
   const categoryFetch = async () => {
     try {
       const fetcha = await axios.get(`${setting.SERVER}/api/category`)
-      console.log(fetcha.data)
-      setCategoryData(category.concat(fetcha.data))
+      console.log('in', fetcha.data)
+      if (fetcha.data.length > categoryData.length - 1) {
+        setCategoryData(combine(categoryData, fetcha.data))
+      }
     }
     catch (error) { }
   }
+  console.log(categoryData)
   useEffect(() => {
     categoryFetch()
   }, [])

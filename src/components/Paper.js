@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom';
 import setting from '../setting.json'
@@ -48,6 +48,7 @@ function Paper() {
     const [Kat, setKat] = useState([])
     const [catgeory, setCategory] = useState(cookie.get('category') || 0)
 
+
     useEffect(() => {
         fetch()
         setCategory(cookie.get('category'))
@@ -56,11 +57,9 @@ function Paper() {
     const fetch = async () => {
         let result = []
         if (catgeory != 0) {
-            console.log(1)
             result = await axios.get(`${setting.SERVER}/api/category/${catgeory}`)
             result = result.data.Posts
         } else {
-            console.log(2)
             result = await axios.get(`${setting.SERVER}/api/random`)
             result = result.data
         }

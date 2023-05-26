@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
 import '../input.css'
 import Navbar from './Navbar';
@@ -14,6 +14,8 @@ const flag = [
 function Nav() {
   const [click, setClick] = useState(0)
   const [dclick, setDclick] = useState(false)
+  
+ 
 
 
   var showdate = new Date();
