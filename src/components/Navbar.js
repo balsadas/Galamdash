@@ -5,21 +5,29 @@ import Search from './Search';
 import setting from '../setting.json'
 import axios from 'axios';
 
-function Navbar() {
-  const [categoryData,setCategoryData] = useState([])
-  console.log(categoryData)
-  const categoryFetch = async ()=>{
-    try{
-      const fetcha = await axios.get(`${setting.SERVER}/api/category`)
-      setCategoryData(fetcha.data)
-      
-    }
-    catch(error){}
+const combine = (array1, array2) => {
+  for (let i = 0; i < array2.length; i++) {
+    array1.push(array2[i])
   }
-  useEffect(()=>{
+  return array1
+}
+
+
+function Navbar({change,setChange}) {
+  const [categoryData, setCategoryData] = useState([{ id: 0, title: 'Esasy' }])
+  const categoryFetch = async () => {
+    try {
+      const fetcha = await axios.get(`${setting.SERVER}/api/category`)
+      if (fetcha.data.length > categoryData.length - 1) {
+        setCategoryData(combine(categoryData, fetcha.data))
+      }
+    }
+    catch (error) { }
+  }
+  useEffect(() => {
     categoryFetch()
-  },[])
- 
+  }, [])
+
 
 
   const kat = [
@@ -59,7 +67,9 @@ function Navbar() {
 
           </div>
         </div>
-        {click ? <div className=' shadow-md bg-[white] rounded-xl absolute'><Category data={categoryData} /></div> : <div></div>}
+        {click ? <div className=' shadow-md bg-[white] rounded-xl absolute'>
+          <Category data={categoryData} change={change} setChange={setChange}/>
+        </div> : <div></div>}
         {click1 ? <div className=' w-full shadow-md bg-[#ffffffe0] rounded-xl p-4'><Search /></div> : <div></div>}
       </div>
     </>

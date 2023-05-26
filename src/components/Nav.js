@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
 import '../input.css'
 import Navbar from './Navbar';
@@ -76,7 +76,7 @@ function Nav() {
           <img src='./image/Galamdas.jpg' className='select-none' />
         </div>
         <div  >
-          <Navbar />
+          <Navbar change={change} setChange={setChange} />
         </div>
       </div>
       <div className='w-[20%] hidden md:block'></div>

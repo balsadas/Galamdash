@@ -1,6 +1,10 @@
-import React from 'react';
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from 'react';
 
+import PostContent from '../components/MainPostContent.js'
+import axios from 'axios';
+import setting from '../setting.json'
+import time from '../time'
+import MainPostContent from '../components/MainPostContent.js';
 
 const post = [
     {
@@ -50,19 +54,25 @@ const com = [
     { id: 1, num: '23', img: './photo/bar-chart.png' },
     { id: 2, num: '13', img: './photo/heart.png' },
     { id: 3, num: '10', img: './photo/comment.png' },
-
 ]
 
-const ShortWord = ({ text, maxLength }) => {
-    if (text.length <= maxLength) {
-        return <>{text}</>
-    }
 
-    const shortWord = `${text.slice(0, maxLength)}...`
-    return <>{shortWord}</>
-}
 
 function Post() {
+    const [Post, setPost] = useState([])
+
+    useEffect(() => {
+        fetchnewposts()
+    }, [])
+
+    const fetchnewposts = async () => {
+        await axios.get(`${setting.SERVER}/api/post`).then((res) => {
+            setPost(res.data)
+        }).catch((err) => {
+            console.log(err)
+        })
+    }
+
     return (
         <div className='flex justify-center mt-[3rem]   '>
             <div className=' w-[90%]   '>
@@ -71,39 +81,8 @@ function Post() {
                 </div>
                 <ul className='rows-10   w-full flex justify-center '>
                     <div>
-                        {post.map((post, index) => (
-                            <motion.li
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, amount: 1 }}
-                            transition={{ delay: 0.2, duration: 0.5 }}
-                            variants={{
-                              hidden: { opacity: 0, y: -50 },
-                              visible: { opacity: 1, y: 0 },
-                            }}
-                             key={index} className="p-4 bg-[#ffffffe0] hover:scale-110 hover:mt-[2rem] duration-300 ease-in-out transition-all hover:mb-[2rem] w-full group cursor-pointer rounded-lg shadow-lg mt-3">
-                                <div className='flex justify-center relative  '>
-                                    <div className='absolute top-0 hidden   group-hover:flex rounded-b-md h-[2vw]  items-center px-4  bg-[#fefefe] '>
-                                        <ul className='flex justify-center'>
-                                            {com.map((com, i) => (
-                                                <li key={i} className='flex mr-2 items-center select-none'>
-                                                    <img src={com.img} className='w-[.7vw] h-[.7vw] ' />
-                                                    <p className='text-[#6B7280] ml-1 text-[.6vw]'>{com.num}</p>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                    <img src={post.img} className='object-cover w-[13vw] h-[12vw] rounded-lg select-none' />
-                                </div>
-                                <p className='font-[600] text-[1.2vw] mt-2 ml-[.7vw] select-none'><ShortWord text={post.text} maxLength={20} /></p>
-                                <div className='flex items-center justify-between mt-3'>
-                                    <div className='flex items-center select-none'>
-                                        <img src={post.img1} className='w-[1.5vw] h-[1.5vw] rounded-full object-cover' />
-                                        <p className='pl-1 text-[.7vw]'>{post.surname} {post.name}</p>
-                                        <p className='pl-1 text-[.7vw]'><span>.</span> {post.time}</p>
-                                    </div>
-                                </div>
-                            </motion.li>
+                        {Post.map((post, index) => (
+                            <MainPostContent key={index} post={post} />
                         ))}
                     </div>
                 </ul>
