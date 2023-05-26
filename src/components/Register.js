@@ -65,7 +65,6 @@ function Register() {
                         const link = document.location.pathname = '/'
                         const cookie = new Cookies()
                         for (const key in res.data) {
-                            console.log(key)
                             cookie.set(key, res.data[key].toString())
                         }
                         link()
