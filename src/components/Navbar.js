@@ -13,19 +13,17 @@ const combine = (array1, array2) => {
 }
 
 
-function Navbar() {
+function Navbar({change,setChange}) {
   const [categoryData, setCategoryData] = useState([{ id: 0, title: 'Esasy' }])
   const categoryFetch = async () => {
     try {
       const fetcha = await axios.get(`${setting.SERVER}/api/category`)
-      console.log('in', fetcha.data)
       if (fetcha.data.length > categoryData.length - 1) {
         setCategoryData(combine(categoryData, fetcha.data))
       }
     }
     catch (error) { }
   }
-  console.log(categoryData)
   useEffect(() => {
     categoryFetch()
   }, [])
@@ -69,7 +67,9 @@ function Navbar() {
 
           </div>
         </div>
-        {click ? <div className=' shadow-md bg-[white] rounded-xl absolute'><Category data={categoryData} /></div> : <div></div>}
+        {click ? <div className=' shadow-md bg-[white] rounded-xl absolute'>
+          <Category data={categoryData} change={change} setChange={setChange}/>
+        </div> : <div></div>}
         {click1 ? <div className=' w-full shadow-md bg-[#ffffffe0] rounded-xl p-4'><Search /></div> : <div></div>}
       </div>
     </>

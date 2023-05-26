@@ -43,21 +43,24 @@ const tag = [
 
 
 
-function Paper() {
+function Paper({ change, setChange }) {
     const cookie = new Cookies()
     const [Kat, setKat] = useState([])
-    const [catgeory, setCategory] = useState(cookie.get('category') || 0)
+
+
 
 
     useEffect(() => {
         fetch()
-        setCategory(cookie.get('category'))
-    }, [])
+    }, [change])
+
+
+
 
     const fetch = async () => {
         let result = []
-        if (catgeory != 0) {
-            result = await axios.get(`${setting.SERVER}/api/category/${catgeory}`)
+        if (sessionStorage.getItem('category') != 0) {
+            result = await axios.get(`${setting.SERVER}/api/category/${sessionStorage.getItem('category') || 0}`)
             result = result.data.Posts
         } else {
             result = await axios.get(`${setting.SERVER}/api/random`)

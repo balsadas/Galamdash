@@ -11,7 +11,7 @@ const flag = [
 ]
 
 
-function Nav() {
+function Nav({change,setChange}) {
   const [click, setClick] = useState(0)
   const [dclick, setDclick] = useState(false)
   
@@ -64,7 +64,7 @@ function Nav() {
           <img src='./image/Galamdas.jpg' className='select-none' />
         </div>
         <div  >
-          <Navbar />
+          <Navbar change={change} setChange={setChange} />
         </div>
       </div>
       <div className='w-[20%] hidden md:block'></div>
