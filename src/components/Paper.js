@@ -1,19 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { motion } from 'framer-motion'
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import setting from '../setting.json'
 import axios from 'axios';
 import PostContent from './PostContent'
 import Cookies from 'universal-cookie';
 
-
-const tag = [
-    { id: 1, text: 'pikir' },
-    { id: 2, text: 'ceper eser' },
-    { id: 3, text: 'oka' },
-    { id: 4, text: 'Magtymguly' },
-    { id: 5, text: 'dashary yurt' }
-]
 
 
 
