@@ -3,7 +3,7 @@ import Cookies from 'universal-cookie';
 
 
 
-function Category({ click, data,    change, setChange }) {
+function Category({  data,    change, setChange }) {
 
     const CategoryChange = (e) => {
         sessionStorage.setItem('category', e.target.value)
