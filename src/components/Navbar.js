@@ -70,7 +70,7 @@ function Navbar({change,setChange}) {
         {click ? <div className=' shadow-md bg-[white] rounded-xl absolute'>
           <Category data={categoryData} change={change} setChange={setChange}/>
         </div> : <div></div>}
-        {click1 ? <div className=' w-full shadow-md bg-[#ffffffe0] rounded-xl p-4'><Search /></div> : <div></div>}
+        {click1 ? <div className=' w-full shadow-md bg-[#ffffffe0] rounded-xl p-4'><Search change={change} setChange={setChange} /></div> : <div></div>}
       </div>
     </>
   );
