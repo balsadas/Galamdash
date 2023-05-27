@@ -4,19 +4,18 @@ import '../input.css'
 import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
 import Dropdown from './Dropdown';
-
-const flag = [
-  { id: 1, img: "./image/russia.png" },
-  { id: 2, img: './image/turkmenistan.png' }
-]
+import setting from '../setting.json'
+import Cookies from 'universal-cookie';
 
 
-function Nav({change,setChange}) {
+const cookies = new Cookies()
+console.log(cookies.get('token'))
+function Nav() {
   const [click, setClick] = useState(0)
   const [dclick, setDclick] = useState(false)
-  
- 
-
+  const clicked = ()=>{
+    console.log('asdsadadsa')
+    }
 
   var showdate = new Date();
   var displaytodaysdate = `${showdate.getDate()}.${showdate.getMonth() + 1}.${showdate.getFullYear()}`;
@@ -30,21 +29,17 @@ function Nav({change,setChange}) {
             {displaytodaysdate}
           </div>
           <div className='flex '>
-            {/* {flag.map((flag, index) => (
-              <div className='mr-2' key={index} >
 
-                <img onClick={() => setClick(click => click = index)} className='h-[2vw] w-[2vw] select-none cursor-pointer' src={flag.img} />
-
-                {click == index ? <div className='h-1 bg-[green] rounded-lg '></div> : <div></div>}
-              </div>
-            ))} */}
-            <Link to='/Register'>
-              <div onClick={() => setDclick(!dclick)} className='flex select-none items-center group md:mr-2 pr-3  cursor-pointer hover:-translate-y-1 hover:scale-110 transition-all duration-500 ease-in'>
+            {!cookies.get('token') && <Link to='/Register'>
+              <div  className='flex select-none items-center group md:mr-2 pr-3  cursor-pointer hover:-translate-y-1 hover:scale-110 transition-all duration-500 ease-in'>
                 <img src='./image/user1.png' className='md:w-[1.8vw] md:h-[1.8vw] w-[4vw] h-[4vw]' />
                 <h4 className='group-hover:block hidden md:text-[1.1vw] text-[3vw] ml-2 font-bold'>Içeri gir</h4>
               </div>
-            </Link>
-
+            </Link>}
+            {cookies.get('token') &&
+            <div onClick={() => setDclick(!dclick)} className='flex select-none items-center group md:mr-2 pr-3  cursor-pointer hover:-translate-y-1 hover:scale-110 transition-all duration-500 ease-in'>
+              <img src={ `${setting.SERVER}/${cookies.get('image')}`  } className='md:w-[1.8vw] md:h-[1.8vw] w-[4vw] h-[4vw]'/>
+            </div>}
           </div>
         </div>
 
@@ -52,9 +47,26 @@ function Nav({change,setChange}) {
 
 
         {/* dropdown registrasiya bolanda ulanmaly */}
-        {/* <div className={dclick ? 'block z-[999]' : 'hidden'}>
-          <Dropdown />
-        </div> */}
+          <div className={dclick ? 'block z-[999]' : 'hidden'}>
+          <div className=' flex justify-end select-none '>
+          <div className=' bg-white md:w-[11vw] w-[35vw] absolute  shadow-lg rounded-lg'>
+              <div className='flex items-center pl-3 p-2 lg:mt-2 cursor-pointer hover:bg-slate-300 w-full'>
+                  <img src='./image/userd.png' className='md:w-[1vw] md:h-[1vw] w-[3vw] h-[3vw]' />
+                  <p className='ml-2 md:text-[1vw] text-[3vw] '>{cookies.get('nick')}</p>
+              </div>
+              <div className='flex items-center lg:mt-2 p-2 cursor-pointer hover:bg-slate-300 w-full'>
+                  <img src='./image/key.png' className='md:w-[1vw] md:h-[1vw] w-[3vw] h-[3vw]' />
+                  <p className='ml-2 md:text-[1vw] text-[3vw] '>Paroly üýtget</p>
+              </div>
+              <div className='border mt-1 mb-1'></div>
+              <div  className='flex items-center cursor-pointer  lg:mt-2 pl-3 p-2 lg:mb-3 md:mb-1 hover:bg-slate-300 w-full'>
+                  <img src='./image/logout.png' className='md:w-[1vw] md:h-[1vw] w-[3vw] h-[3vw]'/>
+                  <p onClick={clicked()} className='ml-4 md:text-[1vw] text-[3vw]' >Çyk</p>
+              </div>
+          </div>
+      </div>
+  
+        </div>
 
 
 

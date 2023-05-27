@@ -5,6 +5,8 @@ import Footer from '../../components/Footer';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import setting from '../../setting.json'
+import { useEffect } from 'react';
+import Cookies from 'universal-cookie';
 
 
 const pos = [
@@ -17,15 +19,24 @@ const pos = [
 function Profile() {
     const [click, setClick] = useState(0)
     const [change, setChange] = useState(false)
-    const [data,setData]=useState([])
-
+    const [data,setData] = useState([])
+    const  cookie = new Cookies() 
     const fetchProfile = async () =>{
+        
       try{
-        const Profile = await axios.get(`${setting.SERVER}/api/user/my`)
+        const Profile = await axios.get(`${setting.SERVER}/api/user/my`,{
+            headers:{
+                Authorization : cookie.get('token')
+            }
+        })
         setData(Profile.data)
       }
       catch(err){}
     }
+    useEffect(()=>{
+        fetchProfile()
+    },[])
+    console.log(data)
     return (
         <>
             <div >
@@ -53,7 +64,7 @@ function Profile() {
                                     </div>
                                     <div className='w-[40%] justify-center flex'>
                                         <div className='mt-[-5rem] z-20 '>
-                                            <img src='./photo/photo8.jpg' className='md:w-[10vw] object-cover md:h-[10vw] rounded-full' />
+                                            <img src={`${setting.SERVER}/${data.img}`} className='md:w-[10vw] object-cover md:h-[10vw] rounded-full' />
                                         </div>
                                     </div>
                                     <div className='w-[30%] flex justify-end xl:mt-7 lg:mt-5 md:mt-3'>
@@ -68,8 +79,8 @@ function Profile() {
 
                             <div className='flex justify-center mt-[3rem]'>
                                 <div className='select-none'>
-                                    <h3 className='md:text-[1.8vw] font-bold text-[#514f4f]'>Myrat Balshayev</h3>
-                                    <p className='text-center md:text-[1.2vw] text-gray-500 '>@developer</p>
+                                    <h3 className='md:text-[1.8vw] font-bold text-[#514f4f]'>{data.name} {data.surname}</h3>
+                                    <p className='text-center md:text-[1.2vw] text-gray-500 '>@{data.nick}</p>
                                 </div>
                             </div>
 
@@ -77,8 +88,7 @@ function Profile() {
                             <div className='flex justify-center mt-6 '>
                                 <div className='w-[70%] flex justify-center select-none'>
                                     <p className='text-center md:text-[1vw] text-[#5e5d5d] '>
-                                        performs and records all of his own music, giving it a warm,
-                                        intimate feel with a solid groove structure. An artist of considerable range.
+                                        {data.info}
                                     </p>
                                 </div>
                             </div>

@@ -7,6 +7,7 @@ import axios from 'axios';
 import setting from '../setting.json'
 import { redirect, useNavigate, useParams } from 'react-router-dom';
 import Time from '../time';
+import Comment from '../components/Comment';
 
 
 const tag = [
@@ -108,14 +109,15 @@ function IntoPaper() {
                                 <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>{Comments} {com[2].title}</p>
                             </li>
                             {/* <li className='flex md:mr-8 mr-3 items-center '>
-                                <img src={com[3].img} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
-                                <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>{com.num} {com[3].title}</p>
+                            <img src={com[3].img} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
+                            <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>{com.num} {com[3].title}</p>
                             </li> */}
 
                         </ul>
                     </div>
                 </div>
             </div>
+            <Comment />
             <UnderPost />
             <div className='bg-[#fff] pt-6'>
                 <Footer />
