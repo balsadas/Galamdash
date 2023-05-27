@@ -15,7 +15,9 @@ function PaperMean({ change, setChange }) {
 
 
             <Routes>
-                <Route path='/search/:word' element={<div>test</div>} />
+                <Route path='/search/:word' element={<div className='md:w-[60%] w-[90%]'>
+                    <Search />
+                </div>} />
                 <Route path='/*' element={<div className='md:w-[60%] w-[90%]'>
                     <Paper change={change} setChange={setChange} />
                 </div>} />
