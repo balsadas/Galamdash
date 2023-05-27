@@ -1,12 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Search() {
+function Search({ change, setChange }) {
   const redirect = useNavigate()
 
   const Search = (e) => {
     let word = document.getElementById('SearchPlace')
+    setChange(change+1)
     redirect(`/search/${word.value}`)
+    setChange(change+1)
   }
 
   return (
