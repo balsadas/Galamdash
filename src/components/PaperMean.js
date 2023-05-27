@@ -12,13 +12,11 @@ function PaperMean({ change, setChange }) {
                 <Post />
             </div>
 
-            <Routes>
-                <Route path='/' element={
-                    <div className='md:w-[60%] w-[90%]'>
-                        <Paper change={change} setChange={setChange} />
-                    </div>} />
-                <Route path='/search' element={<div>search</div>} />
-            </Routes>
+
+
+            <div className='md:w-[60%] w-[90%]'>
+                <Paper change={change} setChange={setChange} />
+            </div>
 
 
             <div className='w-[20%] justify-center md:flex hidden'>
