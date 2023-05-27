@@ -2,6 +2,7 @@ import React from 'react';
 import Adver from './Adver';
 import Paper from './Paper';
 import Post from './Post';
+import Search from './SearchResponse.js';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
@@ -13,10 +14,13 @@ function PaperMean({ change, setChange }) {
             </div>
 
 
+            <Routes>
+                <Route path='/search/:word' element={<div>test</div>} />
+                <Route path='/*' element={<div className='md:w-[60%] w-[90%]'>
+                    <Paper change={change} setChange={setChange} />
+                </div>} />
+            </Routes>
 
-            <div className='md:w-[60%] w-[90%]'>
-                <Paper change={change} setChange={setChange} />
-            </div>
 
 
             <div className='w-[20%] justify-center md:flex hidden'>
