@@ -5,6 +5,7 @@ import axios from 'axios';
 import setting from '../setting.json'
 import time from '../time'
 import MainPostContent from '../components/MainPostContent.js';
+import { Link } from 'react-router-dom';
 
 const post = [
     {
@@ -82,7 +83,9 @@ function Post() {
                 <ul className='rows-10   w-full flex justify-center '>
                     <div>
                         {Post.map((post, index) => (
-                            <MainPostContent key={index} post={post} />
+                            <Link key={index}  to={`/IntoPaper/${post.id}`}>
+                                <MainPostContent post={post} />
+                            </Link>
                         ))}
                     </div>
                 </ul>
