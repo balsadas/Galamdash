@@ -13,9 +13,6 @@ console.log(cookies.get('token'))
 function Nav({ change, setChange }) {
   const [click, setClick] = useState(0)
   const [dclick, setDclick] = useState(false)
-  const clicked = () => {
-    console.log('asdsadadsa')
-  }
 
   var showdate = new Date();
   var displaytodaysdate = `${showdate.getDate()}.${showdate.getMonth() + 1}.${showdate.getFullYear()}`;
@@ -59,9 +56,9 @@ function Nav({ change, setChange }) {
                 <p className='ml-2 md:text-[1vw] text-[3vw] '>Paroly üýtget</p>
               </div>
               <div className='border mt-1 mb-1'></div>
-              <div className='flex items-center cursor-pointer  lg:mt-2 pl-3 p-2 lg:mb-3 md:mb-1 hover:bg-slate-300 w-full'>
-                <img src='./image/logout.png' className='md:w-[1vw] md:h-[1vw] w-[3vw] h-[3vw]' />
-                <p onClick={clicked()} className='ml-4 md:text-[1vw] text-[3vw]' >Çyk</p>
+              <div  className='flex items-center cursor-pointer  lg:mt-2 pl-3 p-2 lg:mb-3 md:mb-1 hover:bg-slate-300 w-full'>
+                  <img src='./image/logout.png' className='md:w-[1vw] md:h-[1vw] w-[3vw] h-[3vw]'/>
+                  <p  className='ml-4 md:text-[1vw] text-[3vw]' >Çyk</p>
               </div>
             </div>
           </div>
