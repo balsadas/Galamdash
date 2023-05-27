@@ -2,9 +2,7 @@ import React from 'react';
 import Cookies from 'universal-cookie';
 const cookie = new Cookies()
 const cookieRemove = new Cookies()
-const clicked = ()=>{
-console.log('asdsadadsa')
-}
+
 function Dropdown() {
     return (
     
