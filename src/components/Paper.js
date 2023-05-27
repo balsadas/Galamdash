@@ -18,6 +18,9 @@ function Paper({ change, setChange }) {
 
     const fetch = async () => {
         let result = []
+        if (!!sessionStorage.getItem('category')) {
+            sessionStorage.setItem('category', 0)
+        }
         if (sessionStorage.getItem('category') != 0) {
             result = await axios.get(`${setting.SERVER}/api/category/${sessionStorage.getItem('category') || 0}`)
             result = result.data.Posts
