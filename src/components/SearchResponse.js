@@ -16,6 +16,8 @@ function Paper({ change, setChange }) {
         fetch()
     }, [change])
 
+    
+
     const fetch = async () => {
         let result = []
         result = await axios.get(`${setting.SERVER}/api/search?word=${word}`)
