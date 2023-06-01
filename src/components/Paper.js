@@ -33,7 +33,6 @@ function Paper({ change, setChange }) {
     return (
         <div className=' md:px-3 md:py-5 mb-5 md:mb-0    overflow-hidden ' >
             <ul>
-
                 {Kat.map((kat, i) => (kat &&
                     <Link to={`/IntoPaper/${kat.id}`} key={i}>
                         <PostContent kat={kat} />
