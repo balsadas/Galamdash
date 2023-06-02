@@ -8,7 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function PaperMean({ change, setChange }) {
     return (
-        <div className='flex justify-center columns-3'>
+        <div className='flex justify-center columns-3 '>
             <div className='w-[20%] md:block hidden'>
                 <Post />
             </div>
