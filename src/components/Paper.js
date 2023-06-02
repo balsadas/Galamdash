@@ -18,6 +18,9 @@ function Paper({ change, setChange }) {
 
     const fetch = async () => {
         let result = []
+        if (!!sessionStorage.getItem('category')) {
+            sessionStorage.setItem('category', 0)
+        }
         if (sessionStorage.getItem('category') != 0) {
             result = await axios.get(`${setting.SERVER}/api/category/${sessionStorage.getItem('category') || 0}`)
             result = result.data.Posts
@@ -30,7 +33,6 @@ function Paper({ change, setChange }) {
     return (
         <div className=' md:px-3 md:py-5 mb-5 md:mb-0    overflow-hidden ' >
             <ul>
-
                 {Kat.map((kat, i) => (kat &&
                     <Link to={`/IntoPaper/${kat.id}`} key={i}>
                         <PostContent kat={kat} />
