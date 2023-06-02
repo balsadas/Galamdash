@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,10 +11,18 @@ const ad = [
 
 
 function Adver() {
+    const [fix,setFix]=useState(false)
 
+    function sidebarRight () {
+        if(window.scrollY >= 500){
+            setFix(true)
+        }else{
+            setFix(false)
+        }
+    } 
 
     return (
-        <div className='bg-slate-500 w-[90%] mt-[3.8rem] shadow-lg h-[45vw] rounded-md flex'>
+        <div className={fix ? 'top-[6%] fixed mt-[2rem] w-[90%] h-[45vw]' : 'bg-slate-500 w-[90%] mt-[3.8rem] shadow-lg h-[45vw] rounded-md flex'}>
             Adver
             {/* <Swiper
                 slidesPerView={1}

@@ -53,12 +53,12 @@ function Navbar({change,setChange}) {
 
           </div>
           <div className='flex '>
-            <div className='flex  items-center cursor-pointer  hover:-translate-y-1 hover:scale-110 transition-all duration-500 ease-in'>
+            <div className='flex  items-center cursor-pointer  md:hover:-translate-y-1 md:hover:scale-110 transition-all duration-400 ease-in'>
               <img src='./image/layer.png' className=' md:w-[1.8vw] md:h-[1.8vw] w-[4.5vw] h-[4.5vw]' />
               <h4 className='  text-[white] ml-2 font-bold md:text-[1vw] text-[3vw] '>Bildiriş goş</h4>
             </div>
             <div
-              className={click1 ? 'flex items-center   ml-4 mb-[-1rem] cursor-pointer hover:-translate-y-1 hover:scale-110 transition-all duration-500 ease-in' : 'flex items-center group ml-4 cursor-pointer hover:-translate-y-1 hover:scale-110 transition-all duration-500 ease-in'}
+              className={click1 ? 'flex items-center   ml-4 mb-[-1rem] cursor-pointer md:hover:-translate-y-1 md:hover:scale-110 transition-all duration-400 ease-in' : 'flex items-center group ml-4 cursor-pointer md:hover:-translate-y-1 md:hover:scale-110 transition-all duration-400 ease-in'}
               onClick={() => setClick1(!click1)}
             >
               {click1 ? <img src='./image/loupe1.png' className='md:w-[1.8vw] md:h-[1.8vw] w-[4vw] h-[4vw]' /> : <img src='./image/loupe.png' className='md:w-[1.8vw] md:h-[1.8vw] w-[4.5vw] h-[4.5vw]' />}

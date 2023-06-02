@@ -21,7 +21,7 @@ function Paper({ change, setChange }) {
         if (sessionStorage.getItem('category') != 0) {
             result = await axios.get(`${setting.SERVER}/api/category/${sessionStorage.getItem('category') || 0}`)
             result = result.data.Posts
-        } else {
+        } else {    
             result = await axios.get(`${setting.SERVER}/api/random`)
             result = result.data
         }
