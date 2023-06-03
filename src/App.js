@@ -6,10 +6,11 @@ import IntoPaper from './Page/IntoPaper';
 import { BrowserRouter, Route, RouterProvider, Routes, createBrowserRouter } from 'react-router-dom';
 import Profile from './Page/Profile/Profile';
 import Register from './components/Register';
+import Socket  from './components/socket'
 
 
-const  name = 'Myrat'
-const surname= 'Balshyev'
+const name = 'Myrat'
+const surname = 'Balshyev'
 const date = '12/04/2023y'
 const title = 'Özüňe ynam.'
 const img = './photo/photo1.jpg'
@@ -24,10 +25,11 @@ function App() {
     <div className='bg-[#E8F8F5]'>
       <BrowserRouter>
         <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/IntoPaper' element={<IntoPaper name={name} surname={surname} date={date} title={title} img={img}/>}/>
-            <Route path='/Profile' element={<Profile />}/>
-            <Route path='/Register' element={<Register />}/>
+          <Route path='/' element={<Home />} />
+          <Route path='/IntoPaper' element={<IntoPaper name={name} surname={surname} date={date} title={title} img={img} />} />
+          <Route path='/Profile' element={<Profile />} />
+          <Route path='/Register' element={<Register />} />
+          <Route path='/socket' element={<Socket />} />
         </Routes>
       </BrowserRouter>
     </div>
