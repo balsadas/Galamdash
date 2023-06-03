@@ -35,7 +35,7 @@ function Nav({ change, setChange }) {
             </Link>}
             {cookies.get('token') &&
               <div onClick={() => setDclick(!dclick)} className='flex select-none items-center group md:mr-2 pr-3  cursor-pointer hover:-translate-y-1 hover:scale-110 transition-all duration-500 ease-in'>
-                <img src={`${setting.SERVER}/${cookies.get('image')}`} className='md:w-[1.8vw] md:h-[1.8vw] w-[4vw] h-[4vw]' />
+                <img src={cookies.get('image') ? './image/user1.png' : './image/user1.png' } className='md:w-[1.8vw] md:h-[1.8vw] w-[4vw] h-[4vw]' />
               </div>}
           </div>
         </div>
@@ -60,7 +60,7 @@ function Nav({ change, setChange }) {
               <div className='border mt-1 mb-1'></div>
               <div className='flex items-center cursor-pointer  lg:mt-2 pl-3 p-2 lg:mb-3 md:mb-1 hover:bg-slate-300 w-full'>
                 <img src='./image/logout.png' className='md:w-[1vw] md:h-[1vw] w-[3vw] h-[3vw]' />
-                <p className='ml-4 md:text-[1vw] text-[3vw]' >Çyk</p>
+                <p className='ml-4 md:text-[1vw] text-[3vw]' onClick={()=> cookies.remove('token')}>Çyk</p>
               </div>
             </div>
           </div>
@@ -72,7 +72,7 @@ function Nav({ change, setChange }) {
 
 
         <div className='md:p-0 p-4 bg-[white]'>
-          <Link to={'/'} >
+          <Link to={'/*'} >
             <img src='./image/Galamdas.jpg' className='select-none' />
           </Link>
 

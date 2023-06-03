@@ -38,7 +38,8 @@ const MainPostContent = ({ post }) => {
             hidden: { opacity: 0, y: -50 },
             visible: { opacity: 1, y: 0 },
         }}
-        className="p-4 bg-[#ffffffe0] hover:scale-110 hover:mt-[2rem] duration-300 ease-in-out transition-all hover:mb-[2rem] w-full group cursor-pointer rounded-lg shadow-lg mt-3">
+       
+        className="p-4 bg-[#ffffffe0] md:hover:scale-110 md:hover:mt-[2rem] duration-300 ease-in-out transition-all md:hover:mb-[2rem] w-full group cursor-pointer rounded-lg shadow-lg mt-3">
         <div className='flex justify-center relative  '>
             <div className='absolute top-0 hidden   group-hover:flex rounded-b-md h-[2vw]  items-center px-4  bg-[#fefefe] '>
                 <ul className='flex justify-center'>
@@ -57,12 +58,12 @@ const MainPostContent = ({ post }) => {
                     </li>
                 </ul>
             </div>
-            <img src={`${setting.SERVER}/${post.img}`} className='object-cover w-[13vw] h-[12vw] rounded-lg select-none' />
+            <img src={post.img ? `${setting.SERVER}/${post.img}` : './image/Galamdas1.png'} className='object-cover w-[13vw] h-[12vw] rounded-lg select-none' />
         </div>
         <p className='font-[600] text-[1.2vw] mt-2 ml-[.7vw] select-none'><ShortWord text={post.title} maxLength={20} /></p>
         <div className='flex items-center justify-between mt-3'>
             <div className='flex items-center select-none'>
-                <img src={`${setting.SERVER}/${post.User.img}`} className='w-[1.5vw] h-[1.5vw] rounded-full object-cover' />
+                <img src={post.img ? `${setting.SERVER}/${post.User.img}` : './image/user (1).png'} className='w-[1.5vw] h-[1.5vw] rounded-full object-cover' />
                 <p className='pl-1 text-[.7vw]'>{post.User.nick} </p>
                 <p className='pl-1 text-[.7vw]'><span>.</span> {time(post.time)}</p>
             </div>

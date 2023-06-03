@@ -1,4 +1,6 @@
 import React from 'react';
+import img1 from './img/arrow.png'
+import img2 from './img/arrow-right.png'
 
 const post = [
     { id: 1, img: './photo/photo5.jpg', title: 'Zenanlaryn yeri dine ashanada daldir...', text: 'Öz kelläňizden çykanyňyzda, beýlekiler bilen hakykatdanam aragatnaşyk saklap bilersiňiz. Gatnaşyklaryňyzdan has lezzet alarsyňyz, sebäbi eden täsiriňiz hakda kän alada etmersiňiz we özüňizi beýlekiler bilen deňeşdirmersiňiz.' },
@@ -39,8 +41,9 @@ function UnderPost() {
                                     </div>
                                 </div>
                                 <div className='flex items-center lg:px-[2rem] px-[1rem] pb-4 md:px-[1rem] lg:pb-5 md:pb-3'>
-                                    <img src='./image/arrow.png' className='md:w-[2vw] md:h-[2vw]  w-[10vw] h-[10vw] group-hover:hidden block'/>
-                                    <img src='./image/arrow-right.png' className='md:w-[2vw] w-[10vw] h-[10vw] md:h-[2vw] group-hover:block  hidden'/>
+                                    <img src={img1} className='md:w-[2vw] md:h-[2vw]  w-[10vw] h-[10vw] group-hover:hidden block'/>
+                                    <img src={img2} className='md:w-[2vw] w-[10vw] h-[10vw] md:h-[2vw] group-hover:block  hidden'/>
+
                                     <p className='md:text-[1.1vw] text-[4.5vw]'>Giňişleýin</p>
                                 </div>
                             </li>
