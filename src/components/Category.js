@@ -3,11 +3,18 @@ import Cookies from 'universal-cookie';
 
 
 
-function Category({  data,    change, setChange }) {
+function Category({ data, change, setChange }) {
 
     const CategoryChange = (e) => {
-        sessionStorage.setItem('category', e.target.value)
-        setChange(change + 1)
+        if (e.target.value == 0) {
+            setChange(change+1)
+            document.location.pathname='/'
+        } else {
+            setChange(change + 1)
+            sessionStorage.setItem('category', e.target.value)
+            setChange(change + 1)
+        }
+
     }
     return (
         <div >
