@@ -4,10 +4,12 @@ import Loading from "./Loading";
 import Error404 from "./Page/Error404";
 
 
+
 const Home = lazy(() => import('./Page/Home'))
 const IntoPaper = lazy(() => import('./Page/IntoPaper'))
 const Profile = lazy(() => import('./Page/Profile/Profile'))
 const Register = lazy(() => import('./components/Register'))
+const CreatePost = lazy(() => import('./Page/CreatePost'))
 
 
 function Router() {
@@ -29,6 +31,10 @@ function Router() {
             path: '/Register'
         },
 
+        {
+            element: <Suspense fallback={<Loading />}><CreatePost /></Suspense>,
+            path: '/CreatePost'
+        },
         {
             element: <Suspense><Error404 /></Suspense>,
             path: '/error404'
