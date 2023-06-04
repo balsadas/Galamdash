@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Paper from '../../components/Paper';
+import PaperProfile from '../../components/PaperProfile';
 import ChangeProfile from './ChangeProfile';
 import Footer from '../../components/Footer';
 import { Link } from 'react-router-dom';
@@ -17,17 +17,18 @@ import { Navigation } from 'swiper';
 const pos = [
     { id: 1, title: "Postlarym" },
     { id: 2, title: "Halanlarym" },
-    { id: 3, title: "Garalamalarym" },
+    { id: 3, title: "Gorenlerim" }
+    // { id: 3, title: "Garalamalarym" },
 
 ]
 
 function Profile() {
     const [click, setClick] = useState(0)
     const [change, setChange] = useState(false)
-    const [data, setData] = useState([])
+    const [data, setData] = useState(null)
+    const [list, setList] = useState('Postlarym')
     const cookie = new Cookies()
     const fetchProfile = async () => {
-
         try {
             const Profile = await axios.get(`${setting.SERVER}/api/user/my`, {
                 headers: {
@@ -36,13 +37,45 @@ function Profile() {
             })
             setData(Profile.data)
         }
-        catch (err) { }
+        catch (err) {
+            console.log(err)
+        }
     }
+
+
+
+
+    const [Kat, setKat] = useState([])
+
+
     useEffect(() => {
         fetchProfile()
-    }, [])
-    console.log(data)
-    return (
+        fetch()
+    }, [list])
+
+    const fetch = async () => {
+        let link = `${setting.SERVER}/api/post?my=true`
+        if (list == "Postlarym") {
+            link = (`${setting.SERVER}/api/post?my=true`)
+        } else if (list == "Halanlarym") {
+            link = (`${setting.SERVER}/api/like`)
+        } else if (list == "Gorenlerim") {
+            link = (`${setting.SERVER}/api/view`)
+        }
+        let result = []
+
+        result = await axios.get(link, {
+            headers: {
+                Authorization: cookie.get('token')
+            }
+        })
+        result = result.data
+        setKat(result)
+    }
+
+
+
+    return (Kat && data &&
         <>
             <div >
                 <div >
@@ -54,7 +87,7 @@ function Profile() {
                     </div>
 
                     <div className={change ? "block" : "hidden"}>
-                        <ChangeProfile change={change} setChange={setChange} />
+                        <ChangeProfile change={change} setChange={setChange} data={data} />
                     </div>
 
                     <div className={change ? "hidden " : 'justify-center flex xl:mt-[-5rem] md:mt-[-2rem] lg:mt-[-3rem] '}>
@@ -73,7 +106,7 @@ function Profile() {
                                         </div>
                                     </div>
                                     <div className='w-[30%] flex justify-end xl:mt-7 lg:mt-5 md:mt-3'>
-                                        <button onClick={() => setChange(!change)} type='submit'
+                                        <button onClick={() => { setChange(!change)}} type='submit'
                                             className='border border-[green] text-white md:w-[9vw] md:h-[3vw] rounded-lg p-2 items-center flex justify-center text-[2.5vw] md:text-[1vw] bg-[green] font-bold hover:scale-110 transition-all ease-in-out'>
                                             Profili üýtget
                                         </button>
@@ -104,8 +137,8 @@ function Profile() {
                                 <div className='w-[90%]'>
                                     <ul className='flex justify-center mb-2 '>
                                         <Swiper
-                                       
-                                        modules={[Navigation]}
+
+                                            modules={[Navigation]}
                                             navigation={{
                                                 nextEl: ".image-swiper-button-next",
                                                 prevEl: ".image-swiper-button-prev",
@@ -113,7 +146,7 @@ function Profile() {
                                             }}
                                             breakpoints={{
                                                 0: {
-                                                    
+
                                                     slidesPerView: 1,
                                                 },
                                                 1000: {
@@ -126,7 +159,7 @@ function Profile() {
                                         >
                                             {pos.map((pos, i) => (
                                                 <SwiperSlide key={i}>
-                                                    <li onClick={() => setClick(!click)} className=' w-full md:text-[1.2vw] text-[4.5vw] font-bold text-[#514f4f] md:justify-between justify-center  flex select-none cursor-pointer '>
+                                                    <li onClick={() => { setClick(!click); setList(pos.title) }} className=' w-full md:text-[1.2vw] text-[4.5vw] font-bold text-[#514f4f] md:justify-between justify-center  flex select-none cursor-pointer '>
                                                         <p click={click} className={click === i ? "text-[green]" : ""}>{pos.title}(2)</p>
                                                     </li>
                                                 </SwiperSlide>
@@ -141,7 +174,7 @@ function Profile() {
 
                             <div className='flex justify-center'>
                                 <div className='w-[90%]'>
-                                    <Paper />
+                                    <PaperProfile Kat={Kat} list={list} />
                                 </div>
                             </div>
 
@@ -154,7 +187,6 @@ function Profile() {
                 <Footer />
             </div>
         </>
-
     );
 }
 
