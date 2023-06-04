@@ -5,23 +5,9 @@ import Loading from './Loading';
 import { BrowserRouter, HashRouter, Route, Routes, } from 'react-router-dom';
 import Home from './Page/Home';
 import IntoPaper from './Page/IntoPaper';
-<<<<<<< HEAD
-import { BrowserRouter, HashRouter, Route, Routes, } from 'react-router-dom';
 import Profile from './Page/Profile/Profile';
 import Register from './components/Register';
 import Socket from './components/Socket.js'
-=======
-import Profile from './Page/Profile/Profile'
-import Register from  './components/Register'
-
-
-
-
-// const Home = lazy(() => import('./Page/Home'))
-// const IntoPaper = lazy(() => import('./Page/IntoPaper'))
-// const Profile = lazy(() => import('./Page/Profile/Profile'))
-// const Register = lazy(() => import('./components/Register'))
->>>>>>> b86e0fc973ee662592523422455d0d428e1073f0
 
 
 
