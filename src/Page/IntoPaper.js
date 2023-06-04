@@ -8,15 +8,14 @@ import setting from '../setting.json'
 import { redirect, useNavigate, useParams } from 'react-router-dom';
 import Time from '../time';
 import Comment from '../components/Comment';
+import img1 from './comment.png'
+import img2 from './like.png'
+import img3 from './bar.png'
+import img4 from './Galamdas1.png'
+import img5 from './user (1).png'
 
 
-const tag = [
-    { id: 1, text: 'pikir' },
-    { id: 2, text: 'ceper eser' },
-    { id: 3, text: 'oka' },
-    { id: 4, text: 'Magtymguly' },
-    { id: 5, text: 'dashary yurt' }
-]
+
 const com = [
     { id: 1, num: '23', img: './photo/bar-chart.png', title: 'görüldi' },
     { id: 2, num: '13', title: 'halandy', img: './image/like.png' },
@@ -62,13 +61,13 @@ function IntoPaper() {
                 <div className='md:w-[50%] w-[90%]'>
                     <div className='flex items-center justify-between'>
                         <div className='flex items-center'>
-                            <img className='rounded-full cursor-pointer md:w-[3vw] md:h-[3vw] w-[12vw] h-[12vw] object-cover' src={`${setting.SERVER}/${Post.User.img}`} />
+                            {Post.img ? <img className='rounded-full cursor-pointer md:w-[3vw] md:h-[3vw] w-[12vw] h-[12vw] object-cover' src={`${setting.SERVER}/${Post.img}`} /> : <img src={img5} className='rounded-full cursor-pointer md:w-[3vw] md:h-[3vw] w-[12vw] h-[12vw] object-cover'/>}
                             <div className='ml-3'>
                                 <h3 className='md:text-[1.3vw] text-[6vw] select-none font-bold '>{Post.User.nick}</h3>
                                 <p className='md:text-[0.8vw] text-[3vw] select-none text-[#6B7280]'>{Time(Post.time)}</p>
                             </div>
                         </div>
-                        <img src='./image/link.png' className='md:w-[1.5vw] md:h-[1.5vw] w-[5vw] h-[5vw] mr-8' />
+                        
                     </div>
                     <div className='mt-5'>
                         <h3 className='font-bold md:text-[1.7vw] text-[5vw]'>
@@ -88,7 +87,8 @@ function IntoPaper() {
                         </p>
                         <div className='flex justify-center mt-[2rem] md:mt-[3rem]'>
                             <div>
-                                <img src={`${setting.SERVER}/${Post.img}`} className='object-cover md:w-[40vw] ' />
+                            {Post.img ?<img src={`${setting.SERVER}/${Post.img}`} className='object-cover md:w-[40vw] ' /> : <img src={img4} className='object-cover md:w-[40vw]'/>
+                             }
                                 <div className='h-[2vw] md:w-[40vw] bg-[#e8e8e8e0] mt-4'></div>
                             </div>
                         </div>
@@ -97,15 +97,15 @@ function IntoPaper() {
                         <ul className='flex justify-end items-end ' >
 
                             <li className='flex md:mr-8 mr-3 items-center '>
-                                <img src={com[0].img} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
+                                <img src={img3} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
                                 <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>{Views} {com[0].title}</p>
                             </li>
                             <li className='flex md:mr-8 mr-3 items-center '>
-                                <img src={com[1].img} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
+                                <img src={img2} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
                                 <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>{Likes} {com[1].title}</p>
                             </li>
                             <li className='flex md:mr-8 mr-3 items-center '>
-                                <img src={com[2].img} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
+                                <img src={img1} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
                                 <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>{Comments} {com[2].title}</p>
                             </li>
                             {/* <li className='flex md:mr-8 mr-3 items-center '>

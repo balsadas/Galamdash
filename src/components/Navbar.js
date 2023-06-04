@@ -4,6 +4,7 @@ import Category from './Category';
 import Search from './Search';
 import setting from '../setting.json'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const combine = (array1, array2) => {
   for (let i = 0; i < array2.length; i++) {
@@ -13,7 +14,7 @@ const combine = (array1, array2) => {
 }
 
 
-function Navbar({change,setChange}) {
+function Navbar({ change, setChange }) {
   const [categoryData, setCategoryData] = useState([{ id: 0, title: 'Esasy' }])
   const categoryFetch = async () => {
     try {
@@ -53,10 +54,12 @@ function Navbar({change,setChange}) {
 
           </div>
           <div className='flex '>
-            <div className='flex  items-center cursor-pointer  md:hover:-translate-y-1 md:hover:scale-110 transition-all duration-400 ease-in'>
-              <img src='./image/layer.png' className=' md:w-[1.8vw] md:h-[1.8vw] w-[4.5vw] h-[4.5vw]' />
-              <h4 className='  text-[white] ml-2 font-bold md:text-[1vw] text-[3vw] '>Bildiriş goş</h4>
-            </div>
+            <Link to='/CreatePost'>
+              <div className='flex  items-center cursor-pointer  md:hover:-translate-y-1 md:hover:scale-110 transition-all duration-400 ease-in'>
+                <img src='./image/layer.png' className=' md:w-[1.8vw] md:h-[1.8vw] w-[4.5vw] h-[4.5vw]' />
+                <h4 className='  text-[white] ml-2 font-bold md:text-[1vw] text-[3vw] '>Bildiriş goş</h4>
+              </div>
+            </Link>
             <div
               className={click1 ? 'flex items-center   ml-4 mb-[-1rem] cursor-pointer md:hover:-translate-y-1 md:hover:scale-110 transition-all duration-400 ease-in' : 'flex items-center group ml-4 cursor-pointer md:hover:-translate-y-1 md:hover:scale-110 transition-all duration-400 ease-in'}
               onClick={() => setClick1(!click1)}
@@ -67,8 +70,8 @@ function Navbar({change,setChange}) {
 
           </div>
         </div>
-        {click ? <div className=' shadow-md bg-[white] rounded-xl absolute'>
-          <Category data={categoryData} change={change} setChange={setChange}/>
+        {click ? <div className=' shadow-md bg-[white] rounded-xl z-[99] absolute'>
+          <Category data={categoryData} change={change} setChange={setChange} />
         </div> : <div></div>}
         {click1 ? <div className=' w-full shadow-md bg-[#ffffffe0] rounded-xl p-4'><Search change={change} setChange={setChange} /></div> : <div></div>}
       </div>

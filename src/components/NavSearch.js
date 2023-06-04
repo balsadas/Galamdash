@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Search from './Search';
+import img from './img/tazepng.png'
+import img1 from './img/plus.png'
+import img2 from './img/user (1).png'
+import Cookies from 'universal-cookie';
+import setting from '../setting.json'
+
+
+const cookies = new Cookies()
+console.log(cookies.get('token'), 'rfre')
+
 
 function NavSearch() {
     const [click1, setClick1] = useState(false)
@@ -11,24 +21,24 @@ function NavSearch() {
                 <div className='md:w-[70%] w-[90%] flex justify-between items-center'>
                     <Link to='/'>
                         <div className='flex items-center justify-center  hover:scale-110 transition-all duration-500 ease-in select-none cursor-pointer '>
-                            <img src='./image/tazepng.png' className='md:w-[9vw] object-cover md:h-[3vw] w-[30vw] ' />
+                            <img src={img} className='md:w-[9vw] object-cover md:h-[3vw] w-[30vw] ' />
 
                         </div>
                     </Link>
-                    <div
-                        className='flex items-center  cursor-pointer'
-                        onClick={() => setClick1(!click1)}
-                    >
-                    <img src='./image/loupe1.png' className='md:w-[1.8vw] md:h-[1.8vw] w-[4vw] h-[4vw]' /> 
-                       
-                    </div>
+
                     <div className='flex'>
                         <div className='flex items-center  hover:scale-110 transition-all duration-500 ease-in'>
-                            <img src='./image/plus.png' className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] ' />
+                            <img src={img1} className='md:w-[1vw] md:h-[1vw] w-[4vw] h-[4vw] ' />
                             <p className='ml-2 md:text-[1vw] text-[3vw] font-[500] select-none'>Post ýaz</p>
                         </div>
                         <div className='ml-4'>
-                            <img src='./photo/photo20.jpg' className='md:w-[2.5vw] md:h-[2.5vw] w-[7vw] h-[7vw] md:mr-0 mr-3 rounded-full object-cover ' />
+                            {cookies.get('image')
+                                ?
+                                <img src={cookies.get('image')} className='md:w-[2.5vw] md:h-[2.5vw] w-[7vw] h-[7vw] md:mr-0 mr-3 rounded-full object-cover ' />
+                                :
+                                <img src={img2} className='md:w-[2.5vw] md:h-[2.5vw] w-[7vw] h-[7vw] md:mr-0 mr-3 rounded-full object-cover ' />
+                            }
+
                         </div>
                     </div>
                 </div>

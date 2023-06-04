@@ -1,4 +1,5 @@
 import React from 'react';
+import img1 from './img/tazepng.png'
 
 const fot = [
   { id: 1, text: 'Biz barada' },
@@ -17,7 +18,7 @@ function Footer() {
               <ul className='flex'>
                 {fot.map((fot, i) => (
                   <li key={i} className='px-4 flex items-center'>
-                    <p className='md:text-[0.9vw] text-[2.5vw] text-center text-gray-500 hover:underline hover:scale-110 hover:translate-y-1  '>{fot.text}</p>
+                    <p className='md:text-[0.9vw] text-[2.5vw] select-none text-center text-gray-500 hover:underline hover:scale-110 hover:translate-y-1  '>{fot.text}</p>
                   </li>
                 ))}
               </ul>
@@ -28,7 +29,7 @@ function Footer() {
             <div>
               <div>
                 <div className='flex items-center justify-center mt-4'>
-                <img src='./image/tazepng.png' className='md:w-[10vw] md:h-[3vw] w-[50vw] h-[20vw]'/>
+                <img src={img1} className='md:w-[10vw] md:h-[3vw] w-[50vw] h-[20vw]'/>
                 {/* <p className='mt-[0.35rem] border-b-2 border-green-500 text-[1.5vw] text-[#018353] font-[500]'> Galamdaş</p> */}
                 </div>
                 <div className='flex justify-center mt-3'>
