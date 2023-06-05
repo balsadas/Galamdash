@@ -7,6 +7,8 @@ import { io } from 'socket.io-client'
 import setting from '../setting.json'
 import Cookies from 'universal-cookie';
 import { useParams } from 'react-router-dom';
+import img4 from './speech-bubble.png'
+import img5 from './speech-bubble (1).png'
 
 const cookie = new Cookies()
 
@@ -25,6 +27,7 @@ const cookie = new Cookies()
 
 
 function Comment() {
+  const [click1,setClick1] = useState(false)
   const [click, setClick] = useState(false)
   const { postID } = useParams('postID')
   const [commentID, setCommentID] = useState(0)
