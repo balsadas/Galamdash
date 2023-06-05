@@ -23,12 +23,11 @@ const cookie = new Cookies()
 
 
 
-
 function Comment() {
   const [click, setClick] = useState(false)
+  const [click1, setClick1] = useState(false)
   const { postID } = useParams('postID')
   const [commentID, setCommentID] = useState(0)
-  console.log(postID)
   const [comments, setComments] = useState([])
   const Send = (e) => {
     if (!!cookie.get('token')) {
@@ -36,7 +35,6 @@ function Comment() {
     }
 
   }
-  console.log(commentID)
   const socket = io(setting.SERVER, {
     auth: {
       token: cookie.get('token')
@@ -152,10 +150,10 @@ function Comment() {
 
 
       <div className='fixed md:bottom-20 md:right-10 right-2 bottom-16 z-50' onClick={() => setClick1(!click1)}>
-        <img className='md:w-[3.5vw] md:h-[3.5vw] w-[8vw] h-[8vw] select-none cursor-pointer ' src={click1 ? img5 : img4} />
+        <img className='md:w-[3.5vw] md:h-[3.5vw] w-[8vw] h-[8vw] select-none cursor-pointer ' src={click1 ? "img5" : "img4"} />
       </div>
       <div className={click1 ? 'block' : 'hidden'}>
-        <Comarea  />
+        <Comarea />
       </div>
 
     </div>

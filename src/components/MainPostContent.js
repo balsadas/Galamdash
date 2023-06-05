@@ -15,20 +15,7 @@ const ShortWord = ({ text, maxLength }) => {
     return <>{shortWord}</>
 }
 const MainPostContent = ({ post }) => {
-    const [like, setLike] = useState(0)
-    const [comment, setComment] = useState(0)
-    const [view, setView] = useState(0)
-
-    useEffect(() => {
-        countFetch()
-    }, [])
-
-    const countFetch = async () => {
-        let res = await axios.get(`${setting.SERVER}/api/count/${post.id}`)
-        setLike(res.data.like.count)
-        setComment(res.data.comment.count)
-        setView(res.data.view.count)
-    }
+  
     return <motion.li
         initial="hidden"
         whileInView="visible"
@@ -46,15 +33,15 @@ const MainPostContent = ({ post }) => {
 
                     <li className='flex mr-2 items-center select-none'>
                         <img src={'./photo/heart.png'} className='w-[.7vw] h-[.7vw] ' />
-                        <p className='text-[#6B7280] ml-1 text-[.6vw]'>{view}</p>
+                        <p className='text-[#6B7280] ml-1 text-[.6vw]'>{post.view}</p>
                     </li>
                     <li className='flex mr-2 items-center select-none'>
                         <img src={'./photo/comment.png'} className='w-[.7vw] h-[.7vw] ' />
-                        <p className='text-[#6B7280] ml-1 text-[.6vw]'>{like}</p>
+                        <p className='text-[#6B7280] ml-1 text-[.6vw]'>{post.like}</p>
                     </li>
                     <li className='flex mr-2 items-center select-none'>
                         <img src={'./photo/bar-chart.png'} className='w-[.7vw] h-[.7vw] ' />
-                        <p className='text-[#6B7280] ml-1 text-[.6vw]'>{comment}</p>
+                        <p className='text-[#6B7280] ml-1 text-[.6vw]'>{post.comment}</p>
                     </li>
                 </ul>
             </div>

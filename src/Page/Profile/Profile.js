@@ -17,8 +17,8 @@ import { Navigation } from 'swiper';
 const pos = [
     { id: 1, title: "Postlarym" },
     { id: 2, title: "Halanlarym" },
-    { id: 3, title: "Gorenlerim" }
-    // { id: 3, title: "Garalamalarym" },
+    { id: 3, title: "Gorenlerim" },
+    { id: 4, title: "Garalamalarym" }
 
 ]
 
@@ -32,7 +32,7 @@ function Profile() {
         try {
             const Profile = await axios.get(`${setting.SERVER}/api/user/my`, {
                 headers: {
-                    Authorization:cookie.get('token') 
+                    Authorization: cookie.get('token')
                 }
             })
             setData(Profile.data)
@@ -61,6 +61,8 @@ function Profile() {
             link = (`${setting.SERVER}/api/like`)
         } else if (list == "Gorenlerim") {
             link = (`${setting.SERVER}/api/view`)
+        } else if (list == "Garalamalarym") {
+            link = (`${setting.SERVER}/api/draft`)
         }
         let result = []
 
@@ -106,7 +108,7 @@ function Profile() {
                                         </div>
                                     </div>
                                     <div className='w-[30%] flex justify-end xl:mt-7 lg:mt-5 md:mt-3'>
-                                        <button onClick={() => { setChange(!change)}} type='submit'
+                                        <button onClick={() => { setChange(!change) }} type='submit'
                                             className='border border-[green] text-white md:w-[9vw] md:h-[3vw] rounded-lg p-2 items-center flex justify-center text-[2.5vw] md:text-[1vw] bg-[green] font-bold hover:scale-110 transition-all ease-in-out'>
                                             Profili üýtget
                                         </button>
@@ -149,11 +151,14 @@ function Profile() {
 
                                                     slidesPerView: 1,
                                                 },
-                                                1000: {
-                                                    slidesPerView: 3,
+                                                600: {
+                                                    slidesPerView: 2,
                                                 },
-                                                1400: {
-                                                    slidesPerView: 3,
+                                                1200: {
+                                                    slidesPerView: 4,
+                                                }, 
+                                                1800: {
+                                                    slidesPerView: 4,
                                                 },
                                             }}
                                         >
