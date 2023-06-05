@@ -32,7 +32,7 @@ function Profile() {
         try {
             const Profile = await axios.get(`${setting.SERVER}/api/user/my`, {
                 headers: {
-                    Authorization: cookie.get('token')
+                    Authorization:cookie.get('token') 
                 }
             })
             setData(Profile.data)
