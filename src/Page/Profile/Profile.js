@@ -135,7 +135,7 @@ function Profile() {
 
                             <div className='flex justify-center mt-[3rem]'>
                                 <div className='w-[90%]'>
-                                    <ul className='flex justify-center mb-2 '>
+                                    <ul className='flex justify-center md:justify-center w-[90%] mb-2 '>
                                         <Swiper
 
                                             modules={[Navigation]}
@@ -159,7 +159,7 @@ function Profile() {
                                         >
                                             {pos.map((pos, i) => (
                                                 <SwiperSlide key={i}>
-                                                    <li onClick={() => { setClick(!click); setList(pos.title) }} className=' w-full md:text-[1.2vw] text-[4.5vw] font-bold text-[#514f4f] md:justify-between justify-center  flex select-none cursor-pointer '>
+                                                    <li onClick={() => { setClick(!click); setList(pos.title) }} className=' w-full md:text-[1.2vw] text-[4.5vw] font-bold text-[#514f4f] md:justify-between justify-center mx-5 flex select-none cursor-pointer '>
                                                         <p click={click} className={click === i ? "text-[green]" : ""}>{pos.title}(2)</p>
                                                     </li>
                                                 </SwiperSlide>

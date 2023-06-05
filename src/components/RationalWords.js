@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 // Default theme
 import '@splidejs/react-splide/css';
@@ -9,6 +9,8 @@ import '@splidejs/react-splide/css/sea-green';
 
 // or only core styles
 import '@splidejs/react-splide/css/core';
+import axios from "axios";
+import setting from '../setting.json'
 
 const words = [
     { title: 'Gyz eneden görelde almasa, öwüt almaz' },
@@ -26,6 +28,18 @@ const words = [
 
 
 function RationalWords() {
+
+const [data, setData]=useState([])
+
+const fetchdata = async () =>{
+   await axios.get(`${setting.SERVER}/api/greatwords`)
+    .then(res=> {setData(res.data)})
+    .catch(err=>{console.log(err)})
+}    
+console.log(data,'ds')
+    useEffect(()=>{
+        fetchdata()
+    },[])
     const options = {
         type: 'loop',
         gap: '1rem',
@@ -38,9 +52,9 @@ function RationalWords() {
         <div className="shadow-lg rounded-xl  bg-[#fff]">
             <Splide options={options}
                 aria-labelledby="autoplay-example-heading">
-                {words.map((word, i) => (
+                {data.map((word, i) => (
                     <SplideSlide key={i} className="flex justify-center">
-                        <p className="md:text-[1vw] font-[500] text-[3vw]">{word.title}</p>
+                        <p className="md:text-[1vw] font-[500] text-[3vw]">{word.content}</p>
                     </SplideSlide>
                 ))}
             </Splide>
