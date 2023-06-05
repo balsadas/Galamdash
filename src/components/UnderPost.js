@@ -4,6 +4,7 @@ import img2 from './img/arrow-right.png'
 import axios from 'axios';
 import setting from '../setting.json'
 import img3 from '../Page/Galamdas1.png'
+import { Link } from 'react-router-dom';
 
 const post = [
     { id: 1, img: './photo/photo5.jpg', title: 'Zenanlaryn yeri dine ashanada daldir...', text: 'Öz kelläňizden çykanyňyzda, beýlekiler bilen hakykatdanam aragatnaşyk saklap bilersiňiz. Gatnaşyklaryňyzdan has lezzet alarsyňyz, sebäbi eden täsiriňiz hakda kän alada etmersiňiz we özüňizi beýlekiler bilen deňeşdirmersiňiz.' },
@@ -50,28 +51,30 @@ function UnderPost() {
                     <ul className='grid grid-cols-3'>
                         {data?.map((post, i) => (
                             <li key={i} className='bg-[#e2e2e2c0] group hover:bg-[#ffffffe0] md:mt-0 mt-5 ml-3 hover:shadow-lg'>
-                                <div>
-                                {post?.img 
-                                    ? 
-                                    <img className='md:w-[25vw] w-full h-[75vw] object-cover md:h-[15vw] group-hover:scale-90 transition-all ease-in-out duration-100 ' src={`${setting.SERVER}/${post.img}`} />
-                                    :
-                                    <img className='md:w-[25vw] w-full h-[75vw] object-cover md:h-[15vw] group-hover:scale-90 transition-all ease-in-out duration-100 ' src={img3} />
-                                }    
-                                    <div className='lg:p-[2rem] md:p-[1rem] p-[1rem]'>
-                                        <div>
-                                            <h3 className='font-bold md:text-[1.2vw] text-[4.5vw] group-hover:underline transition-all ease-in-out'>{post?.title}</h3>
-                                        </div>
-                                        <div>
-                                            <p className='mt-2 md:text-[1vw] text-[4vw] font-[400]'>{short((post?.content), 88)}</p>
+                                
+                                    <div>
+                                        {post?.img
+                                            ?
+                                            <img className='md:w-[25vw] w-full h-[75vw] object-cover md:h-[15vw] group-hover:scale-90 transition-all ease-in-out duration-100 ' src={`${setting.SERVER}/${post.img}`} />
+                                            :
+                                            <img className='md:w-[25vw] w-full h-[75vw] object-cover md:h-[15vw] group-hover:scale-90 transition-all ease-in-out duration-100 ' src={img3} />
+                                        }
+                                        <div className='lg:p-[2rem] md:p-[1rem] p-[1rem]'>
+                                            <div>
+                                                <h3 className='font-bold md:text-[1.2vw] text-[4.5vw] group-hover:underline transition-all ease-in-out'>{post?.title}</h3>
+                                            </div>
+                                            <div>
+                                                <p className='mt-2 md:text-[1vw] text-[4vw] font-[400]'>{short((post?.content), 88)}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className='flex items-center lg:px-[2rem] px-[1rem] pb-4 md:px-[1rem] lg:pb-5 md:pb-3'>
-                                    <img src={img1} className='md:w-[2vw] md:h-[2vw]  w-[10vw] h-[10vw] group-hover:hidden block' />
-                                    <img src={img2} className='md:w-[2vw] w-[10vw] h-[10vw] md:h-[2vw] group-hover:block  hidden' />
+                                    <div className='flex items-center lg:px-[2rem] px-[1rem] pb-4 md:px-[1rem] lg:pb-5 md:pb-3'>
+                                        <img src={img1} className='md:w-[2vw] md:h-[2vw]  w-[10vw] h-[10vw] group-hover:hidden block' />
+                                        <img src={img2} className='md:w-[2vw] w-[10vw] h-[10vw] md:h-[2vw] group-hover:block  hidden' />
 
-                                    <p className='md:text-[1.1vw] text-[4.5vw]'>Giňişleýin</p>
-                                </div>
+                                        <p className='md:text-[1.1vw] text-[4.5vw]'>Giňişleýin</p>
+                                    </div>
+                            
                             </li>
                         ))}
                     </ul>
