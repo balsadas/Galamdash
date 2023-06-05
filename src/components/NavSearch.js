@@ -26,20 +26,24 @@ function NavSearch() {
                         </div>
                     </Link>
 
-                    <div className='flex'>
-                        <div className='flex items-center  hover:scale-110 transition-all duration-500 ease-in'>
-                            <img src={img1} className='md:w-[1vw] md:h-[1vw] w-[4vw] h-[4vw] ' />
-                            <p className='ml-2 md:text-[1vw] text-[3vw] font-[500] select-none'>Post ýaz</p>
-                        </div>
-                        <div className='ml-4'>
-                            {cookies.get('image')
-                                ?
-                                <img src={cookies.get('image')} className='md:w-[2.5vw] md:h-[2.5vw] w-[7vw] h-[7vw] md:mr-0 mr-3 rounded-full object-cover ' />
-                                :
-                                <img src={img2} className='md:w-[2.5vw] md:h-[2.5vw] w-[7vw] h-[7vw] md:mr-0 mr-3 rounded-full object-cover ' />
-                            }
+                    <div className='flex items-center'>
+                        <Link to='/CreatePost'>
+                            <div className='flex items-center  hover:scale-110 transition-all duration-500 ease-in'>
+                                <img src={img1} className='md:w-[1vw] md:h-[1vw] w-[4vw] h-[4vw] ' />
+                                <p className='ml-2 md:text-[1vw] text-[3vw] font-[500] select-none'>Post ýaz</p>
+                            </div>
+                        </Link>
+                        <Link to='/Profile'>
+                            <div className='ml-4'>
+                                {cookies.get('image')
+                                    ?
+                                    <img src={cookies.get('image')} className='md:w-[2.5vw] md:h-[2.5vw] w-[7vw] h-[7vw] md:mr-0 mr-3 rounded-full object-cover ' />
+                                    :
+                                    <img src={img2} className='md:w-[2.5vw] md:h-[2.5vw] w-[7vw] h-[7vw] md:mr-0 mr-3 rounded-full object-cover ' />
+                                }
 
-                        </div>
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>

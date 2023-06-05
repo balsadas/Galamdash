@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import { useState } from 'react';
 import axios from 'axios';
 import setting from '../setting.json'
-import { redirect, useNavigate, useParams } from 'react-router-dom';
+import { Link, redirect, useNavigate, useParams } from 'react-router-dom';
 import Time from '../time';
 import Comment from '../components/Comment';
 import img1 from './comment.png'
@@ -54,13 +54,15 @@ function IntoPaper() {
                 <div className='md:w-[50%] w-[90%]'>
                     <div className='flex items-center justify-between'>
                         <div className='flex items-center'>
-                            {Post.img ? <img className='rounded-full cursor-pointer md:w-[3vw] md:h-[3vw] w-[12vw] h-[12vw] object-cover' src={`${setting.SERVER}/${Post.img}`} /> : <img src={img5} className='rounded-full cursor-pointer md:w-[3vw] md:h-[3vw] w-[12vw] h-[12vw] object-cover'/>}
+                            <Link to='/Profile'>
+                                {Post.img ? <img className='rounded-full cursor-pointer md:w-[3vw] md:h-[3vw] w-[12vw] h-[12vw] object-cover' src={`${setting.SERVER}/${Post.img}`} /> : <img src={img5} className='rounded-full cursor-pointer md:w-[3vw] md:h-[3vw] w-[12vw] h-[12vw] object-cover' />}
+                            </Link>
                             <div className='ml-3'>
                                 <h3 className='md:text-[1.3vw] text-[6vw] select-none font-bold '>{Post.User.nick}</h3>
                                 <p className='md:text-[0.8vw] text-[3vw] select-none text-[#6B7280]'>{Time(Post.time)}</p>
                             </div>
                         </div>
-                        
+
                     </div>
                     <div className='mt-5'>
                         <h3 className='font-bold md:text-[1.7vw] text-[5vw]'>
@@ -80,8 +82,8 @@ function IntoPaper() {
                         </p>
                         <div className='flex justify-center mt-[2rem] md:mt-[3rem]'>
                             <div>
-                            {Post.img ?<img src={`${setting.SERVER}/${Post.img}`} className='object-cover md:w-[40vw] ' /> : <img src={img4} className='object-cover md:w-[40vw]'/>
-                             }
+                                {Post.img ? <img src={`${setting.SERVER}/${Post.img}`} className='object-cover md:w-[40vw] ' /> : <img src={img4} className='object-cover md:w-[40vw]' />
+                                }
                                 <div className='h-[2vw] md:w-[40vw] bg-[#e8e8e8e0] mt-4'></div>
                             </div>
                         </div>
