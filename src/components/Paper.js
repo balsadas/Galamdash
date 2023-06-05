@@ -35,7 +35,7 @@ function Paper({ change, setChange }) {
             <ul>
                 {Kat.map((kat, i) => (kat &&
                    
-                        <PostContent kat={kat} i={i} />
+                        <PostContent key={i} kat={kat} i={i} />
              
                 ))}
             </ul>

@@ -15,7 +15,6 @@ const Shortendtext = (text, maxLength) => {
 }
 
 const MainPost = ({ kat, i }) => {
-
     const [like, setLike] = useState(0)
     const [comment, setComment] = useState(0)
     const [view, setView] = useState(0)
@@ -30,6 +29,7 @@ const MainPost = ({ kat, i }) => {
         setComment(res.data.comment.count)
         setView(res.data.view.count)
     }
+  
 
 
     return (
@@ -45,10 +45,9 @@ const MainPost = ({ kat, i }) => {
 
                     <div className='md:flex-row flex flex-col-reverse'>
                         <div className='w-full '>
-                            <Link to={`/IntoPaper/${kat.id}`} key={i}>
                                 <h2 className='font-bold md:text-[1.5vw] text-[4.5vw] mb-1 md:mt-1 mt-4  pl-2  select-none'>{kat.title}</h2>
                                 <p className='w-[95%] text-[#6B7280] md:text-[1vw] text-[3vw] pr-2  text-justify select-none cursor-pointer'>{Shortendtext((kat.content), 500)}</p>
-                            </Link>
+                         
                         </div>
                         <img className='object-cover rounded-md md:h-[12vw]  h-[50vw] w-full md:w-[11.5vw] transition duration-300 ease-in-out group-hover:scale-110  md:flex' src={kat.img ? `${setting.SERVER}/${kat.img}` : './image/Galamdas1.png'} />
                     </div>

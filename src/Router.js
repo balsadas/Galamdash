@@ -5,11 +5,11 @@ import Error404 from "./Page/Error404";
 
 
 
-const Home = lazy(() => import('./Page/Home'))
-const IntoPaper = lazy(() => import('./Page/IntoPaper'))
-const Profile = lazy(() => import('./Page/Profile/Profile'))
-const Register = lazy(() => import('./components/Register'))
-const CreatePost = lazy(() => import('./Page/CreatePost'))
+import Home from './Page/Home'
+import IntoPaper from './Page/IntoPaper'
+import Profile from './Page/Profile/Profile'
+import Register from './components/Register'
+import CreatePost from './Page/CreatePost'
 
 
 function Router() {
