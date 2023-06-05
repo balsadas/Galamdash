@@ -28,7 +28,6 @@ const cookie = new Cookies()
 function Comment() {
   const [click1,setClick1] = useState(false)
   const [click, setClick] = useState(false)
-  const [click1, setClick1] = useState(false)
   const { postID } = useParams('postID')
   const [commentID, setCommentID] = useState(0)
   const [comments, setComments] = useState([])
