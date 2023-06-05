@@ -20,6 +20,8 @@ function PaperMean({ change, setChange }) {
                 <div className='md:hidden block'>
                     <Post />
                 </div>
+
+                
                 <Routes>
                     <Route path='/search/:word' element={<div >
                         <Search change={change} setChange={setChange} />

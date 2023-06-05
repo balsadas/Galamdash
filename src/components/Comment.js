@@ -64,7 +64,9 @@ function Comment() {
     })
   }, [])
 
+  const [c1n,setC1n] = useState()
   const SetCommentID2 = (value) => {
+    setC1n(value)
     if (value == commentID) {
       setCommentID(0)
     } else {
@@ -93,9 +95,9 @@ function Comment() {
                       <p>{com.content}</p>
                     </div>
                   </div>
-                  <div className='flex justify-end mb-2' onClick={() => { setClick(!click); SetCommentID2(comID) }}>
+                 {/* <div className='flex justify-end mb-2' onClick={() => { setClick(!click); SetCommentID2(comID) }}>
                     <img src={click ? img3 : img2} className='md:w-[1.2vw] w-[4vw] md:h-[1.2vw] h-[4vw]' />
-                  </div>
+              </div> */}
                 </li>
               ))}
             </ul>
@@ -144,7 +146,7 @@ function Comment() {
                   </div>
                 </div>
                 <div className='flex justify-end mb-2 ' onClick={() => { setClick(!click); SetCommentID2(com.id) }}>
-                  <img src={click ? img3 : img2} className='md:w-[1.2vw] w-[4vw] md:h-[1.2vw] h-[4vw]' />
+                  <img src={com.id == c1n ? img3 : img2} className='md:w-[1.2vw] w-[4vw] md:h-[1.2vw] h-[4vw]' />
                 </div>
                 <ReplyCom comments={com.comments} comID={com.id} SetCommentID2={SetCommentID2} />
               </li>
