@@ -10,11 +10,38 @@ function ChangeProfile({ change, setChange, data }) {
 
     const Send = async (e) => {
         e.preventDefault();
-        const formData=new FormData(e.target)
+        const formData = new FormData(e.target)
         console.log(formData)
-        
+
     }
 
+    const fileSend = () => {
+        const file1 = document.getElementById('default_btn1');
+        file1.onchange = () => {
+            const file = document.getElementById('default_btn1').files[0];
+            const img = document.getElementById('surat')
+            const img_txt = document.getElementById('file_name')
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function () {
+                    const result = reader.result;
+                    img.src = result;
+                    img_txt.innerHTML = file.name
+                }
+                reader.readAsDataURL(file)
+            }
+
+        }
+        file1.click()
+
+
+    }
+    const imgCancel = () => {
+        const img_txt = document.getElementById('file_name')
+        const img = document.getElementById('surat')
+        img.src = './image/image.png';
+        img_txt.innerHTML = `No file chosen, yet!`
+    }
 
     return (
 
@@ -28,8 +55,8 @@ function ChangeProfile({ change, setChange, data }) {
                             <h3 className='md:text-[1.5vw]  text-[#514f4f] text-[5vw] font-bold'>Profili üýtget</h3>
                         </div>
                         <div className='flex justify-center mt-5'>
-                            <img src={data.img ? `${setting.SERVER}/${data.img}` : './image/user (1).png'} className='md:w-[10vw] object-cover md:h-[10vw] rounded-full w-[20vw] h-[20vw]' />
-                            <input type="file" name="" id="Surat" accept='image/*' hidden />
+                            <img src={data.img ? `${setting.SERVER}/${data.img}` : './image/user (1).png'} onClick={() => { fileSend() }} id='surat' accept='image/*' className='md:w-[10vw] object-cover md:h-[10vw] rounded-full w-[20vw] h-[20vw]' />
+                            <input type="file" name="" id="default_btn1" accept='image/*' hidden />
                         </div>
                         <div className='md:h-[8px] h-[5px] mt-8 rounded-sm w-full bg-slate-300'></div>
 

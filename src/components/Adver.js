@@ -28,21 +28,9 @@ const ad = [
 
 
 function Adver() {
-    const [fix, setFix] = useState(false)
-
-    function sidebarRight() {
-        if (window.scrollY >= 500) {
-            setFix(true)
-        }
-        else {
-            setFix(false)
-        }
-    }
-
-    window.addEventListener('scroll', sidebarRight)
 
     return (
-        <div className={fix ? 'top-[2%] mb-[25rem] bottom-[0] fixed w-[15rem]  bg-slate-500 h-[30rem] rounded-lg' : 'bg-slate-500 w-[15rem] mt-[3rem] shadow-lg h-[40rem] rounded-lg flex'}>
+        <div className='bg-slate-500 xl:w-[15rem] mt-[3rem] shadow-lg xl:h-[40rem] lg:w-[15rem] rounded-lg flex'>
             <Swiper
             
                 modules={{ Autoplay }}
