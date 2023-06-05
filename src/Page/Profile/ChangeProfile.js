@@ -4,15 +4,26 @@ import axios from 'axios'
 import { Link } from 'react-router-dom';
 import setting from '../../setting.json'
 import { cookie_get } from '../../cookie';
+import Cookies from 'universal-cookie';
 
 function ChangeProfile({ change, setChange, data }) {
-
+    const cookie = new Cookies()
 
     const Send = async (e) => {
         e.preventDefault();
-        const formData=new FormData(e.target)
-        console.log(formData)
-        
+        axios.put(`${setting.SERVER}/api/user/edit`,
+            new FormData(e.target),
+            {
+                headers: {
+                    Authorization: cookie.get('token')
+                },
+            }
+        ).then((res) => {
+            console.log(res)
+        }).catch((err) => {
+            console.log(err)
+        })
+
     }
 
 
@@ -29,7 +40,7 @@ function ChangeProfile({ change, setChange, data }) {
                         </div>
                         <div className='flex justify-center mt-5'>
                             <img src={data.img ? `${setting.SERVER}/${data.img}` : './image/user (1).png'} className='md:w-[10vw] object-cover md:h-[10vw] rounded-full w-[20vw] h-[20vw]' />
-                            <input type="file" name="" id="Surat" accept='image/*' hidden />
+                            <input type="file" name="image" id="Surat" accept='image/*' hidden />
                         </div>
                         <div className='md:h-[8px] h-[5px] mt-8 rounded-sm w-full bg-slate-300'></div>
 
@@ -39,11 +50,11 @@ function ChangeProfile({ change, setChange, data }) {
                             <div className='md:w-[50%]'>
                                 <div className='md:mb-3 mb-4'>
                                     <p className='mb-1 text-[#514f4f] font-bold ml-2 text-[4vw] md:text-[1.2vw]'>At</p>
-                                    <input type='text' className='border rounded-md p-2 bg-gray-200 md:w-[90%] w-full' defaultValue={data.name} />
+                                    <input type='text' name='name' className='border rounded-md p-2 bg-gray-200 md:w-[90%] w-full' defaultValue={data.name} />
                                 </div>
                                 <div className='md:mb-3 mb-4'>
                                     <p className='text-[#514f4f] font-bold ml-2 mb-1 text-[4vw] md:text-[1.2vw]'>Familiýa</p>
-                                    <input type='text' className='border rounded-md p-2 bg-gray-200 md:w-[90%] w-full' defaultValue={data.surname} />
+                                    <input type='text' name='surname' className='border rounded-md p-2 bg-gray-200 md:w-[90%] w-full' defaultValue={data.surname} />
                                 </div>
                             </div>
 
@@ -51,11 +62,11 @@ function ChangeProfile({ change, setChange, data }) {
                             <div className='md:w-[50%]'>
                                 <div className='md:mb-3 mb-4'>
                                     <p className='mb-1 text-[#514f4f] font-bold ml-2 text-[4vw] md:text-[1.2vw]'>Ulanyjy ady</p>
-                                    <input type='text' className='border rounded-md p-2 bg-gray-200 md:w-[90%] w-full' defaultValue={data.nick} />
+                                    <input type='text' name='nick' className='border rounded-md p-2 bg-gray-200 md:w-[90%] w-full' defaultValue={data.nick} />
                                 </div>
                                 <div >
                                     <p className='text-[#514f4f] font-bold ml-2 mb-1 text-[4vw] md:text-[1.2vw]'>E-poçta</p>
-                                    <input type='email' className='border rounded-md p-2 bg-gray-200 md:w-[90%] w-full' defaultValue={data.email} />
+                                    <input type='email' name='email' className='border rounded-md p-2 bg-gray-200 md:w-[90%] w-full' defaultValue={data.email} />
                                 </div>
                             </div>
                         </div>

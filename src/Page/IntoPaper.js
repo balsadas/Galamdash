@@ -28,9 +28,6 @@ const com = [
 
 function IntoPaper() {
     const [Post, setPost] = useState()
-    const [Views, setViews] = useState(0)
-    const [Likes, setLikes] = useState(0)
-    const [Comments, setComments] = useState(0)
     const { postID } = useParams()
 
     useEffect(() => {
@@ -46,10 +43,6 @@ function IntoPaper() {
             redirect('/404')
         })
         setPost(res.data)
-        res = await axios.get(`${setting.SERVER}/api/count/${postID}`)
-        setLikes(res.data.like.count)
-        setViews(res.data.view.count)
-        setComments(res.data.comment.count)
 
 
     }
@@ -98,15 +91,15 @@ function IntoPaper() {
 
                             <li className='flex md:mr-8 mr-3 items-center '>
                                 <img src={img3} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
-                                <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>{Views} {com[0].title}</p>
+                                <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>{Post.like} {com[0].title}</p>
                             </li>
                             <li className='flex md:mr-8 mr-3 items-center '>
                                 <img src={img2} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
-                                <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>{Likes} {com[1].title}</p>
+                                <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>{Post.view} {com[1].title}</p>
                             </li>
                             <li className='flex md:mr-8 mr-3 items-center '>
                                 <img src={img1} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
-                                <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>{Comments} {com[2].title}</p>
+                                <p className='text-[#6B7280] ml-1 text-[2.5vw] text-center md:text-[1vw] select-none'>{Post.comment} {com[2].title}</p>
                             </li>
                             {/* <li className='flex md:mr-8 mr-3 items-center '>
                             <img src={com[3].img} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
