@@ -122,7 +122,7 @@ function Comment() {
   }
 
   return (
-    <div className='flex justify-center bg-[#fff]'>
+    <div className='flex justify-center bg-[#fff] ' >
       <div className=' md:w-[70%] w-[95%]'>
         <div>
           <ul>
@@ -149,7 +149,15 @@ function Comment() {
           </ul>
         </div>
       </div>
-      <Comarea />
+
+
+      <div className='fixed md:bottom-20 md:right-10 right-2 bottom-16 z-50' onClick={() => setClick1(!click1)}>
+        <img className='md:w-[3.5vw] md:h-[3.5vw] w-[8vw] h-[8vw] select-none cursor-pointer ' src={click1 ? img5 : img4} />
+      </div>
+      <div className={click1 ? 'block' : 'hidden'}>
+        <Comarea  />
+      </div>
+
     </div>
   );
 }

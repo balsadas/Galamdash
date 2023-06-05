@@ -16,7 +16,7 @@ function Router() {
     const router = useRoutes([
         {
             element: <Suspense fallback={<Loading />}><Home /></Suspense>,
-            path: '/*'
+            path: '/'
         },
         {
             element: <Suspense fallback={<Loading />}><IntoPaper /></Suspense>,
