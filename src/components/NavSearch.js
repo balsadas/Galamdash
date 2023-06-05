@@ -9,7 +9,6 @@ import setting from '../setting.json'
 
 
 const cookies = new Cookies()
-console.log(cookies.get('token'), 'rfre')
 
 
 function NavSearch() {

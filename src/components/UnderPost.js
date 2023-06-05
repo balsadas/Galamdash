@@ -34,7 +34,6 @@ function UnderPost() {
             .then(res => { setData(res.data) })
             .catch(err => { console.log(err) })
     }
-    console.log(data)
     useEffect(() => {
         dataFetch()
     }, [])

@@ -15,21 +15,8 @@ const Shortendtext = (text, maxLength) => {
 }
 
 const MainPost = ({ kat, i }) => {
-    const [like, setLike] = useState(0)
-    const [comment, setComment] = useState(0)
-    const [view, setView] = useState(0)
 
 
-    useEffect(() => {
-        countFetch()
-    }, [])
-    const countFetch = async () => {
-        let res = await axios.get(`${setting.SERVER}/api/count/${kat.id}`)
-        setLike(res.data.like.count)
-        setComment(res.data.comment.count)
-        setView(res.data.view.count)
-    }
-  
 
 
     return (
@@ -45,9 +32,9 @@ const MainPost = ({ kat, i }) => {
 
                     <div className='md:flex-row flex flex-col-reverse'>
                         <div className='w-full '>
-                                <h2 className='font-bold md:text-[1.5vw] text-[4.5vw] mb-1 md:mt-1 mt-4  pl-2  select-none'>{kat.title}</h2>
-                                <p className='w-[95%] text-[#6B7280] md:text-[1vw] text-[3vw] pr-2  text-justify select-none cursor-pointer'>{Shortendtext((kat.content), 500)}</p>
-                         
+                            <h2 className='font-bold md:text-[1.5vw] text-[4.5vw] mb-1 md:mt-1 mt-4  pl-2  select-none'>{kat.title}</h2>
+                            <p className='w-[95%] text-[#6B7280] md:text-[1vw] text-[3vw] pr-2  text-justify select-none cursor-pointer'>{Shortendtext((kat.content), 500)}</p>
+
                         </div>
                         <img className='object-cover rounded-md md:h-[12vw]  h-[50vw] w-full md:w-[11.5vw] transition duration-300 ease-in-out group-hover:scale-110  md:flex' src={kat.img ? `${setting.SERVER}/${kat.img}` : './image/Galamdas1.png'} />
                     </div>
@@ -55,7 +42,7 @@ const MainPost = ({ kat, i }) => {
                     <div className='md:flex md:columns-2 md:mt-5 mt-3'>
                         <div className='md:w-[80%] w-full '>
                             <ul className='flex'>
-                                {kat.Tags.map((tag, i) => (
+                                {kat.Tags && kat.Tags.map((tag, i) => (
                                     <li className='mr-3 md:text-[1vw] text-[2.5vw] text-[#1F2937]  select-none bg-[#F3F4F6] md:py-1 py-[0.25rem] px-[0.3rem] md:px-2 rounded-md font-[500]' key={i}>{tag.TagList.title}</li>
                                 ))}
                             </ul>
@@ -65,15 +52,15 @@ const MainPost = ({ kat, i }) => {
 
                                 <li className='flex mr-3 items-center '>
                                     <img src={'./photo/heart.png'} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
-                                    <p className='text-[#6B7280] ml-1 md:text-[.9vw] text-[3vw] select-none'>{like}</p>
+                                    <p className='text-[#6B7280] ml-1 md:text-[.9vw] text-[3vw] select-none'>{kat.like}</p>
                                 </li>
                                 <li className='flex mr-3 items-center '>
                                     <img src={'./photo/comment.png'} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
-                                    <p className='text-[#6B7280] ml-1 md:text-[.9vw] text-[3vw] select-none'>{comment}</p>
+                                    <p className='text-[#6B7280] ml-1 md:text-[.9vw] text-[3vw] select-none'>{kat.comment}</p>
                                 </li>
                                 <li className='flex mr-3 items-center '>
                                     <img src={'./photo/bar-chart.png'} className='md:w-[1vw] md:h-[1vw] w-[5vw] h-[5vw] select-none' />
-                                    <p className='text-[#6B7280] ml-1 md:text-[.9vw] text-[3vw] select-none'>{view}</p>
+                                    <p className='text-[#6B7280] ml-1 md:text-[.9vw] text-[3vw] select-none'>{kat.view}</p>
                                 </li>
 
                             </ul>

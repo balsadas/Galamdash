@@ -9,7 +9,6 @@ import Cookies from 'universal-cookie';
 
 
 const cookies = new Cookies()
-console.log(cookies.get('token'))
 function Nav({ change, setChange }) {
   const [click, setClick] = useState(0)
   const [dclick, setDclick] = useState(false)
