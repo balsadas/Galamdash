@@ -59,20 +59,7 @@ function Post() {
 
 
     SwiperCore.use([Autoplay])
-    const [like, setLike] = useState(0)
-    const [comment, setComment] = useState(0)
-    const [view, setView] = useState(0)
 
-    useEffect(() => {
-        countFetch()
-    }, [])
-
-    const countFetch = async () => {
-        let res = await axios.get(`${setting.SERVER}/api/count/${Post.id}`)
-        setLike(res.data.like.count)
-        setComment(res.data.comment.count)
-        setView(res.data.view.count)
-    }
 
     return (
         <div className='flex justify-center mt-[1rem] md:mt-[3rem]   '>
@@ -90,15 +77,15 @@ function Post() {
                     </div>
                     <div className='md:hidden block w-[95%]  mt-4'>
                         <SwiperComponent
-                        
+
                             modules={{ Autoplay }}
                             loop={true}
-                           
+
                             autoplay={{
                                 delay: 2000,
                                 disableOnInteraction: false,
                             }}
-                           >
+                        >
                             {Post.map((post, i) => (
                                 <SwiperSlide key={i} >
                                     <Link to={`/IntoPaper/${post.id}`}>
@@ -110,15 +97,15 @@ function Post() {
 
                                                         <li className='flex mr-2 items-center select-none'>
                                                             <img src={'./photo/heart.png'} className='w-[5vw] h-[5vw] ' />
-                                                            <p className='text-[#6B7280] ml-1 text-[3vw]'>{view}</p>
+                                                            <p className='text-[#6B7280] ml-1 text-[3vw]'>{post.view}</p>
                                                         </li>
                                                         <li className='flex mr-2 items-center select-none'>
                                                             <img src={'./photo/comment.png'} className='w-[5vw] h-[5vw] ' />
-                                                            <p className='text-[#6B7280] ml-1 text-[3vw]'>{like}</p>
+                                                            <p className='text-[#6B7280] ml-1 text-[3vw]'>{post.like}</p>
                                                         </li>
                                                         <li className='flex mr-2 items-center select-none'>
                                                             <img src={'./photo/bar-chart.png'} className='w-[5vw] h-[5vw] ' />
-                                                            <p className='text-[#6B7280] ml-1 text-[3vw]'>{comment}</p>
+                                                            <p className='text-[#6B7280] ml-1 text-[3vw]'>{post.comment}</p>
                                                         </li>
                                                     </ul>
                                                 </div>

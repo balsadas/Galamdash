@@ -30,7 +30,7 @@ const ad = [
 function Adver() {
 
     return (
-        <div className='bg-slate-500 xl:w-[15rem] mt-[3rem] shadow-lg xl:h-[40rem] lg:w-[15rem] rounded-lg flex'>
+        <div className='bg-slate-500 xl:w-[15rem] mt-[3rem] shadow-lg md:h-[30rem] lg:h-[40rem] lg:w-[12rem]  md:w-[9rem] rounded-lg flex'>
             <Swiper
             
                 modules={{ Autoplay }}
@@ -42,12 +42,12 @@ function Adver() {
                 }}
             >
                 <SwiperSlide>
-                    <img src='./photo/photo5.jpg' className='w-full h-[40rem] object-cover rounded-lg' />
+                    <img src='./photo/photo5.jpg' className='w-full h-[100%] object-cover rounded-lg' />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src='./photo/photo2.jpg' className='w-full h-[40rem] object-cover rounded-lg' />
+                    <img src='./photo/photo2.jpg' className='w-full h-[100%] object-cover rounded-lg' />
                 </SwiperSlide><SwiperSlide>
-                    <img src='./photo/photo6.jpg' className='w-full h-[40rem] object-cover rounded-lg' />
+                    <img src='./photo/photo6.jpg' className='w-full h-[100%] object-cover rounded-lg' />
                 </SwiperSlide>
             </Swiper>
         </div>
