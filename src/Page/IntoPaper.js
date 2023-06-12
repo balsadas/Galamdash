@@ -55,7 +55,7 @@ function IntoPaper() {
                     <div className='flex items-center justify-between'>
                         <div className='flex items-center'>
                             <Link to='/Profile'>
-                                {Post.img ? <img className='rounded-full cursor-pointer md:w-[3vw] md:h-[3vw] w-[12vw] h-[12vw] object-cover' src={`${setting.SERVER}/${Post.img}`} /> : <img src={img5} className='rounded-full cursor-pointer md:w-[3vw] md:h-[3vw] w-[12vw] h-[12vw] object-cover' />}
+                                {Post.User.img ? <img className='rounded-full cursor-pointer md:w-[3vw] md:h-[3vw] w-[12vw] h-[12vw] object-cover' src={`${setting.SERVER}/${Post.User.img}`} /> : <img src={img5} className='rounded-full cursor-pointer md:w-[3vw] md:h-[3vw] w-[12vw] h-[12vw] object-cover' />}
                             </Link>
                             <div className='ml-3'>
                                 <h3 className='md:text-[1.3vw] text-[6vw] select-none font-bold '>{Post.User.nick}</h3>
@@ -77,12 +77,12 @@ function IntoPaper() {
                                 ))}
                             </ul>
                         </div>
-                        <p className='text-[#6B7280] text-[4vw] text-justify md:text-[1vw] mt-3'>
-                            {Post.content}
+                        <p className='text-[#6B7280] text-[4vw] text-justify md:text-[1vw] mt-3' dangerouslySetInnerHTML={{__html:  Post.content}}>
+                           
                         </p>
                         <div className='flex justify-center mt-[2rem] md:mt-[3rem]'>
                             <div>
-                                {Post.img ? <img src={`${setting.SERVER}/${Post.img}`} className='object-cover md:w-[40vw] ' /> : <img src={img4} className='object-cover md:w-[40vw]' />
+                                {Post.img ? <img src={`${setting.SERVER}/${Post.img}`} className='object-contain md:w-[40vw] md:h-[30vw] ' /> : <img src={img4} className='object-cover md:w-[40vw]' />
                                 }
                                 <div className='h-[2vw] md:w-[40vw] bg-[#e8e8e8e0] mt-4'></div>
                             </div>

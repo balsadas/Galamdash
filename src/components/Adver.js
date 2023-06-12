@@ -42,13 +42,13 @@ function Adver() {
                 }}
             >
                 <SwiperSlide>
-                    <img src='./photo/photo5.jpg' className='w-full h-[100%] object-cover rounded-lg' />
+                    <img src='./image/ad3.gif' className='w-full h-[100%] object-cover  rounded-lg' />
                 </SwiperSlide>
-                <SwiperSlide>
+                {/* <SwiperSlide>
                     <img src='./photo/photo2.jpg' className='w-full h-[100%] object-cover rounded-lg' />
                 </SwiperSlide><SwiperSlide>
                     <img src='./photo/photo6.jpg' className='w-full h-[100%] object-cover rounded-lg' />
-                </SwiperSlide>
+                </SwiperSlide> */}
             </Swiper>
         </div>
     );

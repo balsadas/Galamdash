@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import NavSearch from '../components/NavSearch';
 import Footer from '../components/Footer';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import setting from '../setting.json'
 import axios from 'axios';
 import Cookies from 'universal-cookie';
@@ -13,6 +13,8 @@ function CreatePost() {
     const [path, setPath] = useState(undefined)
     const [category, setCategory] = useState([])
     const cookie = new Cookies()
+
+    const redirect = useNavigate()
 
     const fileSend = () => {
         const file1 = document.getElementById('default_btn1');
@@ -57,6 +59,7 @@ function CreatePost() {
             }
         }).then((res) => {
             console.log(res)
+            redirect('/')
         }).catch((err) => {
             console.log(err)
         })

@@ -32,13 +32,14 @@ function Adver1() {
                 modules={{ Autoplay }}
             >
                 <SwiperSlide>
-                    <img src='./photo/photo5.jpg' className='w-full h-full object-cover rounded-lg' />
+                    <img src='./image/ad2.gif' className='w-full h-full object-cover rounded-lg' />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src='./photo/photo2.jpg' className='w-full h-full object-cover rounded-lg' />
-                </SwiperSlide><SwiperSlide>
+                    <img src='./image/ad1.gif' className='w-full h-full object-cover rounded-lg' />
+               </SwiperSlide>
+              {/*   <SwiperSlide>
                     <img src='./photo/photo6.jpg' className='w-full h-full object-cover rounded-lg' />
-                </SwiperSlide>
+                </SwiperSlide> */}
             </Swiper>
         </div>
     );
