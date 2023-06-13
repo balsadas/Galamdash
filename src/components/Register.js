@@ -17,6 +17,7 @@ function Register() {
     const [selection, setSelection] = useState('')
     const [visibility, setVisibility] = useState(false)
 
+    
     const Enter = (e) => {
         var key = e.keyCode || e.which;
         if (key === 13) { // Клавиша Enter

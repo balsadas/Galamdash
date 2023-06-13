@@ -71,7 +71,7 @@ function Nav({ change, setChange }) {
 
 
         <div className='md:p-0 p-4 bg-[white]'>
-          <Link to={'/*'} >
+          <Link to={'/'} >
             <img src='./image/Galamdas.jpg' className='select-none' />
           </Link>
 
