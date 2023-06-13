@@ -31,14 +31,14 @@ function Register() {
     }
 
 
-    const [data, setData] = useState({
-        email: '',
-        password1: '',
-        password2: '',
-        name: '',
-        surname: '',
-        nick: ''
-    })
+        const [data, setData] = useState({
+            email: '',
+            password1: '',
+            password2: '',
+            name: '',
+            surname: '',
+            nick: ''
+        })
 
     const handleChange1 = (e) => {
         const value = e.target.value
@@ -58,7 +58,7 @@ function Register() {
             surname: data.surname,
             type: selection
         }
-        if (data.email !== '' || data.name !== '' || data.nick !== '' || data.password1 !== '' || data.password2 !== '' || data.surname !== '' || data.type !== '') {
+        if (data.email !== '' && data.name !== '' && data.nick !== '' && data.password1 !== '' && data.password2 !== '' && data.surname !== '' && data.type !== '') {
             axios.post(`${setting.SERVER}/api/user/registry`, userData)
                 .then(res => {
                     if (res.status === 200) {

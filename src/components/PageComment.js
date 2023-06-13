@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import setting from '../setting.json'
 import time from '../time'
 import { Link } from "react-router-dom";
+import img1 from '../Page/user (1).png'
 
 const com = [
     { img: './photo/photo4.jpg', title: 'Balshayew Myrat', title1: 'Magtymguly' },
@@ -42,13 +43,20 @@ function MeanComment() {
 
                             <div className="flex items-center">
                                 {console.log(Com)}
-                                <img src={`${setting.SERVER}/${Com.User.img}`} className="md:w-[3vw] md:h-[3vw] w-[10vw] h-[10vw] object-cover rounded-full" />
+                                {
+                                    Com.User.img
+                                        ?
+                                        <img src={`${setting.SERVER}/${Com.User.img}`} className="md:w-[3vw] md:h-[3vw] w-[10vw] h-[10vw] object-cover rounded-full" />
+                                        :
+                                        <img src={img1} className="md:w-[3vw] md:h-[3vw] w-[10vw] h-[10vw] object-cover rounded-full"/>
+                                }
+
                                 <div className="ml-4">
                                     <p className="md:text-[1.2vw] text-[3.5vw] font-[500]">{Com.User.nick}</p>
                                     <p className="md:text-[.9vw] text-[2.5vw] text-[#929292] md:mt-1 ">Teswir yazdy:
                                         <span className="text-[#74ebd6] font-[500] underline mx-2">{Com.Post.title}</span>
                                         posta
-                                        <span className="mx-1 text-[3vw] md:text-[.9vw]">{time(Com.time)}</span>
+                                        <span className="mx-1 text-[3vw] indent-[1rem] md:text-[.9vw]">{time(Com.time)}</span>
                                     </p>
                                 </div>
                             </div>
