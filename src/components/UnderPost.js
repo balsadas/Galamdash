@@ -49,7 +49,7 @@ function UnderPost() {
                 <div className='mt-[2rem] '>
                     <ul className='grid grid-cols-3'>
                         {data?.map((post, i) => (
-                            <li key={i} className='bg-[#e2e2e2c0] group hover:bg-[#ffffffe0] md:mt-0 mt-5 ml-3 hover:shadow-lg'>
+                            <li key={i} className='bg-[#e2e2e2c0]  group hover:bg-[#ffffffe0] md:mt-0 mt-5 ml-3 hover:shadow-lg'>
                                 
                                     <div>
                                         {post?.img

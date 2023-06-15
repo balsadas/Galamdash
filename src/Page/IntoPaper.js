@@ -27,6 +27,7 @@ const com = [
 
 
 function IntoPaper() {
+    const [click1, setClick1] = useState(false)
     const [Post, setPost] = useState()
     const { postID } = useParams()
 
@@ -49,6 +50,7 @@ function IntoPaper() {
 
     return (Post &&
         <>
+            {click1 ? <div className='absolute z-[49] bg-[#49484800] min-h-[100vh] w-[100vw]' onClick={() => setClick1(false)}></div> : ''}
             <NavSearch />
             <div className='bg-[#fff] flex justify-center md:pt-[7rem] pt-[6rem]'>
                 <div className='md:w-[50%] w-[90%]'>
@@ -77,13 +79,14 @@ function IntoPaper() {
                                 ))}
                             </ul>
                         </div>
-                        <p className='text-[#6B7280] text-[4vw] text-justify md:text-[1vw] mt-3' dangerouslySetInnerHTML={{__html:  Post.content}}>
-                           
+                        {Post.img ? <img src={`${setting.SERVER}/${Post.img}`} className='object-contain mr-5 md:w-[25vw] float-left md:h-[25vw] mt-4 mb-3 ' /> : <img src={img4} className='object-cover md:w-[40vw]' />
+                        }
+                        <p className='text-[#6B7280] text-[4vw] text-justify clear-right md:text-[1vw] mt-3' dangerouslySetInnerHTML={{ __html: Post.content }}>
+
                         </p>
                         <div className='flex justify-center mt-[2rem] md:mt-[3rem]'>
                             <div>
-                                {Post.img ? <img src={`${setting.SERVER}/${Post.img}`} className='object-contain md:w-[40vw] md:h-[30vw] ' /> : <img src={img4} className='object-cover md:w-[40vw]' />
-                                }
+
                                 <div className='h-[2vw] md:w-[40vw] bg-[#e8e8e8e0] mt-4'></div>
                             </div>
                         </div>
@@ -112,7 +115,7 @@ function IntoPaper() {
                     </div>
                 </div>
             </div>
-            <Comment />
+            <Comment click1={click1} setClick1={setClick1} />
             <UnderPost />
             <div className='bg-[#fff] pt-6'>
                 <Footer />

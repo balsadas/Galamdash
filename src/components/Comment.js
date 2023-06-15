@@ -13,20 +13,13 @@ import img5 from './speech-bubble (1).png'
 const cookie = new Cookies()
 
 
-// const Com = [
-//   { title: 'Balshayew Hojamyrat', date: '23 hour ago', img: './photo/photo12.jpg', comment: 'kdjrfeksrjnfv erkwjfnvrs werkjnfvrsekjavn' },
-//   { title: 'Balshayew Hojamyrat', date: '23 hour ago', img: '', comment: 'kdjrfeksrjnfv erkwjfnvrs werkjnfvrsekjavn' },
-//   { title: 'Balshayew Hojamyrat', date: '23 hour ago', img: './photo/photo12.jpg', comment: 'kdjrfeksrjnfv erkwjfnvrs werkjnfvrsekjavn' },
-//   { title: 'Balshayew Hojamyrat', date: '23 hour ago', img: './photo/photo12.jpg', comment: 'kdjrfeksrjnfv erkwjfnvrs werkjnfvrsekjavn' },
-//   { title: 'Balshayew Hojamyrat', date: '23 hour ago', img: './photo/photo12.jpg', comment: 'kdjrfeksrjnfv erkwjfnvrs werkjnfvrsekjavn' },
-//   { title: 'Balshayew Hojamyrat', date: '23 hour ago', img: './photo/photo12.jpg', comment: 'kdjrfeksrjnfv erkwjfnvrs werkjnfvrsekjavn kdjrfeksrjnfv erkwjfnvrs werkjnfvrsekjavnkdjrfeksrjnfv erkwjfnvrs werkjnfvrsekjavn' },
-// ]
 
 
 
 
-function Comment() {
-  const [click1,setClick1] = useState(false)
+
+function Comment({click1, setClick1}) {
+ 
   const [click, setClick] = useState(false)
   const { postID } = useParams('postID')
   const [commentID, setCommentID] = useState(0)
@@ -61,7 +54,7 @@ function Comment() {
     })
   }, [])
 
-  const [c1n,setC1n] = useState()
+  const [c1n, setC1n] = useState()
   const SetCommentID2 = (value) => {
     setC1n(value)
     if (value == commentID) {
@@ -87,12 +80,12 @@ function Comment() {
                     </div>
                     <div className='md:text-[.8vw] text-[2.5vw] select-none'>{new Date(com.time).toLocaleString()}</div>
                   </div>
-                  <div className='flex justify-center'>
+                  <div className='flex '>
                     <div className='md:w-[91%] select-none py-4 md:text-[1vw] text-[4vw] md:indent-3 indent-8 '>
                       <p>{com.content}</p>
                     </div>
                   </div>
-                 {/* <div className='flex justify-end mb-2' onClick={() => { setClick(!click); SetCommentID2(comID) }}>
+                  {/* <div className='flex justify-end mb-2' onClick={() => { setClick(!click); SetCommentID2(comID) }}>
                     <img src={click ? img3 : img2} className='md:w-[1.2vw] w-[4vw] md:h-[1.2vw] h-[4vw]' />
               </div> */}
                 </li>
@@ -109,13 +102,13 @@ function Comment() {
     return (
       <div className='z-[99] fixed w-full bottom-0 right-2'>
         <div className=' flex justify-center'>
-          <div className='shadow-xl rounded-t-lg md:px-4 py-3 flex bg-[#E8F8F5] w-full md:w-[80%]'>
-            <img className='rounded-full object-cover md:h-[3vw] md:w-[3vw]  h-[10vw] w-[10vw]' src={img1} />
-            <div className='md:w-[80%] ml-3'>
-              <input id='text' className='md:w-full px-4 py-2  md:text-[1.1vw] text-[3vw] border rounded-lg' placeholder='Teswirinizi yazyn!' />
+          <div className='shadow-xl rounded-t-lg md:px-4 py-3 flex bg-[#E8F8F5] w-full md:w-[80%] '>
+            <img className='rounded-full object-cover md:h-[3vw] md:w-[3vw] ml-4 h-[10vw] w-[10vw]' src={img1} />
+            <div className='md:w-[80%] w-[60%] ml-3'>
+              <input id='text' className='md:w-full w-full px-4 py-2  md:text-[1.1vw] text-[3vw] border rounded-lg' placeholder='Teswirinizi yazyn!' />
             </div>
-            <div className='md:w-[10%] ml-3'>
-              <button onClick={() => { Send() }} className='border py-2 rounded-lg font-[600] select-none cursor-pointer hover:bg-green-400 hover:text-[#fff] bg-[#fff] w-full'>Paylas</button>
+            <div className='md:w-[10%] w-[18%] ml-3 mb-2'>
+              <button onClick={() => { Send() }} className='border py-1 md:py-2 rounded-lg font-[600] select-none cursor-pointer hover:bg-green-400 hover:text-[#fff] bg-[#fff] w-full'>Paylas</button>
             </div>
           </div>
         </div>
@@ -125,6 +118,7 @@ function Comment() {
 
   return (
     <div className='flex justify-center bg-[#fff] ' >
+
       <div className=' md:w-[70%] w-[95%]'>
         <div>
           <ul>
@@ -153,8 +147,12 @@ function Comment() {
       </div>
 
 
-      <div className='fixed md:bottom-20 md:right-10 right-2 bottom-16 z-50' onClick={() => setClick1(!click1)}>
-        <img className='md:w-[3.5vw] md:h-[3.5vw] w-[8vw] h-[8vw] select-none cursor-pointer ' src={click1 ? "img5" : "img4"} />
+      <div className='fixed md:bottom-20 md:right-10 right-2 bottom-20 z-50' onClick={() => setClick1(!click1)}>
+        {click1 ?
+          <img className='md:w-[3.5vw] md:h-[3.5vw] w-[8vw] h-[8vw] select-none cursor-pointer ' src={img5} />
+          :
+          <img className='md:w-[3.5vw] md:h-[3.5vw] w-[8vw] h-[8vw] select-none cursor-pointer ' src={img4} />
+        }
       </div>
       <div className={click1 ? 'block' : 'hidden'}>
         <Comarea />
