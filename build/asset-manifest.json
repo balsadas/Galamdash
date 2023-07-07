@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.cff04841.css",
+    "main.js": "/static/js/main.b637a949.js",
+    "static/media/photo12.jpg": "/static/media/photo12.3f08be871cb018aea4f9.jpg",
+    "static/media/Galamdas1.png": "/static/media/Galamdas1.a7ec9c5dc50485b92b42.png",
+    "static/media/tazepng.png": "/static/media/tazepng.6debb66a3460adab7326.png",
+    "static/media/user (1).png": "/static/media/user (1).05c595bd0ad55e1a58c5.png",
+    "static/media/speech-bubble (1).png": "/static/media/speech-bubble (1).a33d83658aa01bc898d9.png",
+    "static/media/like.png": "/static/media/like.5655ea45b5cfb253a657.png",
+    "static/media/comment.png": "/static/media/comment.1278c0701ee2a7465c57.png",
+    "static/media/speech-bubble.png": "/static/media/speech-bubble.d205291be2b50572d094.png",
+    "static/media/arrow.png": "/static/media/arrow.51cf457d986899c2a43c.png",
+    "static/media/reply.png": "/static/media/reply.01ce18a0f05922724889.png",
+    "index.html": "/index.html",
+    "main.cff04841.css.map": "/static/css/main.cff04841.css.map",
+    "main.b637a949.js.map": "/static/js/main.b637a949.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cff04841.css",
+    "static/js/main.b637a949.js"
+  ]
+}
