@@ -31,11 +31,7 @@ function Navbar({ change, setChange }) {
 
 
 
-  const kat = [
-    { id: 1, text: "Şahyrlar" },
-    { id: 2, text: 'Poema' },
-    { id: 3, text: 'Makala' }
-  ]
+
 
   const [click, setClick] = useState(false)
   const [click1, setClick1] = useState(false)
